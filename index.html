@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<title>Midlife, Be Ambitious. — 中年よ、大志を抱け。</title>
+<meta name="description" content="20代・30代の戦い方では、もう届かない景色がある。経験と知恵を力に変え、これからの人生を自分らしくデザインするコミュニティ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700;900&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+<style>
+/* ===== reset ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;
+  line-height: 1.7;
+  color: #192b60;
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  background: #FAF4E8;
+}
+img { display: block; max-width: 100%; height: auto; }
+::selection { color: #192b60; background-color: #FFE99A; }
+a { color: inherit; text-decoration: none; }
+
+:root {
+  --navy: #192b60;
+  --navy-dark: #0E1B3F;
+  --navy-light: #4460b4;
+  --gold: #C9A961;
+  --gold-bright: #FFD150;
+  --gold-dark: #9C8552;
+  --cream-bg: #FAF4E8;
+  --cream-soft: #FFF8E8;
+  --marker-yellow: #FFE99A;
+  --marker-cream: #F5E6B8;
+  --green-bg: #E8F4E5;
+  --green-dark: #5A8568;
+  --blue-bg: #E8EEF8;
+  --orange: #E07856;
+  --orange-dark: #C25F3F;
+  --red-accent: #E53935;
+  --white: #FFFFFF;
+  --text: #192b60;
+  --text-soft: #4A5870;
+}
+
+/* ===== Layout ===== */
+.section { padding: 70px 16px; }
+.wrap { max-width: 880px; margin: 0 auto; }
+.wrap-narrow { max-width: 720px; margin: 0 auto; }
+
+/* ===== Section backgrounds ===== */
+.bg-white { background: var(--white); }
+.bg-cream { background: var(--cream-bg); }
+.bg-cream-soft { background: var(--cream-soft); }
+.bg-green { background: var(--green-bg); }
+.bg-blue { background: var(--blue-bg); }
+.bg-navy { background: var(--navy); color: #fff; }
+.bg-navy h2 { color: #fff !important; border-color: #fff !important; }
+.bg-navy h2::after { border-top-color: #fff !important; }
+.bg-navy p { color: #E8EEF8; }
+.bg-navy p strong { color: var(--gold-bright); }
+
+/* ===== Dot pattern background ===== */
+.dots {
+  background-color: #fff;
+  background-image:
+    radial-gradient(circle, #E0D5BB 1.5px, transparent 1.5px),
+    radial-gradient(circle, #E0D5BB 1.5px, transparent 1.5px);
+  background-position: 0 0, 10.5px 11px;
+  background-size: 21px 24px;
+}
+@media (max-width:600px){
+  .dots {
+    background-size: 12px 14px;
+    background-position: 0 0, 6px 7px;
+  }
+}
+
+/* ===== Typography ===== */
+p {
+  margin-bottom: 22px;
+  font-weight: 500;
+  line-height: 1.95;
+}
+p:last-child { margin-bottom: 0; }
+strong { font-weight: 900; }
+
+/* 蛍光ペン マーカー */
+.marker, em.marker, .marker-y {
+  font-style: normal;
+  background: linear-gradient(transparent 55%, var(--marker-yellow) 55%, var(--marker-yellow) 95%, transparent 95%);
+  padding: 0 4px;
+  font-weight: 900;
+}
+.marker-cream {
+  font-style: normal;
+  background: linear-gradient(transparent 55%, var(--marker-cream) 55%, var(--marker-cream) 95%, transparent 95%);
+  padding: 0 4px;
+  font-weight: 900;
+}
+.text-orange { color: var(--orange-dark); font-weight: 900; }
+.text-navy { color: var(--navy); font-weight: 900; }
+
+/* ===== h2 (吹き出し型) ===== */
+h2 {
+  position: relative;
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 900;
+  color: var(--orange-dark);
+  border: 3px solid var(--navy);
+  background-color: #fff;
+  border-radius: 100000px;
+  text-align: center;
+  margin: 0 auto 60px;
+  padding: 16px 24px;
+  width: 100%;
+  max-width: 760px;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+h2::before {
+  content: "";
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 18px solid transparent;
+  border-top: 18px solid #fff;
+  z-index: 2;
+}
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 18px solid transparent;
+  border-top-color: var(--navy);
+  z-index: 1;
+}
+@media (max-width:600px){
+  h2 { font-size: 19px; padding: 14px 16px; margin-bottom: 44px; max-width: 92%;}
+  h2::before { bottom: -22px; border: 14px solid transparent; border-top: 14px solid #fff;}
+  h2::after { bottom: -25px; border: 14px solid transparent; border-top-color: var(--navy);}
+}
+
+/* h3 */
+h3 {
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 900;
+  color: var(--navy);
+  margin-bottom: 20px;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+
+/* ===== Box (太枠＋角丸) ===== */
+.box {
+  background: #fff;
+  border: 3px solid var(--navy);
+  border-radius: 20px;
+  padding: 40px 36px;
+  margin-bottom: 24px;
+}
+.box.dots-bg {
+  background-color: #fff;
+  background-image:
+    radial-gradient(circle, #EFE7D0 1.5px, transparent 1.5px),
+    radial-gradient(circle, #EFE7D0 1.5px, transparent 1.5px);
+  background-position: 0 0, 10.5px 11px;
+  background-size: 21px 24px;
+}
+@media (max-width:600px){
+  .box { padding: 28px 22px; border-radius: 14px; border-width: 2px; }
+}
+
+/* ===== CTA ボタン（二重枠＋立体影） ===== */
+.cta-btn-wrap { text-align: center; padding: 16px 0; }
+.cta-form-title {
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: 900;
+  text-align: center;
+  color: var(--navy);
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+.cta-form-title span {
+  background: linear-gradient(transparent 55%, var(--marker-yellow) 55%);
+  padding: 0 6px;
+}
+.cta-form-title::before { content: "＼ "; font-weight: 400; color: var(--navy); }
+.cta-form-title::after { content: " ／"; font-weight: 400; color: var(--navy); }
+.cta-form-subtitle {
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-soft);
+  margin-bottom: 18px;
+}
+.cta-main-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 22px 28px;
+  background: var(--gold);
+  border: 5px solid var(--navy);
+  outline: 5px solid var(--marker-yellow);
+  color: #fff;
+  font-size: clamp(18px, 3.5vw, 28px);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+  border-radius: 4px;
+}
+.cta-main-btn:hover {
+  transform: translateY(-2px);
+  background: var(--gold-dark);
+}
+.cta-note {
+  display: block;
+  margin-top: 22px;
+  font-size: 14px;
+  color: var(--text-soft);
+  text-align: center;
+}
+@media (max-width:600px){
+  .cta-main-btn { font-size: 17px; padding: 16px 18px; border-width: 3px; outline-width: 3px; }
+}
+
+/* ===== Hero ===== */
+.hero { background: #fff; }
+.hero img { width: 100%; }
+
+/* ===== Empathy ===== */
+.empathy-question {
+  margin-top: 36px;
+  padding: 28px 24px;
+  background: var(--marker-yellow);
+  border: 3px dashed var(--navy);
+  border-radius: 16px;
+  text-align: center;
+  font-size: clamp(18px, 3vw, 22px);
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1.6;
+}
+
+/* ===== Comparison Table（手作り風） ===== */
+.cmp {
+  border: 3px solid var(--navy);
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 36px 0;
+  background: #fff;
+}
+.cmp-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--navy);
+  color: #fff;
+}
+.cmp-head > div {
+  padding: 18px 16px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+.cmp-head > div:first-child { color: #C8C0AA; border-right: 1px solid rgba(255,255,255,0.2); }
+.cmp-head > div:last-child { color: var(--gold-bright); }
+.cmp-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 2px solid var(--navy);
+}
+.cmp-row > div {
+  padding: 18px 14px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+}
+.cmp-row > div:first-child {
+  border-right: 2px solid var(--navy);
+  color: #888;
+  background: #FAFAFA;
+  text-decoration: line-through;
+  text-decoration-color: #BBB;
+}
+.cmp-row > div:last-child {
+  color: var(--orange-dark);
+  background: var(--cream-soft);
+}
+.cmp-row > div:last-child::before {
+  content: "→ ";
+  color: var(--orange-dark);
+  font-weight: 900;
+}
+@media (max-width:600px){
+  .cmp-head > div, .cmp-row > div { padding: 12px 8px; font-size: 13px; }
+}
+
+/* ===== Pillar Box ===== */
+.pillar {
+  background: #fff;
+  border: 3px solid var(--navy);
+  border-radius: 20px;
+  padding: 40px 32px;
+  margin-bottom: 24px;
+  position: relative;
+}
+.pillar-number {
+  display: inline-block;
+  background: var(--navy);
+  color: #fff;
+  padding: 6px 18px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  margin-bottom: 18px;
+}
+.pillar h3 { margin-bottom: 18px; }
+.pillar ul { list-style: none; padding-left: 0; margin: 16px 0; }
+.pillar ul li {
+  padding-left: 28px;
+  position: relative;
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: var(--navy);
+}
+.pillar ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0; top: 0;
+  color: var(--orange-dark);
+  font-weight: 900;
+  font-size: 18px;
+}
+@media (max-width:600px){
+  .pillar { padding: 28px 22px; border-width: 2px; border-radius: 14px; }
+}
+
+/* ===== People ===== */
+.person {
+  background: #fff;
+  border: 3px solid var(--navy);
+  border-radius: 20px;
+  padding: 36px 32px;
+  margin-bottom: 24px;
+  position: relative;
+}
+.person-tag {
+  display: inline-block;
+  background: var(--gold);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+.person-name {
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 900;
+  color: var(--navy);
+  margin-bottom: 4px;
+  letter-spacing: 0.04em;
+}
+.person-role {
+  font-size: 14px;
+  color: var(--gold-dark);
+  font-weight: 700;
+  margin-bottom: 22px;
+  letter-spacing: 0.06em;
+}
+@media (max-width:600px){
+  .person { padding: 28px 22px; border-width: 2px; border-radius: 14px; }
+}
+
+/* ===== Highlight ===== */
+.highlight-banner {
+  background: var(--marker-yellow);
+  border: 3px solid var(--navy);
+  border-radius: 16px;
+  padding: 32px 28px;
+  margin: 36px 0;
+  text-align: center;
+  font-size: clamp(18px, 3vw, 22px);
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1.7;
+}
+
+/* ===== Wave divider ===== */
+.wave-divider {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  background: var(--cream-bg);
+}
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+.wave-divider.up svg { transform: rotate(180deg); }
+
+/* ===== Pain list（中年が感じていること） ===== */
+.pain-list {
+  background: #fff;
+  border: 3px solid var(--navy);
+  border-radius: 20px;
+  padding: 36px 32px;
+  margin: 32px 0;
+}
+.pain-list h3 {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 24px;
+  color: var(--orange-dark);
+}
+.pain-list h3::before { content: "💭 "; }
+.pain-list ul { list-style: none; padding: 0; }
+.pain-list ul li {
+  padding: 14px 0 14px 36px;
+  border-bottom: 1px dashed var(--line, #D8D0BC);
+  position: relative;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--navy);
+  line-height: 1.7;
+}
+.pain-list ul li:last-child { border-bottom: 0; }
+.pain-list ul li::before {
+  content: "▸";
+  position: absolute;
+  left: 8px;
+  top: 14px;
+  color: var(--orange-dark);
+  font-size: 18px;
+  font-weight: 900;
+}
+@media (max-width: 600px) {
+  .pain-list { padding: 24px 18px; border-width: 2px; border-radius: 14px; }
+  .pain-list h3 { font-size: 18px; }
+  .pain-list ul li { font-size: 14px; padding-left: 28px; }
+}
+
+/* ===== Check/Cross list（参加要件） ===== */
+.check-list, .x-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 28px;
+}
+.check-list li, .x-list li {
+  padding: 12px 0 12px 38px;
+  position: relative;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--navy);
+  line-height: 1.7;
+}
+.check-list li::before {
+  content: "○";
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  color: #2D8C57;
+  font-size: 20px;
+  font-weight: 900;
+}
+.x-list li::before {
+  content: "✕";
+  position: absolute;
+  left: 8px;
+  top: 12px;
+  color: var(--red-accent);
+  font-size: 18px;
+  font-weight: 900;
+}
+.gate-label {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+.gate-label.ok { background: #E8F4E5; color: #2D8C57; border: 2px solid #2D8C57; }
+.gate-label.ng { background: #FCE8E6; color: var(--red-accent); border: 2px solid var(--red-accent); }
+
+/* ===== Final CTA ===== */
+.final-cta {
+  background: var(--navy);
+  color: #fff;
+  padding: 80px 16px;
+  text-align: center;
+  position: relative;
+}
+.final-cta-inner { max-width: 720px; margin: 0 auto; }
+.final-cta h2 {
+  color: var(--gold-bright);
+  border-color: var(--gold-bright);
+  background: var(--navy);
+}
+.final-cta h2::before { border-top-color: var(--navy); }
+.final-cta h2::after { border-top-color: var(--gold-bright); }
+.final-cta p { color: #E8EEF8; font-size: 17px; }
+.final-cta-soft {
+  margin-top: 40px;
+  padding: 28px;
+  border: 2px dashed var(--gold-bright);
+  border-radius: 12px;
+  font-size: 15px;
+  color: #C8C0AA;
+  line-height: 2;
+  text-align: left;
+}
+.final-cta-soft strong { color: var(--gold-bright); font-weight: 900; }
+.script-tag {
+  margin-top: 24px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--gold-bright);
+  letter-spacing: 0.06em;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: var(--navy-dark);
+  color: #8A92A8;
+  padding: 40px 16px;
+  text-align: center;
+  font-size: 13px;
+  border-top: 3px solid var(--gold);
+}
+footer .en {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  color: var(--gold-bright);
+  margin-bottom: 6px;
+}
+footer .jp {
+  font-weight: 700;
+  color: #E8EEF8;
+  margin-bottom: 16px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width:600px){
+  .section { padding: 50px 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO（画像そのまま） ===== -->
+<section class="hero">
+  <a href="#join" aria-label="無料でコミュニティに入る">
+    <img src="images/hero_v3.png" alt="Midlife, Be Ambitious. ミッドライフ・ビーアンビシャス — 中年よ、もう一度、大志を抱け。">
+  </a>
+</section>
+
+<!-- ===== Hero下CTA ===== -->
+<section class="section bg-cream-soft">
+  <div class="wrap">
+    <p class="cta-form-title"><span>無料コミュニティに、いますぐ参加する</span></p>
+    <p class="cta-form-subtitle">※登録後、すぐにご案内をお届けします</p>
+    <div class="cta-btn-wrap">
+      <a href="#join" class="cta-main-btn">▶ 無料でコミュニティに入る</a>
+      <span class="cta-note">Facebookグループ・LINEからも参加できます</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EMPATHY ===== -->
+<section class="section bg-white dots">
+  <div class="wrap-narrow">
+    <h2>あなたに、問いかけたいことがある。</h2>
+
+    <div class="box">
+      <p>ビジネスを20年近くやってきた。<br>それなりに成果も出してきた。</p>
+      <p>でも正直に言うと——<br><em class="marker">なんか、面白くない。</em></p>
+      <p>これ、うちだけかな？と思っていたら、<br>3人で飲んだときに同じことを言い合っていた。<br><strong>高江洌も、松井も、真井も。</strong></p>
+      <p><em class="marker-cream">「ビジネスやってきたけど、それが全然つまんない」</em>って。</p>
+      <p>燃え尽きているわけじゃない。仕事は回っている。<br>でも何かが抜けた感じ。</p>
+      <p>若い頃にあった<strong>「これをやってやる」</strong>という熱量が、<br>気づいたら冷えている。</p>
+      <p>体力も落ちてきた。無理が利かなくなってきた。<br>子どもの受験や、親の介護の話が周りで出始めた。</p>
+      <p>それでも走り続けているのは、惰性なのか、本物の意欲なのか<br>——自分でもわからなくなってきた。</p>
+    </div>
+
+    <div class="pain-list">
+      <h3>こんなこと、感じていませんか？</h3>
+      <ul>
+        <li>衰えへの恐怖、<em class="marker">老化への不安</em>がある</li>
+        <li><em class="marker">弱音を吐ける仲間</em>が、いない</li>
+        <li>集中力が落ちて、<em class="marker">昔のように踏ん張りが効かない</em></li>
+        <li>戦い方を変えなきゃと分かっているけど、<em class="marker-cream">どうすればいいか分からない</em></li>
+        <li>AIも使ってみたいけど、最新情報に振り回されて<em class="marker-cream">何から手をつければいいか分からない</em></li>
+      </ul>
+    </div>
+
+    <div class="empathy-question">
+      あなたも、そう感じていませんか？
+    </div>
+  </div>
+</section>
+
+<!-- ===== HYPOTHESIS ===== -->
+<section class="section bg-cream">
+  <div class="wrap">
+    <h2>「つまらない」の正体は、<br>戦い方が古くなっていることだ。</h2>
+
+    <div class="box dots-bg">
+      <p>一つ仮説を立ててみた。</p>
+      <p><em class="marker">「20代・30代のゲームを、40代以降もやり続けているから詰まる」</em>のではないか、と。</p>
+      <p>20代・30代のゲームは<strong>「増やす・広げる・証明する」</strong>だった。<br>売上を増やす、人脈を広げる、自分の実力を証明する。</p>
+      <p>このモードで走り続けると、どこかで必ず壁にぶち当たる。</p>
+      <p>なぜなら、40代以降は<em class="marker-cream">別のゲーム</em>に入っているからだ。</p>
+    </div>
+
+    <div class="cmp">
+      <div class="cmp-head">
+        <div>❌ 20-30代の戦い方</div>
+        <div>✓ 40代以降の戦い方</div>
+      </div>
+      <div class="cmp-row"><div>増やす</div><div>絞る</div></div>
+      <div class="cmp-row"><div>広げる</div><div>深める</div></div>
+      <div class="cmp-row"><div>証明する</div><div>残す・繋ぐ</div></div>
+      <div class="cmp-row"><div>背伸びする</div><div>自分らしくいる</div></div>
+      <div class="cmp-row"><div>弱みを見せない</div><div>仲間に弱みを見せる</div></div>
+      <div class="cmp-row"><div>自分を大きく見せる</div><div>本音で相談する</div></div>
+      <div class="cmp-row"><div>無理して頑張る</div><div>持続可能に走る</div></div>
+    </div>
+
+    <div class="highlight-banner">
+      戦い方が、変わる。<br>
+      これがこのコミュニティの、唯一にして最大のテーマです。
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT IT MEANS ===== -->
+<section class="section bg-white">
+  <div class="wrap-narrow">
+    <h2>「戦い方を変える」とは、<br>具体的にどういうことか。</h2>
+
+    <div class="box dots-bg">
+      <p>20代・30代の頃、私たちは<em class="marker">「弱みを見せたら負け」</em>と思っていました。</p>
+      <p>背伸びをして、できないことを「できる」と言って、<br>自分を実際より大きく見せて、無理をして帳尻を合わせる。</p>
+      <p>それが戦い方だったし、そのモードで通用してきた。</p>
+      <p>でも40代に入って、それを続けるのがしんどくなってきた。<br><strong>背伸びし続けると、足がつる。</strong></p>
+      <p>40代以降の戦い方は、真逆です。</p>
+    </div>
+
+    <div class="box" style="margin-top: 28px;">
+      <h3>① 自分らしくいる。</h3>
+      <p>背伸びを下ろす。等身大で勝負する。</p>
+    </div>
+    <div class="box">
+      <h3>② 弱みを、仲間に見せる。</h3>
+      <p>隠してきたものを、出してみる。</p>
+    </div>
+    <div class="box">
+      <h3>③ 本音で、相談する。</h3>
+      <p>社員にも取引先にも家族にも言えなかったことを、<br>同じ立場の人間と話す。</p>
+    </div>
+    <div class="box">
+      <h3>④ 無理せず、持続可能に走る。</h3>
+      <p>瞬発力で押し切るのではなく、長く続けられる仕組みを作る。</p>
+    </div>
+
+    <div class="highlight-banner">
+      これを一人でやるのは、難しい。<br>
+      <span style="color: var(--orange-dark);">「弱みを見せていい場所」</span>が必要だから。
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY MARKETING ===== -->
+<section class="section bg-blue">
+  <div class="wrap-narrow">
+    <h2>なぜ今、マーケが<br>中心軸なのか。</h2>
+
+    <div class="box">
+      <p>「AIコミュニティじゃないの？」と思った方もいるかもしれません。</p>
+      <p><em class="marker">違います。マーケティングが主軸です。</em></p>
+      <p>何かを成し遂げる、世の中に何かを投げかけて反応を得る——<br>そのためには、<strong>マーケティングの知識が絶対に必要</strong>です。</p>
+      <p>事業として収益を得て、再投資する活動を回すには「<em class="marker-cream">稼ぐスキル</em>」が必要。<br>発信もコミュニティ作りも、<strong>どういう価値を、どんな悩みに、どう伝えるか</strong>のマーケ視点が要る。</p>
+      <p>そして——ここが大事です。</p>
+      <p><em class="marker">デザインも、文章作成も、動画も、これからどんどん AI に代替されていきます。</em><br>でも、<strong>マーケのスキル・アイデアは、AIが出てきてから、むしろ重要性を増している。</strong></p>
+      <p>私たちの20年で一番確かな知見が、マーケティングにあります。<br>このコミュニティでは、その<em class="marker-cream">マーケを突き詰めて習得</em>し、<strong>AIで効率化していきます。</strong></p>
+      <p style="text-align: center; margin-top: 32px;"><span style="font-size: 22px; font-weight: 900; color: var(--orange-dark);">私たちの強みは、AIにはない。マーケにある。</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3 PILLARS ===== -->
+<section class="section bg-white">
+  <div class="wrap">
+    <h2>このコミュニティで、<br>やること。</h2>
+
+    <p style="text-align: center; font-size: 18px; font-weight: 700; margin-bottom: 40px;">MBA（ミッドライフ・ビーアンビシャス）は、<br><em class="marker">3つの軸</em>で動きます。</p>
+
+    <div class="pillar">
+      <div class="pillar-number">PILLAR 01</div>
+      <h3>正しいマーケの知識を持つ</h3>
+      <p>目標型マーケティングは消耗します。<br>「今月の数字を達成しろ」「キャンペーンを回せ」——<br>これを繰り返すほど、疲弊が溜まっていく。</p>
+      <p>一方、<em class="marker-cream">価値観型マーケティング</em>は逆です。<br>「なぜこれをやるのか」「誰の何を変えたいのか」が明確だと、<br>コンテンツにも営業にも一本筋が通る。</p>
+      <p>このコミュニティでは、<strong>「なぜやりたいか」</strong>をベースに置いたマーケティングの組み立て方を、一緒に考えていきます。</p>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar-number">PILLAR 02</div>
+      <h3>AIを道具として使いこなす</h3>
+      <p>40代以降、<em class="marker">体力・思考体力・新しいことをやる馬力</em>が落ちてきます。<br>若い頃のような <strong>「ブルドーザー的働き方」</strong> はもうできない。</p>
+      <p>「これやりたい」と思っても、<em class="marker-cream">「これもこれもめんどくさい」</em>で一歩踏み出せない。<br>そんな経験、ないですか？</p>
+      <p>その<strong>億劫な部分を、AIに補ってもらう</strong>のがMBAの考え方です。<br>「AIを勉強する」ではなく「AIを仕事に差し込む」。</p>
+      <p>会議の議事録、提案書のドラフト、数字のレポーティング——<br>中年世代が日常的に抱えている業務の中で、AIがどこに入るかを具体的にやってみる場にします。</p>
+      <p>Claude Code、ChatGPT、その他の生成AIを<strong>用途別に使い分ける話</strong>も、事例ベースで扱います。</p>
+      <p>狙いはただ一つ。<em class="marker">心からやりたいことに、もう一度エネルギーを注げる状態を取り戻すこと。</em></p>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar-number">PILLAR 03</div>
+      <h3>弱みをさらけ出せる仲間と場</h3>
+      <p style="font-size: 19px;"><em class="marker">これがMBAの中核です。</em></p>
+      <p>「経営の話が正直にできる仲間がいない」という人は、意外と多いです。<br>社員には言えない。取引先には言えない。家族には心配かけたくない。</p>
+      <p>そして20代・30代に染み込んだ<strong>「弱みを見せたら負け」のクセ</strong>が、40代でも抜けない。<br>だから一人で抱えてしまう。</p>
+      <p><em class="marker-cream">このコミュニティは、その逆を意図的にやる場所です。</em></p>
+      <ul>
+        <li>背伸びをやめる</li>
+        <li>弱みを共有する</li>
+        <li>本音で相談する</li>
+        <li>自分らしさを取り戻す</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LIBERAL ARTS ===== -->
+<section class="section bg-green">
+  <div class="wrap-narrow">
+    <h2>大人の<br>リベラルアーツ。</h2>
+
+    <div class="box">
+      <p>ビジネス以外の話もします。</p>
+      <p><strong>松井</strong>は運動の話をよくする。体を動かすことで仕事の質が変わるという話は、40代以降には特に刺さる。</p>
+      <p>ホリエモンが<em class="marker">「社会人には体育がない」</em>と言ったのは本当にそうで、<br>放っておくと動かなくなる。</p>
+      <p><strong>健康、食事、お金の管理、芸術</strong>——<br>中年が本当は話したいけど「経営の話じゃない」と後回しにしてきたテーマを、ゲスト講師も交えながら扱います。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3 PEOPLE ===== -->
+<section class="section bg-white dots">
+  <div class="wrap">
+    <h2>3人の話を、<br>しておきます。</h2>
+
+    <div class="person">
+      <div class="person-tag">MEMBER 01</div>
+      <div class="person-name">真井（さない）</div>
+      <div class="person-role">Wambase株式会社 代表</div>
+      <p>サロンなど小規模事業者・個人起業家向けのマーケコンサルを本業に持ちながら、<strong>AI×マーケの実践</strong>を深めている。</p>
+      <p><em class="marker">「価値観型マーケティング」</em>を自分の事業で実践してきた人間。<br>「<strong>目標型マーケは消耗する</strong>」という言葉は、<br>彼が20年かけて辿り着いた結論です。</p>
+    </div>
+
+    <div class="person">
+      <div class="person-tag">MEMBER 02</div>
+      <div class="person-name">松井 宏晃</div>
+      <div class="person-role">株式会社Catch the Web 代表</div>
+      <p>ニッチなビジネスを複数立ち上げ、<em class="marker-cream">バイアウトも経験</em>している。<br>「数字を作る」だけでなく「<strong>出口まで設計する</strong>」視点を持っている。</p>
+      <p>運動の話をよくします。<br>「体を動かさなくなった40代は早く詰まる」と昔から言い続けている人です。</p>
+    </div>
+
+    <div class="person">
+      <div class="person-tag">MEMBER 03</div>
+      <div class="person-name">高江洌 亮（たかえす りょう）</div>
+      <div class="person-role">株式会社C-links 代表</div>
+      <p>マーケティング歴20年。最初の仕事は、キャッチ（アフィリエイト・ASP業界）でした。</p>
+      <p>そこから独立し、C-linksを設立。整骨院のLP制作・集客コンサル、歯科業界のマーケ支援など、<strong>小さな事業を複数並走</strong>させています。</p>
+      <p>1982年生まれ。自分自身が<em class="marker-cream">「戦い方を変えている途中」</em>です。</p>
+      <p>いまやっていることを一言で言うと<strong>「小さな事業を複数並走させて、コントロールを握る」</strong>。<br>売上も、働く時間も、続けるか辞めるかの判断も、全部自分で決められる状態を作ること——これが2026年のテーマです。</p>
+    </div>
+
+    <div class="highlight-banner">
+      3人とも、戦い方を変えた中年です。<br>
+      その経験を、一緒に持ち込みます。
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY COMMUNITY ===== -->
+<section class="section bg-cream">
+  <div class="wrap-narrow">
+    <h2>「孤独で戦う」より<br>「仲間と戦う」方が、速い。</h2>
+
+    <div class="box dots-bg">
+      <p>大前研一がこんなことを言っていた——<br>人が変わるための3つの要素は、<em class="marker">時間配分・住む場所・付き合う人</em>だと。</p>
+      <p>行動計画を立て直すのは自分でできる。<br>でも<strong>「付き合う人」</strong>だけは、環境を変えないと変わらない。</p>
+      <p>40代で本音を話せる仲間がいる環境は、思ったより少ないです。<br>このコミュニティがその一つになれたら、それだけでも来た価値があると思っています。</p>
+    </div>
+
+    <div class="box" style="margin-top: 28px; background: #FFF8E8;">
+      <h3>これから先を一緒に過ごす仲間って、<br>意外と作りにくい時代だと思いませんか？</h3>
+      <p>40代以降は、<em class="marker">利害関係</em>があったり、肩書きで判断されたり——<br>純粋な仲間関係を作るのが難しい。</p>
+      <p>会社にも、業界にも、SNSにも、人はたくさんいる。<br>でも、<strong>「本音で話せる、純粋な仲間」</strong>は、なかなか見つからない。</p>
+      <p>このMBAは、<em class="marker-cream">利害関係から離れた、純粋な仲間関係</em>を作る場所です。</p>
+      <p>一緒に高め合って、青春し合える——<br>そんな関係を、この場で築けたらと思っています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TIME / 100年時代 ===== -->
+<section class="section bg-white">
+  <div class="wrap-narrow">
+    <h2>40代は、<br>まだ折り返し前。</h2>
+
+    <div class="box">
+      <p>よく「人生100年時代」という言葉が出てくる。<br>でも実感している人はほとんどいないと思う。</p>
+      <p>私も正直、頭では分かっていても体感していなかった。</p>
+      <p>でも計算してみると、40代前半は<em class="marker">まだ折り返しにすら達していない</em>。<br>45歳が折り返しだとしても、<strong>残りはあと55年ある</strong>。</p>
+      <p>20代の頃に<strong>「40歳でこんな人になっていたい」</strong>と思い描いた自分に、<br>まだなれていないとしたら——残り時間は十分にある。</p>
+      <p>ただし、20代の戦い方のままでいれば、<br>次の20年も同じ詰まり方をする。</p>
+    </div>
+
+    <div class="highlight-banner">
+      戦い方を変える、<br>
+      <span style="color: var(--orange-dark); font-size: 1.2em;">今がそのタイミングです。</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GATE（参加要件・審査制） ===== -->
+<section class="section bg-blue">
+  <div class="wrap-narrow">
+    <h2>誰でも参加できる、<br>わけではありません。</h2>
+
+    <div class="box dots-bg">
+      <p>このコミュニティは、<em class="marker">面談を含めた審査制</em>にしています。</p>
+      <p>理由は単純で、<strong>本気で仲間として一緒に走れる人だけ</strong>に集まってほしいから。</p>
+      <p>テイカー（もらうだけの人）が一人でも入ると、<br>場の空気が一気に変わってしまうことを、3人とも経験で知っています。</p>
+      <p><em class="marker-cream">質の高い仲間と、長く付き合う。</em><br>これがMBAのスタンスです。</p>
+    </div>
+
+    <div class="box" style="margin-top: 24px;">
+      <div class="gate-label ok">こんな方に参加してほしい</div>
+      <ul class="check-list">
+        <li>大人として、ルールを守って切磋琢磨できる人</li>
+        <li><em class="marker">テイカーではなく、ギバー</em>（与え合える人）</li>
+        <li>40代以降の人生を、もう一度本気でやりたい人</li>
+        <li>仲間と一緒に、純粋に高め合いたい人</li>
+        <li>利害関係を抜きにして、本音で話せる人</li>
+      </ul>
+
+      <div class="gate-label ng" style="margin-top: 16px;">こんな方は、ご遠慮ください</div>
+      <ul class="x-list">
+        <li>「もらうだけ」「奪うだけ」の方</li>
+        <li>仲間の悪口を陰で言う方</li>
+        <li>マウンティングで存在を示そうとする方</li>
+        <li>営業目的・売り込み目的の方</li>
+      </ul>
+    </div>
+
+    <div class="highlight-banner">
+      面談で、お互いの相性を確かめてから、<br>仲間になりましょう。
+    </div>
+
+    <div class="box" style="margin-top: 28px;">
+      <h3 style="text-align: center;">プラン構造（シンプル2階建）</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px;">
+        <div style="border: 2px dashed var(--navy); border-radius: 14px; padding: 20px; text-align: center; background: #fff;">
+          <div class="gate-label ok" style="margin-bottom: 12px;">無料枠</div>
+          <p style="font-weight: 700; color: var(--navy); margin: 8px 0;">まずは入って、雰囲気を感じてください</p>
+          <p style="font-size: 14px; color: var(--text-soft);">コミュニティに参加・<br>日常の話や事業の話を読める</p>
+        </div>
+        <div style="border: 2px solid var(--gold); border-radius: 14px; padding: 20px; text-align: center; background: var(--marker-yellow);">
+          <div class="gate-label" style="background: var(--gold); color: #fff; border-color: var(--gold); margin-bottom: 12px;">有料プラン</div>
+          <p style="font-weight: 700; color: var(--navy); margin: 8px 0;">本気で学びたい方へ</p>
+          <p style="font-size: 14px; color: var(--text-soft);">セミナー・教材・<br>個別アドバイスまでフル活用</p>
+        </div>
+      </div>
+      <p style="text-align: center; margin-top: 24px; font-size: 14px; color: var(--text-soft);">※ <em class="marker-cream">無料でもやれることがある／有料ならよりしっかり学べる</em>、という階段設計です。<br>押し売りはしません。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta" id="join">
+  <div class="final-cta-inner">
+    <h2>まず、コミュニティに<br>入ってみてください。</h2>
+
+    <p style="font-size: 18px; line-height: 2;">
+      MBAは、<strong>無料のコミュニティ</strong>からスタートします。<br>
+      Facebookグループで、3人の日常の話や事業の話を流していきます。<br>
+      セミナーは月に数回、ライブで開催します。
+    </p>
+    <p style="font-size: 18px; line-height: 2;">
+      <strong>押し売りはしません。</strong><br>
+      合わなければ抜けてください。<br>
+      「面白そうだな」と思ったら、それだけで十分です。
+    </p>
+
+    <div style="margin-top: 40px;">
+      <p class="cta-form-title" style="color: #fff;"><span style="background: linear-gradient(transparent 55%, var(--gold-bright) 55%); padding: 0 6px;">無料コミュニティに、いますぐ参加する</span></p>
+      <p class="cta-form-subtitle" style="color: #C8C0AA;">※登録後、すぐにご案内をお届けします</p>
+      <div class="cta-btn-wrap">
+        <a href="#" class="cta-main-btn">▶ 無料でコミュニティに入る</a>
+        <span class="cta-note" style="color: #C8C0AA;">Facebookグループへ参加 / LINEで登録</span>
+      </div>
+    </div>
+
+    <div class="final-cta-soft">
+      <strong>「中年よ大志を抱け」</strong>——大げさに聞こえるかもしれない。<br>
+      でも、大志なんて大したものじゃなくていい。<br><br>
+      ・「もう少し、面白くなりたい」<br>
+      ・「もう少し、自分でコントロールしたい」<br>
+      ・「もう少し、本音で話せる仲間が欲しい」<br><br>
+      <strong>それで十分です。</strong><br>
+      一緒に、新しい戦い方を始めませんか。
+    </div>
+
+    <div class="script-tag">Your Next Chapter Starts Now.</div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="en">Midlife, Be Ambitious.</div>
+  <div class="jp">中年よ、大志を抱け。</div>
+  <div>© 2026 Midlife Be Ambitious Community</div>
+</footer>
+
+</body>
+</html>
