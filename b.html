@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<title>Midlife, Be Ambitious. ｜ 中年よ、大志を抱け。（B）</title>
+<meta name="description" content="20代・30代の戦い方では、もう届かない景色がある。経験と知恵を力に変え、これからの人生を自分らしくデザインするコミュニティ。">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#14181b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MBA LP — Design B "Editorial Monochrome"
+   墨×生成り×ゴールド。FVの黄色を、本文では成熟したゴールドで受ける。
+   ============================================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --ink:      #14181b;
+  --ink-2:    #33393f;
+  --ink-3:    #6b7278;
+  --line:     #e3ded2;
+  --line-strong: #c9c2b0;
+  --cream-bg:  #f6f1e7;
+  --cream-soft:#faf7ef;
+  --paper:    #fbf9f4;
+  --gold:     #a8803e;
+  --gold-bright: #c9ab6e;
+  --gold-dark: #7a5b28;
+  --marker-yellow: #efe7cf;
+  --marker-cream: #f0e9d6;
+  --green-bg: #edf1e9;
+  --green-dark: #4a7a5a;
+  --blue-bg:  #efede6;
+  --orange:   #a8803e;
+  --orange-dark: #8a5a2a;
+  --red-accent: #9c3b32;
+  --white:    #ffffff;
+  --navy:     #14181b;
+  --navy-dark:#0c0f11;
+  --navy-light:#3a4147;
+  --text:     #14181b;
+  --text-soft:#565e66;
+  --serif: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --serif-en: "Fraunces", "Shippori Mincho", serif;
+  --sans: "Noto Sans JP", "Hiragino Sans", -apple-system, sans-serif;
+  --rhythm: clamp(76px, 11vw, 130px);
+}
+
+body {
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 2.05;
+  color: var(--ink-2);
+  font-size: clamp(15.5px, 15px + .3vw, 17px);
+  letter-spacing: 0.05em;
+  background: var(--paper);
+  counter-reset: sec;
+}
+img { display: block; max-width: 100%; height: auto; }
+::selection { color: var(--paper); background-color: var(--ink); }
+a { color: inherit; text-decoration: none; }
+
+/* ===== Layout ===== */
+.section { padding: var(--rhythm) 22px; }
+.wrap { max-width: 880px; margin: 0 auto; }
+.wrap-narrow { max-width: 680px; margin: 0 auto; }
+
+/* ===== Section backgrounds ===== */
+.bg-white { background: var(--paper); }
+.bg-cream { background: var(--cream-bg); }
+.bg-cream-soft { background: var(--cream-soft); }
+.bg-green { background: var(--green-bg); }
+.bg-blue { background: var(--cream-bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.bg-navy { background: var(--ink); color: var(--cream-bg); }
+.bg-navy p { color: #d9d4c7; }
+.bg-navy p strong { color: var(--gold-bright); }
+.dots { background: var(--paper); }
+
+/* ===== Typography ===== */
+p { margin-bottom: 24px; font-weight: 400; line-height: 2.1; }
+p:last-child { margin-bottom: 0; }
+strong { font-weight: 700; color: var(--ink); }
+
+/* 強調行（インラインfont-weight:900の宣言文）を明朝のディスプレイ行に変換 */
+p[style*="font-weight: 900"] {
+  font-family: var(--serif) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em;
+  line-height: 1.75 !important;
+}
+/* 引用ブロック（gold左罫線）を明朝に */
+p[style*="border-left"] {
+  font-family: var(--serif);
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.05em;
+}
+/* キッカー（僕たちからの提案 等）*/
+p[style*="letter-spacing: 0.3em"] { font-family: var(--serif); font-weight: 600; }
+
+/* マーカー → 金の下線／淡い和紙ウォッシュ */
+.marker, em.marker, .marker-y {
+  font-style: normal;
+  background: linear-gradient(transparent 86%, rgba(168,128,62,.55) 86%);
+  padding: 0 2px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.marker-cream {
+  font-style: normal;
+  background: linear-gradient(transparent 62%, var(--marker-cream) 62%);
+  padding: 0 2px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.text-orange { color: var(--gold-dark); font-weight: 700; }
+.text-navy { color: var(--ink); font-weight: 700; }
+
+/* ===== h2 — 雑誌の章扉。番号 + 明朝 + 金のヘアライン ===== */
+h2 {
+  position: relative;
+  font-family: var(--serif);
+  font-size: clamp(24px, 2.2rem + 1vw, 40px);
+  font-weight: 700;
+  color: var(--ink);
+  text-align: center;
+  margin: 0 auto 72px;
+  padding: 0;
+  max-width: 760px;
+  letter-spacing: 0.06em;
+  line-height: 1.55;
+}
+h2::before {
+  counter-increment: sec;
+  content: counter(sec, decimal-leading-zero);
+  display: block;
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.05rem;
+  letter-spacing: 0.28em;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+h2::after {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 1px;
+  background: var(--gold);
+  margin: 26px auto 0;
+}
+@media (max-width:600px){
+  h2 { font-size: 21px; margin-bottom: 52px; }
+  h2::before { font-size: .9rem; margin-bottom: 12px; }
+  h2::after { margin-top: 18px; }
+}
+
+h3 {
+  font-family: var(--serif);
+  font-size: clamp(19px, 3vw, 25px);
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 22px;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+}
+
+/* ===== Box — 記事ブロック（上下罫線のみ） ===== */
+.box {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--line-strong);
+  border-radius: 0;
+  padding: clamp(36px, 6vw, 56px) clamp(4px, 3vw, 28px);
+  margin-bottom: 28px;
+}
+.box.dots-bg { background: transparent; }
+@media (max-width:600px){ .box { padding: 30px 2px; } }
+
+/* コンテンツ挿絵をプリント調に落ち着かせる */
+figure img { filter: saturate(.78) sepia(.05) contrast(.98); }
+
+/* ===== CTA ===== */
+.cta-btn-wrap { text-align: center; padding: 20px 0; }
+.cta-form-title {
+  font-family: var(--serif);
+  font-size: clamp(17px, 3vw, 22px);
+  font-weight: 700;
+  text-align: center;
+  color: var(--ink);
+  margin-bottom: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+}
+.cta-form-title::before, .cta-form-title::after { content: ""; }
+.cta-form-title span { background: none; padding: 0; }
+.cta-form-subtitle {
+  font-size: 13.5px;
+  font-weight: 400;
+  text-align: center;
+  color: var(--ink-3);
+  margin-bottom: 22px;
+  letter-spacing: 0.12em;
+}
+.cta-main-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 22px 30px;
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  outline: none;
+  color: var(--cream-bg);
+  font-family: var(--serif);
+  font-size: clamp(16px, 2.6vw, 20px);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  border-radius: 0;
+  box-shadow: 0 0 0 1px var(--paper) inset, 0 0 0 0 transparent;
+  transition: background .35s ease, color .35s ease, letter-spacing .35s ease;
+}
+.cta-main-btn:hover {
+  background: var(--gold-dark);
+  border-color: var(--gold-dark);
+  color: #fdfbf5;
+  letter-spacing: 0.18em;
+  transform: none;
+}
+.cta-note {
+  display: block;
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--ink-3);
+  text-align: center;
+  letter-spacing: 0.08em;
+}
+@media (max-width:600px){ .cta-main-btn { font-size: 15px; padding: 18px 20px; } }
+
+/* ===== Hero ===== */
+.hero { background: var(--paper); border-bottom: 1px solid var(--line); }
+.hero img { width: 100%; }
+
+/* ===== Empathy ===== */
+.empathy-question {
+  margin-top: 40px;
+  padding: 34px 30px;
+  background: var(--paper);
+  border: 1px solid var(--gold);
+  border-radius: 0;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: clamp(17px, 3vw, 21px);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.9;
+  letter-spacing: 0.05em;
+}
+
+/* ===== Comparison Table — 編集罫線表 ===== */
+.cmp {
+  border: 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  border-radius: 0;
+  overflow: hidden;
+  margin: 40px 0;
+  background: var(--paper);
+}
+.cmp-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--ink);
+  color: var(--cream-bg);
+}
+.cmp-head > div {
+  padding: 16px;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+.cmp-head > div:first-child { color: #8f8a7e; border-right: 1px solid rgba(246,241,231,.18); }
+.cmp-head > div:last-child { color: var(--gold-bright); }
+.cmp-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--line);
+}
+.cmp-row > div {
+  padding: 18px 14px;
+  text-align: center;
+  font-size: 14.5px;
+  font-weight: 500;
+}
+.cmp-row > div:first-child {
+  border-right: 1px solid var(--line);
+  color: #9a958a;
+  background: transparent;
+  text-decoration: line-through;
+  text-decoration-color: #c5bfae;
+}
+.cmp-row > div:last-child { color: var(--gold-dark); background: var(--cream-soft); font-weight: 700; }
+.cmp-row > div:last-child::before { content: ""; }
+@media (max-width:600px){ .cmp-head > div, .cmp-row > div { padding: 12px 8px; font-size: 12.5px; } }
+
+/* ===== Pillar ===== */
+.pillar {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--ink);
+  border-radius: 0;
+  padding: 44px 36px;
+  margin-bottom: 28px;
+  position: relative;
+}
+.pillar-number {
+  display: inline-block;
+  background: transparent;
+  color: var(--gold);
+  padding: 0;
+  border-radius: 0;
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  margin-bottom: 16px;
+}
+.pillar h3 { margin-bottom: 18px; }
+.pillar ul { list-style: none; padding-left: 0; margin: 18px 0; }
+.pillar ul li {
+  padding-left: 26px;
+  position: relative;
+  margin-bottom: 12px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.pillar ul li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0.95em;
+  width: 14px; height: 1px;
+  background: var(--gold);
+}
+@media (max-width:600px){ .pillar { padding: 30px 22px; } }
+
+/* ===== People ===== */
+.person {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--ink);
+  border-radius: 0;
+  padding: 40px 34px;
+  margin-bottom: 28px;
+  position: relative;
+}
+.person-tag {
+  display: inline-block;
+  background: transparent;
+  color: var(--gold);
+  padding: 0 0 4px;
+  border-bottom: 1px solid var(--gold);
+  border-radius: 0;
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  margin-bottom: 16px;
+}
+.person-name {
+  font-family: var(--serif);
+  font-size: clamp(21px, 3vw, 27px);
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+  letter-spacing: 0.08em;
+}
+.person-role {
+  font-size: 13px;
+  color: var(--ink-3);
+  font-weight: 500;
+  margin-bottom: 24px;
+  letter-spacing: 0.14em;
+}
+@media (max-width:600px){ .person { padding: 30px 22px; } }
+
+/* ===== Highlight ===== */
+.highlight-banner {
+  background: var(--cream-bg);
+  border: 0;
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+  border-radius: 0;
+  padding: 38px 30px;
+  margin: 44px 0;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: clamp(17px, 3vw, 21px);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 2;
+  letter-spacing: 0.05em;
+}
+
+/* ===== Wave divider（未使用だが保持） ===== */
+.wave-divider { display: none; }
+
+/* ===== Pain list ===== */
+.pain-list {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--ink);
+  border-radius: 0;
+  padding: 40px 34px;
+  margin: 36px 0;
+}
+.pain-list h3 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 26px;
+  color: var(--ink);
+}
+.pain-list h3::before { content: ""; }
+.pain-list ul { list-style: none; padding: 0; }
+.pain-list ul li {
+  padding: 15px 0 15px 32px;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--ink-2);
+  line-height: 1.9;
+}
+.pain-list ul li:last-child { border-bottom: 0; }
+.pain-list ul li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1.35em;
+  width: 15px; height: 1px;
+  background: var(--gold);
+}
+@media (max-width: 600px) {
+  .pain-list { padding: 28px 18px; }
+  .pain-list ul li { font-size: 13.5px; padding-left: 26px; }
+}
+
+/* ===== Check/Cross list ===== */
+.check-list, .x-list { list-style: none; padding: 0; margin: 18px 0 32px; }
+.check-list li, .x-list li {
+  padding: 13px 0 13px 36px;
+  position: relative;
+  font-weight: 500;
+  font-size: 14.5px;
+  color: var(--ink-2);
+  line-height: 1.9;
+  border-bottom: 1px solid var(--line);
+}
+.check-list li:last-child, .x-list li:last-child { border-bottom: 0; }
+.check-list li::before {
+  content: "○";
+  position: absolute;
+  left: 6px; top: 11px;
+  color: var(--green-dark);
+  font-size: 17px;
+  font-weight: 700;
+}
+.x-list li::before {
+  content: "✕";
+  position: absolute;
+  left: 7px; top: 13px;
+  color: var(--red-accent);
+  font-size: 15px;
+  font-weight: 700;
+}
+.gate-label {
+  display: inline-block;
+  font-family: var(--serif);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  padding: 7px 18px;
+  border-radius: 0;
+  margin-bottom: 16px;
+}
+.gate-label.ok { background: transparent; color: var(--green-dark); border: 1px solid var(--green-dark); }
+.gate-label.ng { background: transparent; color: var(--red-accent); border: 1px solid var(--red-accent); }
+
+/* ===== Final CTA ===== */
+.final-cta {
+  background: #101416;
+  color: #d9d4c7;
+  padding: var(--rhythm) 22px;
+  text-align: center;
+  position: relative;
+}
+.final-cta::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(50% 45% at 50% 0%, rgba(168,128,62,.14), transparent 65%);
+  pointer-events: none;
+}
+.final-cta-inner { max-width: 680px; margin: 0 auto; position: relative; }
+.final-cta h2 { color: var(--gold-bright); background: transparent; border: 0; }
+.final-cta h2::before { color: var(--gold); }
+.final-cta h2::after { background: var(--gold); }
+.final-cta p { color: #cfc9ba; font-size: 16px; }
+.final-cta .cta-main-btn {
+  background: var(--gold-dark);
+  border-color: var(--gold-dark);
+  color: #fdfbf5;
+  box-shadow: none;
+}
+.final-cta .cta-main-btn:hover { background: var(--gold); border-color: var(--gold); }
+.final-cta-soft {
+  margin-top: 48px;
+  padding: 32px;
+  border: 1px solid rgba(201,171,110,.35);
+  border-radius: 0;
+  font-size: 14px;
+  color: #a8a294;
+  line-height: 2.1;
+  text-align: left;
+}
+.final-cta-soft strong { color: var(--gold-bright); font-weight: 700; }
+.script-tag {
+  margin-top: 30px;
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 21px;
+  color: var(--gold-bright);
+  letter-spacing: 0.1em;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #0c0f11;
+  color: #7d7f82;
+  padding: 48px 20px;
+  text-align: center;
+  font-size: 12.5px;
+  border-top: 1px solid rgba(168,128,62,.4);
+  letter-spacing: 0.08em;
+}
+footer .en {
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 17px;
+  letter-spacing: 0.16em;
+  color: var(--gold-bright);
+  margin-bottom: 6px;
+}
+footer .jp { font-weight: 500; color: #cfc9ba; margin-bottom: 16px; }
+
+@media (max-width:600px){ .section { padding: 64px 18px; } }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO（画像そのまま） ===== -->
+<section class="hero">
+  <picture>
+    <source media="(max-width: 600px)" srcset="images/fv_sp_yellow.png">
+    <img src="images/fv_yellow.png" alt="Midlife, Be Ambitious. ミッドライフ・ビーアンビシャス｜中年よ、もう一度、大志を抱け。">
+  </picture>
+</section>
+
+<!-- ===== Hero下CTA ===== -->
+<section class="section" style="background: var(--cream-bg); padding-top: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--line);">
+  <div class="wrap">
+    <div class="cta-btn-wrap">
+      <a href="#join" class="cta-main-btn">▶ コミュニティの参加申請をする</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTRO PROFILES ===== -->
+<section class="section bg-white" style="padding-top: 50px; padding-bottom: 50px;">
+  <div class="wrap">
+    <p style="text-align: center; font-size: 13px; letter-spacing: 0.3em; color: var(--gold); font-weight: 700; margin-bottom: 18px;">プロジェクトを立ち上げた3人</p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px;">
+      <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 20px; background: #fff; position: relative;">
+        <svg style="position: absolute; top: 16px; right: 16px; width: 60px; height: 60px;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="50" cy="50" r="50" fill="#EDE6D2"/>
+          <circle cx="50" cy="40" r="15" fill="#8A8A8A"/>
+          <path d="M 20 82 Q 20 60 50 60 Q 80 60 80 82 L 80 100 L 20 100 Z" fill="#8A8A8A"/>
+        </svg>
+        <p style="font-size: 11px; color: var(--gold); letter-spacing: 0.2em; font-weight: 700; margin-bottom: 8px; padding-right: 70px;">MEMBER 01</p>
+        <p style="font-size: 19px; font-weight: 900; color: var(--navy); margin-bottom: 4px; line-height: 1.3; padding-right: 70px;">真井 良幸</p>
+        <p style="font-size: 12px; color: var(--text-soft); margin-bottom: 12px; padding-right: 70px;">wombase株式会社 代表</p>
+        <p style="font-size: 13px; line-height: 1.7; margin-bottom: 0;">2008年から Catch the Web で広告責任者として全広告を担当。その後、wombase設立。15年間、社員を雇わない<strong>自由なひとり起業家</strong>として、すべてのマーケティングを自ら実践。現在はその経験を活かし、価値観型の起業家に<strong>AIも活用した価値観型マーケティング</strong>を広める活動をしている。</p>
+      </div>
+      <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 20px; background: #fff; position: relative;">
+        <svg style="position: absolute; top: 16px; right: 16px; width: 60px; height: 60px;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="50" cy="50" r="50" fill="#EDE6D2"/>
+          <circle cx="50" cy="40" r="15" fill="#8A8A8A"/>
+          <path d="M 20 82 Q 20 60 50 60 Q 80 60 80 82 L 80 100 L 20 100 Z" fill="#8A8A8A"/>
+        </svg>
+        <p style="font-size: 11px; color: var(--gold); letter-spacing: 0.2em; font-weight: 700; margin-bottom: 8px; padding-right: 70px;">MEMBER 02</p>
+        <p style="font-size: 19px; font-weight: 900; color: var(--navy); margin-bottom: 4px; line-height: 1.3; padding-right: 70px;">松井 宏晃</p>
+        <p style="font-size: 12px; color: var(--text-soft); margin-bottom: 12px; padding-right: 70px;">株式会社Catch the Web 代表</p>
+        <p style="font-size: 13px; line-height: 1.7; margin-bottom: 0;">大手証券会社で営業を経験後、Catch the Web に入社。<strong>代表取締役として約15年</strong>陣頭指揮。<strong>店舗ビジネス・中小企業のマーケ案件</strong>を多数手がけ、自社プロダクトも<strong>継続的に売れ続ける</strong>仕組みを設計してきた。</p>
+      </div>
+      <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 20px; background: #fff; position: relative;">
+        <svg style="position: absolute; top: 16px; right: 16px; width: 60px; height: 60px;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="50" cy="50" r="50" fill="#EDE6D2"/>
+          <circle cx="50" cy="40" r="15" fill="#8A8A8A"/>
+          <path d="M 20 82 Q 20 60 50 60 Q 80 60 80 82 L 80 100 L 20 100 Z" fill="#8A8A8A"/>
+        </svg>
+        <p style="font-size: 11px; color: var(--gold); letter-spacing: 0.2em; font-weight: 700; margin-bottom: 8px; padding-right: 70px;">MEMBER 03</p>
+        <p style="font-size: 19px; font-weight: 900; color: var(--navy); margin-bottom: 4px; line-height: 1.3; padding-right: 70px;">高江洌 亮</p>
+        <p style="font-size: 12px; color: var(--text-soft); margin-bottom: 12px; padding-right: 70px;">株式会社C-links 代表</p>
+        <p style="font-size: 13px; line-height: 1.7; margin-bottom: 0;">外資系コンサルティング会社を経て Catch the Web で役員、その後独立してC-links設立。通販からBtoBまで、<strong>120を超えるプロジェクト</strong>でコンセプト設計からセールスまで総合プロデュースでマーケ支援を実施。約20年マーケ畑を歩み、近年は<strong>AIを使った業務効率化</strong>を進めている。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EMPATHY ===== -->
+<section class="section bg-white dots">
+  <div class="wrap-narrow">
+    <h2>五反田のもつ焼き屋で辿り着いた、<br>「中年が」幸せに成功する方法。</h2>
+
+    <div class="box">
+      <p>僕たちはその日、<em class="marker">本当に幸せに成功する方法</em>が何かを、<br><strong>東京・五反田のもつ焼き屋</strong>で語っていた。</p>
+
+      <p>20代で出会い、マーケの世界にどっぷりと浸かり、<br>独立したり、会社を経営したり、それぞれの道に進みつつ、<br>十数年ぶりに3人で集まった。</p>
+
+      <figure style="margin: 24px 0; text-align: center;">
+        <img src="images/motsuyaki.png" alt="五反田のもつ焼き屋。3人がもつ焼きとビールを囲んで語り合うシーン。" style="width: 100%; max-width: 720px; border-radius: 0; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
+      </figure>
+
+      <p>煙と熱気が充満したお店の中で、<br>もつ焼きとビール、レモンサワーを片手に話題に上がったのが、</p>
+
+      <p style="text-align: center; font-size: 21px; font-weight: 900; color: var(--navy); margin: 24px 0;"><em class="marker">「中年が楽しく、幸せに成功するには？」</em></p>
+
+      <p>というテーマ。</p>
+
+      <p>僕たちは<strong>40代</strong>。</p>
+
+      <p>出会ったときはまだ怖いもの知らずの20代で、<br>体力任せでやりたいことを<em class="marker-cream">ブルドーザーのように進めることができた若者</em>だった。</p>
+
+      <p>多少疲れていても無理ができたし、<br>目の前の仕事が面白くて夢中で働いていた。</p>
+
+      <p>そして3人は<strong>立派な中年</strong>になった。<br>
+      <span style="font-size: 14px; color: var(--text-soft);">（いわゆる「<em class="marker-cream">ミッドライフ</em>」「<em class="marker-cream">ミドルエイジ</em>」と呼ばれる世代だ）</span></p>
+
+      <p>これから50代、60代、70代になっていく僕たち3人は、</p>
+
+      <p>20代、30代の頃と同じくらいに、いやそれ以上に、<br><em class="marker">心がときめくようなワクワクする毎日</em>を生きて<br><strong>第2、第3の青春を謳歌</strong>していきたいと思っている。</p>
+
+      <p>でも<em class="marker">体力も落ちた、集中力も落ちた、おまけに視力まで落ちた</em>。<br>若い時と同じような戦い方を続けることができないことも<strong>自覚している</strong>。</p>
+
+      <p>そんな僕たち3人だけれど、<br>
+      ここまで歩いてきた道のりで、<br>
+      それぞれが<em class="marker-cream">自分の事業を持ち、自分のフィールド</em>を築いてきた。</p>
+
+      <p>マーケの世界にどっぷり浸かってきた3人だけど、<br>
+      これまで累計でいくらの売上を叩き出したのか、<br>
+      <em class="marker">3人トータルで優に200億円は超えていました</em>。</p>
+
+      <p>別にいくら稼いだかなんて<em class="marker-cream">大して重要な話ではないのですが</em>、<br>
+      それぞれ会社を経営し、<br>
+      平均的な人よりも自由で豊かな暮らしはできている。</p>
+
+      <p style="text-align: center; font-size: 20px; font-weight: 900; color: var(--orange-dark); margin: 24px 0;"><em class="marker-cream">「でも、それだけじゃ物足りない」</em></p>
+
+      <p>そう感じるようにもなった。</p>
+
+      <p>そして<strong>五反田のもつ焼き屋</strong>で、<br>アイデアが浮かんだんです。</p>
+
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;">「同じ中年以降を熱く生きる仲間と一緒に<br>　面白いことをやれたらいいよね」</p>
+
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;">「<em class="marker">中年よ大志を抱け！</em>って感じで、<br>　ミッドライフになっても熱量高く<br>　人生を楽しむコミュニティを作ってみない？」</p>
+
+      <p>と。</p>
+
+      <p style="text-align: center; font-size: 22px; font-weight: 900; color: var(--navy); margin: 24px 0;">「いいね！やろうよ！」</p>
+
+      <p>と、<strong>若者みたいなノリ</strong>で始まったのが<br>今回の企画でありコミュニティという場。</p>
+
+      <p>まずはこのページを最後まで読んでみて、</p>
+
+      <p style="text-align: center; font-size: 19px; font-weight: 900; color: var(--navy); margin: 20px 0;"><em class="marker-cream">「なかなか面白そうじゃないか」</em></p>
+
+      <p>と、あなたが共感する部分があったら、<br><strong>まずは僕たちの仲間になってみて欲しい。</strong></p>
+
+      <p style="text-align: center; font-size: 24px; font-weight: 900; color: var(--orange-dark); margin: 28px 0;">中年よ大志を抱け。</p>
+
+      <p>そうすることで世界はもっと面白くなるし、<br>僕たちの人生は間違いなく<em class="marker">胸がときめくもの</em>になる。</p>
+
+      <p>それが今回あなたをお誘いする、</p>
+
+      <p style="text-align: center; font-size: 19px; font-weight: 900; color: var(--navy); line-height: 1.8; margin: 24px 0;">30〜60代の<em class="marker">ミッドライフ</em>経営者が<br>
+      今の何倍ももっとワクワクした<br>
+      ビジネスと人生を目指していく<br>
+      <em class="marker">経営者コミュニティMBA</em><br>
+      （Midlife Be Ambitious）です。</p>
+
+      <p style="font-size: 12px; color: var(--text-soft); line-height: 1.7; margin: 16px 0;">※ フリーランスの方、1人起業家の方、これから起業を目指すサラリーマンや主婦の方もこのコミュニティに参加いただけます。</p>
+
+      <p>少し長いメッセージになりますが、<br><strong>今から10分ほど</strong>時間をとって僕たちの思いとアイデアに<br>耳を傾けて欲しい。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROPOSAL ===== -->
+<section class="section bg-white">
+  <div class="wrap-narrow">
+    <p style="text-align: center; font-size: 13px; letter-spacing: 0.3em; color: var(--gold); font-weight: 700; margin-bottom: 14px;">僕たちからの提案</p>
+    <h2><em class="marker">マーケ × AI</em>で、<br>中年よ、再び大志を抱こう！</h2>
+
+    <div class="box">
+      <figure style="margin: 8px auto 28px; text-align: center;">
+        <img src="images/ai_marketing.png" alt="マーケとAIを両手に掲げた中年のイラスト" style="width: 100%; max-width: 250px; display: block; margin: 0 auto;">
+      </figure>
+
+      <p>「面白いコミュニティを作ろうよ！」<br>
+      という話にはなったけど、<br>
+      じゃあ具体的に<strong>何をやるのがいいのか</strong>。</p>
+
+      <p>メンバーが集まる中心には、必ず「テーマ」が要る。</p>
+
+      <p>そのテーマが、自分たちの中から自然に湧き出るものでなければ、<br>
+      続かないし、語る言葉に熱量が乗らない。</p>
+
+      <p>そう考えた時に、<br>
+      僕たちがまず<em class="marker">「コア」</em>として持っているのは、<br>
+      <strong>マーケティングの知識と経験</strong>だった。</p>
+
+      <p>これまで約<strong>20年</strong>、<br>
+      マーケティングの世界にどっぷりと浸かってきた。</p>
+
+      <p>通販、サブスク、コンサル、教材販売、サロン運営、SaaS、自社プロダクト、BtoB、マーケティングオートメーション、店舗ビジネス、医療などなど。</p>
+
+      <p>業種も商材も入れ替わりながら、<br>
+      いろんな分野で<em class="marker">結果を出し続けてきた3人</em>。</p>
+
+      <p>もちろん成功体験だけじゃなく、<br>
+      <em class="marker-cream">思い出したくないような失敗</em>もたくさん共有してきた。</p>
+
+      <p>マーケの世界の<strong>酸いも甘いも</strong>知っている僕らだからこそ、<br>
+      マーケをテーマに価値あるものを届けられると<br>
+      <strong>思うんです</strong>。</p>
+
+      <p>そしてもう一つ、今を語る上で外せないテーマがある。</p>
+
+      <p style="text-align: center; font-size: 28px; font-weight: 900; color: var(--navy); margin: 32px 0;">それが<em class="marker">AI</em>。</p>
+
+      <p>SNSを開けば、うんざりするくらいに<br>
+      「<strong>AIでこんなことができるよ！</strong>」<br>
+      「<strong>もうこれを知らないと終わる</strong>」<br>
+      そんな煽り混じりの情報が、毎日のように流れてくる。</p>
+
+      <p>でも、その中から<em class="marker">「本当に使えるもの」</em>を取捨選択し、<br>
+      具体的な仕事に当てはめて、</p>
+
+      <p style="text-align: center; font-size: 20px; font-weight: 900; color: var(--orange-dark); margin: 20px 0;"><em class="marker-cream">「自分の仕事をちゃんと効率化できる使い方」</em></p>
+
+      <p>ここまで落とし込めている人は、<strong>まだほとんどいない</strong>。</p>
+
+      <p>AIは便利だけど、<br>
+      単なる<em class="marker-cream">検索の延長線上</em>で使っていたり、<br>
+      <em class="marker-cream">悩み相談レベル</em>に留まっている人は多い。</p>
+
+      <p>いろんな情報は目にするけど</p>
+
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;">「自分は若くもないし、<br>
+      　最先端のAIの使い方にはついていけない」</p>
+
+      <p>そう思っている人は、<strong>本当にもったいない</strong>。</p>
+
+      <p>僕たちは思う。</p>
+
+      <p style="text-align: center; font-size: 24px; font-weight: 900; color: var(--navy); margin: 32px 0 16px;"><em class="marker">中年こそが、AIを味方につけるべき</em>だと。</p>
+
+      <p style="text-align: center; font-size: 19px; font-weight: 900; color: var(--navy); margin: 0 0 16px;">ミドルエイジこそがAIを使うことで、<br>
+      <em class="marker-cream">可能性を大きく広げることができる</em>んだと。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROPOSAL: AI WEAPON ===== -->
+<section class="section bg-cream-soft">
+  <div class="wrap-narrow">
+    <h2><em class="marker">ミドルエイジの可能性</em>を広げてくれる<br>「AI」という武器</h2>
+
+    <div class="box">
+      <p>あなたは<em class="marker">ミドルエイジ・クライシス</em><br>
+      （ミッドライフ・クライシス）という言葉を知っていますか？</p>
+
+      <figure style="margin: 24px auto 28px; text-align: center;">
+        <img src="images/midlife_crisis.png" alt="頭を抱えて悩む中年男性のイラスト" style="width: 100%; max-width: 300px; display: block; margin: 0 auto;">
+      </figure>
+
+      <p>いわゆる<strong>中年の危機</strong>というもので、<br>
+      主に40代から60代のミッドライフ世代が直面する<br>
+      不安や憂うつな気分になったり、</p>
+
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;">「自分の人生これでいいのかな・・・」</p>
+
+      <p>と、疑問に感じたりする、そんな状態のこと。</p>
+
+      <p>もちろん中年になれば体力も衰えてくるし、<br>
+      昔のように気力も落ちてくる。</p>
+
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;">「もうちょっと頑張りたいのに<br>
+      　踏ん張れなくなってきた」</p>
+
+      <p>そう感じている人は、きっと多いはず。</p>
+
+      <p>若い頃の感覚で</p>
+
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;">「まだまだやれるよ！」</p>
+
+      <p>と、思っていても、<br>
+      現実は<em class="marker-cream">自分の衰えを隠し切ることはできない</em>。</p>
+
+      <p>だましだまし無理をしていても<br>
+      体調を崩したり、気分が落ち込んだりして<br>
+      必ず<strong>しっぺ返し</strong>をくらってしまう。</p>
+
+      <p style="text-align: center; font-size: 21px; font-weight: 900; color: var(--navy); margin: 28px 0 16px;">僕たちは<em class="marker">自覚しないといけない</em>。</p>
+
+      <p>純粋な体力や気力というのは、<br>
+      <strong>すでにピークを過ぎている</strong>。</p>
+
+      <p>今までと同じ戦い方をしていたら、<br>
+      やっぱり成果は思うように出せない。</p>
+
+      <p>単純な体力とかエネルギーで勝負したら、<br>
+      <em class="marker-cream">若い人たちにはどうしても勝てない</em>。</p>
+
+      <p style="text-align: center; font-size: 26px; font-weight: 900; color: var(--orange-dark); margin: 36px 0 24px;"><em class="marker">だからこそ、AIを使うべき</em>。</p>
+
+      <p>僕たちはマーケや経営にまつわる仕事で、<br>
+      AIを<strong>フルに活用</strong>している。</p>
+
+      <p><strong>データ分析</strong>もAIでやっているし、<br>
+      <strong>デザイン制作や動画編集</strong>もAIをガッツリ使う。</p>
+
+      <p><strong>市場リサーチ、提案書や企画書のドラフト、<br>
+      記事・メルマガのライティング、<br>
+      議事録の整理、スライドや資料の作成、<br>
+      さらにはサイトのコーディング</strong>まで。</p>
+
+      <p>これまで何時間、何日もかけてやっていたことが、<br>
+      AIを使えば<em class="marker">数十分、数時間で形になる</em>。</p>
+
+      <p>このページだってAIで作っているし、<br>
+      これまで時間を使ってやっていて、</p>
+
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;">「面倒だなぁ・・・」</p>
+
+      <p>と、思うことをどんどんAIを使って、<br>
+      自動化したり、効率化してきた。</p>
+
+      <p>もちろん僕たち3人は、<br>
+      <strong>AIの専門家ではない</strong>。</p>
+
+      <p>論文を書ける研究者でもないし、<br>
+      モデルを作るエンジニアでもない。</p>
+
+      <p>でも、<em class="marker">AIを使って自分の実務を効率化している「実践家」</em>ではある。</p>
+
+      <p>業務の中身を熟知している人間が、<br>
+      AIを<em class="marker">徹底して業務に組み込んでいる</em>。<br>
+      このポジションだからこそ届けられる、<strong>リアルな使い方</strong>がある。</p>
+
+      <p>100%完璧な答えではないかもしれない。<br>
+      でも、</p>
+
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;">「明日からあなたの業務が、確実にラクになる」<br>
+      「<em class="marker">5倍、10倍のスピード</em>で仕事が進められるようになる」</p>
+
+      <p>その水準のAIの使い方は、<br>
+      間違いなく伝えることができる。</p>
+
+      <p>常識で考えれば、<br>
+      40代に入れば人生は<em class="marker-cream">下り坂</em>になってしまうかもしれない。</p>
+
+      <figure style="margin: 28px auto; text-align: center;">
+        <img src="images/downhill_40s.png" alt="40代を過ぎて下り坂をしょんぼり降りていく人のイラスト" style="width: 100%; max-width: 400px;">
+      </figure>
+
+      <p>けどAIを使って戦い方を変えれば、<br>
+      我々の人生は<em class="marker">まだまだ上り坂</em>になっていく。</p>
+
+      <figure style="margin: 28px auto; text-align: center;">
+        <img src="images/uphill_40s.png" alt="40代を踏み台に山頂の星に向かって駆け上がる人のイラスト" style="width: 100%; max-width: 400px;">
+      </figure>
+
+      <p style="text-align: center; font-size: 21px; font-weight: 900; color: var(--navy); margin: 28px 0;">まだまだこれから先に<br><strong>面白いこと</strong>がたくさん待っているのです。</p>
+
+      <p>現場で使っているAIの使い方。</p>
+
+      <p>これを<strong>MBA</strong>というコミュニティの中で<br>
+      どんどん共有して、<em class="marker">ミッドライフの人生に革命が起こるようなうねり</em>を<br>
+      作っていきたい。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROPOSAL: WHY MARKETING ===== -->
+<section class="section bg-white">
+  <div class="wrap-narrow">
+    <h2>なぜ<em class="marker">中年こそ</em>が、<br>マーケティングを学ぶべきなのか</h2>
+
+    <div class="box">
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;">「"AI"を学ぶのは分かったけど、<br>　なぜ"マーケ"なんだろう？」</p>
+
+      <p>そう思った人もいるかもしれない。</p>
+
+      <p>マーケティングなんて、<br>
+      営業職や広告業界の人だけが学ぶものでしょう？<br>
+      自分には関係ないんじゃ・・・</p>
+
+      <p>そう感じる人もいるかもしれない。</p>
+
+      <p>でも、僕たちは<strong>断言します</strong>。</p>
+
+      <p style="text-align: center; font-size: 26px; font-weight: 900; color: var(--orange-dark); margin: 36px 0 24px;"><em class="marker">中年こそ、マーケを学ぶべき</em>だと。</p>
+
+      <p>むしろマーケを学ぶことで、<br>
+      <em class="marker">僕たちの未来はより明るいもの</em>になる。</p>
+
+      <p>その理由は、いくつもあります。</p>
+
+      <p style="text-align: center; font-size: 21px; font-weight: 900; color: var(--navy); margin: 36px 0 16px;">①体力勝負ができなくなったからこそ、<br><em class="marker">「設計」の力</em>が要る。</p>
+
+      <p>20代・30代は、勢いと根性で結果を出せた。<br>
+      徹夜してでも数をこなす。<br>
+      朝から晩まで動き回って、人に会う。</p>
+
+      <p>でも40代以降、そのやり方は<strong>続かない</strong>。</p>
+
+      <p>少ない動きで、大きな成果を出す。<br>
+      <em class="marker">より賢く、より効率的に</em>。<br>
+      <em class="marker-cream">動く前に、設計して当てに行く</em>。</p>
+
+      <p>その「設計図」を引くために必要なのが、<br>
+      <strong>マーケティングの知識</strong>です。</p>
+
+      <p style="text-align: center; font-size: 21px; font-weight: 900; color: var(--navy); margin: 36px 0 16px;">②マーケは<em class="marker">「人を動かす技術」</em>。<br>すべての仕事に効く"OS"だ。</p>
+
+      <p>物を売るのも、サービスを広めるのも、<br>
+      人を採用するのも、部下を動かすのも、<br>
+      子供に何かを伝えるのも、<br>
+      本質的には<strong>全部マーケティング</strong>。</p>
+
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;">「相手は何を求めているか？」<br>
+      「どんな順番で、どう伝えれば動いてくれるか？」</p>
+
+      <p>もちろん簡単なことではありませんが、<br>
+      この<em class="marker">「人を動かす技術」</em>が分かっていると、<br>
+      仕事も、人間関係も、<em class="marker-cream">人生全体がラクになる</em>。</p>
+
+      <p>1つのスキルで一生使い回しがきく、<br>
+      数少ない<strong>"OS"</strong>のような教養です。</p>
+
+      <p style="text-align: center; font-size: 21px; font-weight: 900; color: var(--navy); margin: 36px 0 16px;">③中年の経験は、マーケで初めて<em class="marker">"資産化"</em>する。</p>
+
+      <p>これまで積み重ねてきた<strong>経験・知識・人脈</strong>。</p>
+
+      <p>そのままでは、自分の中に眠っているだけ。<br>
+      でもマーケを噛ませると、<br>
+      それが<em class="marker">「商品」</em>になり、<em class="marker">「顧客」</em>がつき、<br>
+      <em class="marker">「収益」</em>が生まれる。</p>
+
+      <p>20年・30年の経験を持つミドルエイジが、<br>
+      基礎的なマーケ力を身につけたとき、<br>
+      <strong>ものすごく強い</strong>。</p>
+
+      <p>なぜなら、</p>
+
+      <p>若い人には「経験」がない。<br>
+      ベテランには「マーケ感覚」が乏しい。</p>
+
+      <p style="text-align: center; font-size: 20px; font-weight: 900; color: var(--orange-dark); margin: 28px 0;"><em class="marker-cream">経験 × マーケ感覚</em>。<br>この交差点に立てるのは、僕たち中年だけ。</p>
+
+      <p style="text-align: center; font-size: 21px; font-weight: 900; color: var(--navy); margin: 36px 0 16px;">④セカンドキャリア時代の<em class="marker">"必須教養"</em>。</p>
+
+      <p>そして50代・60代になると、<br>
+      組織から離れる人が増えていく。</p>
+
+      <p>独立、副業、第二創業、セカンドキャリア。</p>
+
+      <p>その時に必要なのは、<br>
+      自分の力で<strong>お客さんを集めて、商品を売って、人を動かす力</strong>。</p>
+
+      <p>これができないと、<br>
+      会社の看板が外れた瞬間に、<em class="marker-cream">何もできなくなる</em>。</p>
+
+      <p>逆にマーケが分かっていれば、<br>
+      <strong>70代でも、80代でも</strong>、自分の腕で生きていける。</p>
+
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;">「自分の人生は、自分で設計する」</p>
+
+      <p>その選択肢を持つために、<br>
+      マーケは<strong>必要</strong>だと、<em class="marker-cream">僕たちは思うんです</em>。</p>
+
+      <p style="text-align: center; font-size: 26px; font-weight: 900; color: var(--navy); margin: 44px 0 24px;"><em class="marker">AIは「武器」</em><br><em class="marker-cream">マーケは「OS」</em></p>
+
+      <p>マーケというOSがないままに<br>
+      AIという武器だけを覚えても、<br>
+      <em class="marker-cream">便利な道具を持っているだけの人</em>で終わる。</p>
+
+      <p>OSと武器、<br>
+      <strong>この2つが揃ったとき</strong>、<br>
+      ミッドライフからの仕事と人生が、本当に動き出す。</p>
+
+      <p>このMBAというコミュニティで、<br>
+      僕たち3人が20年、約20年積み上げてきた<em class="marker">マーケの知見</em>を、<br>
+      共有していきたいと思っています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROPOSAL 2: LIBERAL ARTS ===== -->
+<section class="section bg-cream-soft">
+  <div class="wrap-narrow">
+    <p style="text-align: center; font-size: 13px; letter-spacing: 0.3em; color: var(--gold); font-weight: 700; margin-bottom: 14px;">僕たちからの提案 ②</p>
+    <h2>さらに必要なのは<br><em class="marker">「大人のリベラルアーツ」</em>だ！</h2>
+
+    <div class="box">
+      <p>「マーケ × AI」があれば、<br>
+      仕事は確実にラクになる。<br>
+      <strong>5倍、10倍のスピード</strong>で進められるようにもなる。</p>
+
+      <p>でも、それだけで<em class="marker">「人生が幸せになるか？」</em>と聞かれると、<br>
+      僕たちは即答できない。</p>
+
+      <p>仕事は人生の一部であって、全部じゃない。</p>
+
+      <p>20代・30代は、仕事に振り切ることでバランスが取れていた。<br>
+      <strong>売上を伸ばす、評価される、出世する、独立する</strong>。<br>
+      ある意味、シンプルだった。</p>
+
+      <p>でも40代に入って、その問いが変わってきた。</p>
+
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;">「いくら稼いだら、自分は満足するんだろう？」<br>
+      「成功したい、その先に、何があるんだろう？」</p>
+
+      <p>仕事の数字を追いかける一本足では、<br>
+      そろそろ<em class="marker-cream">立っていられなくなってきている</em>。</p>
+
+      <p>そして気づいた。</p>
+
+      <p style="text-align: center; font-size: 22px; font-weight: 900; color: var(--navy); margin: 28px 0;">ミッドライフからの幸せには、<br><em class="marker">もう一つの柱</em>が要る。</p>
+
+      <p>仕事以外の、<strong>人生全般を豊かにする教養</strong>。</p>
+
+      <p>僕たちはこれを<em class="marker">「大人のリベラルアーツ」</em>と呼ぶことにした。</p>
+
+      <p style="text-align: center; font-size: 16px; color: var(--text-soft); margin: 32px 0 16px; font-weight: 700;">具体的には、こんなテーマです。</p>
+
+      <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 24px; margin: 16px 0; background: #fff;">
+        <p style="font-weight: 900; color: var(--navy); margin-bottom: 8px; font-size: 18px;">【身体】運動・食事・健康・医療</p>
+        <p style="margin-bottom: 0; font-size: 15px;">50代、60代を健康に楽しむための知識と習慣。<br>「衰える」のではなく「<strong>整えていく</strong>」ミドルエイジへ。</p>
+      </div>
+
+      <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 24px; margin: 16px 0; background: #fff;">
+        <p style="font-weight: 900; color: var(--navy); margin-bottom: 8px; font-size: 18px;">【人生】運・縁・人間関係</p>
+        <p style="margin-bottom: 0; font-size: 15px;">「いい人と出会う」「いい縁に恵まれる」のは偶然じゃない。<br><strong>設計できるもの</strong>として扱う。</p>
+      </div>
+
+      <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 24px; margin: 16px 0; background: #fff;">
+        <p style="font-weight: 900; color: var(--navy); margin-bottom: 8px; font-size: 18px;">【感性】アート・芸術・古典</p>
+        <p style="margin-bottom: 0; font-size: 15px;">仕事の論理だけでは育たない、<strong>人生の彩り</strong>。<br>40代以降にこそ、本当に味わえるテーマ。</p>
+      </div>
+
+      <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 24px; margin: 16px 0 28px; background: #fff;">
+        <p style="font-weight: 900; color: var(--navy); margin-bottom: 8px; font-size: 18px;">【お金】資産形成・投資・税</p>
+        <p style="margin-bottom: 0; font-size: 15px;">稼ぐだけじゃなく「残す・増やす・守る」。<br><strong>もう一段、自由になる</strong>ための土台。</p>
+      </div>
+
+      <p>ここで、もう一つ大事なことを伝えておきたい。</p>
+
+      <p>それは、学びには<br>
+      <em class="marker">「学んですぐ役に立つもの」</em>と、<br>
+      <em class="marker-cream">「学んでから時間をかけて効いてくるもの」</em>がある、ということ。</p>
+
+      <p><strong>マーケや AI</strong> は、学んだその日から、<br>
+      明日の仕事に活かせる。<br>
+      やり方を覚えれば、すぐに業務が楽になる。<br>
+      新しいフレームワークを使えば、来月の数字に反映できる。</p>
+
+      <p>これは<em class="marker">「短期で効くスキル」</em>。<br>
+      すぐに成果が出るからこそ、世の中の関心も集まりやすい。</p>
+
+      <p>一方で、<strong>リベラルアーツ的なテーマ</strong>は、ちょっと違う。</p>
+
+      <p>学んでから、<br>
+      <strong>半年後、1年後、数年後</strong>、<br>
+      下手をすれば<em class="marker-cream">十数年後</em>に、<br>
+      じわりと効いてくる。</p>
+
+      <p>健康への意識を変えたから、10年後の体力が違う。<br>
+      本物のアートに触れたから、10年後の感性が違う。<br>
+      若い頃から運や縁を大切にしてきたから、今の人間関係がある。</p>
+
+      <p>すぐには、目に見えない。<br>
+      でも、確実に<em class="marker">人生の深いところに沈殿していく</em>。</p>
+
+      <p style="text-align: center; font-size: 21px; font-weight: 900; color: var(--navy); margin: 32px 0;">そういう<em class="marker">「長期で効いてくる教養」</em>こそ、<br>中年こそが、<strong>腰を据えて学んでおく</strong>必要がある。</p>
+
+      <p>短期で効くスキル（マーケ・AI）だけ追いかけ続けると、<br>
+      気づいたら、<em class="marker-cream">外側だけ強くて、中身がスカスカな自分</em>が<br>
+      出来上がってしまう。</p>
+
+      <p style="text-align: center; font-size: 19px; font-weight: 900; color: var(--orange-dark); margin: 20px 0;">そんな人間には、<em class="marker">誰もなりたくない</em>じゃないですか？</p>
+
+      <p>逆に、長期で効く教養だけを追いかけても、<br>
+      明日のご飯を食べるお金は稼げない。</p>
+
+      <p style="text-align: center; font-size: 24px; font-weight: 900; color: var(--orange-dark); margin: 32px 0;"><em class="marker">短期で効くもの</em>と<em class="marker-cream">長期で効くもの</em>、<br><strong>その両輪が要る</strong>。</p>
+
+      <figure style="margin: 0 auto 28px; text-align: center;">
+        <img src="images/long_short.png" alt="短期と長期の両輪をバランスよく扱う中年のイラスト" style="width: 100%; max-width: 300px; display: block; margin: 0 auto;">
+      </figure>
+
+      <p>長期で効くものを、<br>
+      ちゃんと学んで、自分の中に蓄えておく。</p>
+
+      <p>これが、<em class="marker">充実した人生を生きるため</em>には、<br>
+      <strong>必ず必要なもの</strong>だと、僕たちは思っています。</p>
+
+      <p>これらは、若い頃には<em class="marker-cream">「いつかやろう」</em>と<br>
+      後回しにしてきたテーマたち。</p>
+
+      <p>でもミドルエイジになった今、<strong>避けては通れない</strong>。</p>
+
+      <p>そして、こういう話を本気でできる仲間って、<br>
+      <em class="marker">意外と周りにいない</em>んですよね。</p>
+
+      <p>会社の同僚とは仕事の話だけ。<br>
+      家族にはこういう話はしづらい。<br>
+      若い友人とは、話が噛み合わない。</p>
+
+      <p>だからこそ、このコミュニティで、<br>
+      <strong>同じミッドライフ世代と本音で語り合える場</strong>を作りたい。</p>
+
+      <p style="text-align: center; font-size: 22px; font-weight: 900; color: var(--navy); margin: 36px 0 24px;"><em class="marker">仕事を加速させる「マーケ × AI」</em><br>と<br><em class="marker-cream">人生を豊かにする「大人のリベラルアーツ」</em>。</p>
+
+      <p>この2つが揃ったとき、<br>
+      ミッドライフからの<strong>第2の青春</strong>が本格的に動き出す。</p>
+
+      <p>と、僕たちは信じています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CLUB COMMUNITY ===== -->
+<section class="section bg-white">
+  <div class="wrap-narrow">
+    <h2>これら3つを<em class="marker">「部活」</em>のように<br>楽しむコミュニティ</h2>
+
+    <div class="box">
+      <p><strong>マーケ × AI × 大人のリベラルアーツ</strong>。</p>
+
+      <p>この3つは、教材として一方通行で学ぶものではなくて、<br>
+      <em class="marker">「部活」</em>として、<br>
+      仲間と一緒に<strong>楽しみながら磨いていく</strong>ものにしたい。</p>
+
+      <p>僕たちはそう考えています。</p>
+
+      <p style="text-align: center; font-size: 14px; letter-spacing: 0.3em; color: var(--gold); font-weight: 700; margin: 40px 0 16px;">MBA の3つの部活</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 0 0 36px;">
+        <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 20px; background: #fff;">
+          <p style="font-size: 13px; color: var(--gold); letter-spacing: 0.2em; font-weight: 700; margin-bottom: 6px;">CLUB 01</p>
+          <p style="font-size: 22px; font-weight: 900; color: var(--navy); margin-bottom: 12px; line-height: 1.3;">マーケ部</p>
+          <p style="font-size: 14px; line-height: 1.7; margin-bottom: 0;">約20年、現場で戦い続けてきた<strong>知識・ノウハウ・事例</strong>を共有。<br><strong>添削会・グループ公開コンサル・ケーススタディ</strong>などで、マーケスキルを磨いていく。</p>
+        </div>
+        <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 20px; background: #fff;">
+          <p style="font-size: 13px; color: var(--gold); letter-spacing: 0.2em; font-weight: 700; margin-bottom: 6px;">CLUB 02</p>
+          <p style="font-size: 22px; font-weight: 900; color: var(--navy); margin-bottom: 12px; line-height: 1.3;">AI部</p>
+          <p style="font-size: 14px; line-height: 1.7; margin-bottom: 0;">マーケや様々な業務を効率化するための、<strong>実践的な知識・ノウハウ</strong>を共有。<br>研究者ではなく<strong>実践家</strong>だからこそのノウハウを、ここでシェアします。</p>
+        </div>
+        <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 20px; background: #fff;">
+          <p style="font-size: 13px; color: var(--gold); letter-spacing: 0.2em; font-weight: 700; margin-bottom: 6px;">CLUB 03</p>
+          <p style="font-size: 22px; font-weight: 900; color: var(--navy); margin-bottom: 12px; line-height: 1.3;">大人のリベラルアーツ部</p>
+          <p style="font-size: 14px; line-height: 1.7; margin-bottom: 0;">身体・人生・感性・お金の教養を深める。<br><strong>ゲスト講師回・読書会・実体験のシェア</strong>。</p>
+        </div>
+      </div>
+
+      <p>そして、これだけじゃない。</p>
+
+      <p>「中年が楽しく生きるためにやりたいこと」は、<br>
+      もっといろいろある。</p>
+
+      <p style="text-align: center; font-size: 14px; letter-spacing: 0.3em; color: var(--gold); font-weight: 700; margin: 40px 0 16px;">さらに、自由に増えていく部活</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 0 0 24px;">
+        <div style="border: 1px dashed var(--gold); border-radius: 0; padding: 22px 20px; background: var(--cream-soft);">
+          <p style="font-size: 13px; color: var(--orange-dark); letter-spacing: 0.2em; font-weight: 700; margin-bottom: 6px;">CLUB 04</p>
+          <p style="font-size: 22px; font-weight: 900; color: var(--navy); margin-bottom: 12px; line-height: 1.3;">旅行部</p>
+          <p style="font-size: 14px; line-height: 1.7; margin-bottom: 0;">みんなで旅に出る。合宿、ワーケーション、海外も。<br><strong>旅をしながら、人生を豊かにしていく</strong>。</p>
+        </div>
+        <div style="border: 1px dashed var(--gold); border-radius: 0; padding: 22px 20px; background: var(--cream-soft);">
+          <p style="font-size: 13px; color: var(--orange-dark); letter-spacing: 0.2em; font-weight: 700; margin-bottom: 6px;">CLUB 05</p>
+          <p style="font-size: 22px; font-weight: 900; color: var(--navy); margin-bottom: 12px; line-height: 1.3;">飲み部</p>
+          <p style="font-size: 14px; line-height: 1.7; margin-bottom: 0;">お酒を交わしながら、本音で語り合う。<br><strong>リアルに集まって、人生を充実させる場</strong>。</p>
+        </div>
+        <div style="border: 1px dashed var(--gold); border-radius: 0; padding: 22px 20px; background: var(--cream-soft); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+          <p style="font-size: 13px; color: var(--orange-dark); letter-spacing: 0.2em; font-weight: 700; margin-bottom: 10px;">CLUB ??</p>
+          <p style="font-size: 22px; font-weight: 900; color: var(--navy); margin-bottom: 12px; line-height: 1.3;">あなたが立ち上げる部</p>
+          <p style="font-size: 14px; line-height: 1.7; margin-bottom: 0;">ゴルフ部？投資部？写真部？ランニング部？<br><strong>「これやりたい！」</strong>があれば、どんどん作ろう。</p>
+        </div>
+      </div>
+
+      <p>楽しい場は、<em class="marker-cream">参加するメンバーが作るもの</em>。</p>
+
+      <p>僕たち3人が枠を作って、<br>
+      <strong>みんなで育てていく</strong>。</p>
+
+      <p style="text-align: center; font-size: 22px; font-weight: 900; color: var(--navy); margin: 36px 0 0;">それが、<em class="marker">MBAというコミュニティ</em>です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HYPOTHESIS ===== -->
+<section class="section bg-cream">
+  <div class="wrap">
+    <h2>これまでと<em class="marker">同じ戦い方</em>を<br>していませんか？</h2>
+
+    <div class="box dots-bg">
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;">「最近、頑張っているはずなのに、<br>　なぜか成果が出ない」<br><br>
+      「やることは増えているのに、<br>　手応えが薄くなってきた」<br><br>
+      「忙しいのに、ちっとも前に進んでいる気がしない」</p>
+
+      <p>そんな違和感を、感じていませんか？</p>
+
+      <p>実はその違和感、<br>
+      年齢のせいでも、努力不足でもなくて、</p>
+
+      <p style="text-align: center; font-size: 22px; font-weight: 900; color: var(--orange-dark); margin: 32px 0;"><em class="marker">戦い方そのものが、時代遅れになっている。</em></p>
+
+      <p>これが正体じゃないかと、<br>
+      僕たちは<strong>一つの仮説</strong>を立てています。</p>
+
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;"><em class="marker">「20代・30代のゲームを、<br>　40代以降もやり続けているから詰まる」</em></p>
+
+      <p>これが、僕たち3人が話し合ううちに<br>
+      行き着いた答えです。</p>
+
+      <p>20代・30代のゲームは、ひとことで言えば<br>
+      <strong>「増やす・広げる・証明する」</strong>。</p>
+
+      <p>売上を増やす。<br>
+      人脈を広げる。<br>
+      ポジションを上げる。<br>
+      自分の実力を、世の中に証明する。</p>
+
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;">「とにかく動け」<br>
+      「数で勝負しろ」<br>
+      「人より早く、人より多く」</p>
+
+      <p>体力も気力もある若い頃は、<br>
+      このルールで<em class="marker-cream">確かに結果が出た</em>。</p>
+
+      <p>むしろ、これしか<strong>戦い方を知らなかった</strong>。</p>
+
+      <p>ところが、</p>
+
+      <p style="text-align: center; font-size: 22px; font-weight: 900; color: var(--navy); margin: 32px 0;">40代に入った途端、<br>このやり方が<em class="marker">通用しなくなってくる</em>。</p>
+
+      <p>理由は、大きく2つ。</p>
+
+      <p>1つは、当然の話だが<strong>体力が落ちる</strong>こと。</p>
+
+      <p>徹夜は効かない。<br>
+      回復が遅い。<br>
+      無理を続けると、体調を崩したり、<br>
+      気分が落ち込んだりして、<br>
+      必ず<em class="marker-cream">しっぺ返し</em>をくらう。</p>
+
+      <p>もう1つは、<br>
+      <strong>40代以降の世界は、そもそも"別ゲーム"</strong>だということ。</p>
+
+      <p>20-30代は、まだ自分が<em class="marker">「プレイヤー」</em>だった。<br>
+      体力で稼ぎ、数で押し切り、勢いで突破する世界。</p>
+
+      <p>でも40代以降は、</p>
+
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;">「<strong>何を残すか</strong>」<br>
+      「<strong>誰と組むか</strong>」<br>
+      「<strong>どう自分らしく生きるか</strong>」</p>
+
+      <p>そういう、もっと<em class="marker-cream">深い問い</em>に<br>
+      答えを出していくゲームに、<br>
+      <strong>ステージが切り替わっている</strong>。</p>
+
+      <p style="text-align: center; font-size: 20px; font-weight: 900; color: var(--navy); margin: 32px 0 16px;"><em class="marker">増やす</em>ゲームから、<em class="marker">絞る</em>ゲームへ。</p>
+      <p style="text-align: center; font-size: 20px; font-weight: 900; color: var(--navy); margin: 0 0 16px;"><em class="marker">広げる</em>ゲームから、<em class="marker">深める</em>ゲームへ。</p>
+      <p style="text-align: center; font-size: 20px; font-weight: 900; color: var(--navy); margin: 0 0 32px;"><em class="marker">証明する</em>ゲームから、<em class="marker">残す・繋ぐ</em>ゲームへ。</p>
+
+      <p>ルールが変わったのに、<br>
+      <em class="marker-cream">前のルールのまま戦い続けていたら</em>、<br>
+      どんな名プレイヤーでも<strong>壊れる</strong>。</p>
+
+      <p>ここまで読んで、</p>
+
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;">「自分は、まだ<br>　20代のルールで戦っているかも・・・」</p>
+
+      <p>そう、<strong>ハッとした人</strong>もいるかもしれません。</p>
+
+      <p>20代・30代の戦い方と、<br>
+      40代以降の戦い方は、<br>
+      <em class="marker">具体的に何がどう違うのか</em>。</p>
+
+      <p>ちょっと整理してみました。</p>
+    </div>
+
+    <figure style="margin: 36px auto; text-align: center;">
+      <img src="images/compare_table.png" alt="20-30代の戦い方と40代以降の戦い方を比較した表" style="width: 100%; max-width: 820px;">
+    </figure>
+
+  </div>
+</section>
+
+<!-- ===== WHAT IT MEANS ===== -->
+<section class="section bg-white">
+  <div class="wrap-narrow">
+    <h2>「戦い方を変える」とは、<br>具体的にどういうことか。</h2>
+
+    <div class="box dots-bg">
+      <p>20代・30代の頃、私たちは<em class="marker">「弱みを見せたら負け」</em>と思っていました。</p>
+      <p>背伸びをして、できないことを「できる」と言って、<br>自分を実際より大きく見せて、無理をして帳尻を合わせる。</p>
+      <p>それが戦い方だったし、そのモードで通用してきた。</p>
+      <p>でも40代に入って、それを続けるのがしんどくなってきた。<br><strong>背伸びし続けると、足がつる。</strong></p>
+      <p>40代以降の戦い方は、真逆です。</p>
+    </div>
+
+    <div class="box" style="margin-top: 28px;">
+      <h3>① 自分らしくいる。</h3>
+      <p>背伸びを下ろす。等身大で勝負する。<br>
+      できないことは「できない」と言える。<br>
+      20代・30代で被ってきた<em class="marker-cream">鎧を、そろそろ脱ぐ時期</em>に来ている。</p>
+    </div>
+    <div class="box">
+      <h3>② 弱みを、仲間に本音で相談する。</h3>
+      <p>20代・30代の頃は、「<strong>弱みを見せたら負け</strong>」だった。<br>
+      でも40代以降は、逆です。</p>
+      <p>社員にも取引先にも家族にも言えなかったことを、<br>
+      <em class="marker">同じ立場の仲間と本音で話せる</em>。<br>
+      その場があるだけで、人生のしんどさは<strong>半分</strong>になる。</p>
+    </div>
+    <div class="box">
+      <h3>③ AIを使って、自分の手作業を減らす。</h3>
+      <p>体力も気力も限られているミドルエイジが、<br>
+      20代と同じ量を自分で抱え込むのは、<strong>もう無理がある</strong>。</p>
+      <p>任せられる作業は、AIに任せる。<br>
+      自分は<em class="marker">「考える・決める・人と会う」</em>に集中する。<br>
+      これができないと、いつまでも作業に追われて、<br>
+      <em class="marker-cream">肝心のところに時間を使えない</em>。</p>
+    </div>
+    <div class="box">
+      <h3>④ 負けない、確実に稼ぐスキルを持っておく。</h3>
+      <p>大博打や流行りものに飛びつくのは、<em class="marker-cream">若い時のゲーム</em>。<br>
+      ミドルエイジは、地に足のついた<em class="marker">「再現性ある稼ぎ方」</em>を、<br>
+      1つでも持っておく。</p>
+      <p><strong>マーケ、AI、資産形成</strong>、いずれでもいい。<br>
+      これがあれば、何があっても食えていけるし、<br>
+      <em class="marker">人生の選択肢</em>が一気に広がる。</p>
+    </div>
+
+    <div class="highlight-banner">
+      これを一人でやるのは、難しい。<br>
+      <span style="color: var(--orange-dark);">「弱みを見せていい場所」</span>が必要だから。
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3 PILLARS ===== -->
+<section class="section bg-white">
+  <div class="wrap">
+    <h2>このコミュニティで、<br>やること。</h2>
+
+    <p style="text-align: center; font-size: 18px; font-weight: 700; margin-bottom: 40px;">MBA（ミッドライフ・ビーアンビシャス）は、<br><em class="marker">3つの軸</em>で動きます。</p>
+
+    <div class="pillar">
+      <div class="pillar-number">PILLAR 01</div>
+      <h3>マーケというOSを、現場目線で磨く</h3>
+      <p>中年が、若い頃のように<strong>体力勝負だけで結果を出し続ける</strong>のは、もう難しい。<br>だからこそ要るのが、<em class="marker">「動く前に設計する力」</em>＝マーケティングの知識です。</p>
+      <p>マーケは、<em class="marker-cream">「人を動かす技術」</em>であり、<br>すべての仕事に効く<strong>"OS"</strong>のような教養。<br>商品を売るのも、人を採用するのも、自分の価値を世に届けるのも、本質はマーケです。</p>
+      <p>そしてミドルエイジの<em class="marker">経験 × マーケ感覚</em>の交差点に立てるのは、<br>若手にもベテランにも、なかなか真似できない強み。</p>
+      <p>このコミュニティでは、僕たち3人が<strong>約20年、現場で泥臭く積み上げてきたマーケの知見</strong>を、<br>事例・添削・実践MTGを通して、あなた自身の事業やキャリアに<em class="marker-cream">「差し込める」レベル</em>まで一緒に磨いていきます。</p>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar-number">PILLAR 02</div>
+      <h3>AIを道具として使いこなす</h3>
+      <p>40代以降、<em class="marker">体力・思考体力・新しいことをやる馬力</em>が落ちてきます。<br>若い頃のような <strong>「ブルドーザー的働き方」</strong> はもうできない。</p>
+      <p>「これやりたい」と思っても、<em class="marker-cream">「これもこれもめんどくさい」</em>で一歩踏み出せない。<br>そんな経験、ないですか？</p>
+      <p>その<strong>億劫な部分を、AIに補ってもらう</strong>のがMBAの考え方です。<br>「AIを勉強する」ではなく「AIを仕事に差し込む」。</p>
+      <p>会議の議事録、提案書のドラフト、数字のレポーティング。<br>ミッドライフ世代が日常的に抱えている業務の中で、AIがどこに入るかを具体的にやってみる場にします。</p>
+      <p>Claude Code、ChatGPT、その他の生成AIを<strong>用途別に使い分ける話</strong>も、事例ベースで扱います。</p>
+      <p>狙いはただ一つ。<em class="marker">心からやりたいことに、もう一度エネルギーを注げる状態を取り戻すこと。</em></p>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar-number">PILLAR 03</div>
+      <h3>弱みをさらけ出せる仲間と場</h3>
+      <p style="font-size: 19px;"><em class="marker">これがMBAの中核です。</em></p>
+      <p>「経営の話が正直にできる仲間がいない」という人は、意外と多いです。<br>社員には言えない。取引先には言えない。家族には心配かけたくない。</p>
+      <p>そして20代・30代に染み込んだ<strong>「弱みを見せたら負け」のクセ</strong>が、40代でも抜けない。<br>だから一人で抱えてしまう。</p>
+      <p><em class="marker-cream">このコミュニティは、その逆を意図的にやる場所です。</em></p>
+      <ul>
+        <li>背伸びをやめる</li>
+        <li>弱みを共有する</li>
+        <li>本音で相談する</li>
+        <li>自分らしさを取り戻す</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3 PEOPLE ===== -->
+<section class="section bg-white dots">
+  <div class="wrap">
+    <h2>3人の話を、<br>しておきます。</h2>
+
+    <p style="text-align: center; font-size: 14px; color: var(--gold); font-weight: 700; letter-spacing: 0.2em; margin-top: -32px; margin-bottom: 44px;">このコミュニティを立ち上げた3人について</p>
+
+    <div class="person">
+      <div class="person-tag">MEMBER 01</div>
+      <div class="person-name">真井 良幸</div>
+      <div class="person-role">wombase株式会社 代表</div>
+      <p>2008年、株式会社Catch the Webに<strong>広告責任者</strong>として参画。<br>同社のすべての広告マーケティングを担い、<br>最前線で運用と集客の実践を積み重ねる。<br>その後独立し、<strong>wombase株式会社を設立</strong>。</p>
+
+      <p>以来15年間、<em class="marker">社員を雇わない"ひとり起業家"</em>として、<br>あらゆるマーケティングを<strong>自らの手で設計し実践</strong>。</p>
+
+      <p>その後、トレンドやノウハウや数字だけのマーケティングの<em class="marker-cream">限界と無意味さ</em>を痛感し、<br>ただ消耗する<strong>目標型マーケティング</strong>ではなく、<br>自分のコアを強みにして高い価値を発揮する<em class="marker">価値観型マーケティング</em>を体系化。</p>
+
+      <p>現在は、自らの経験を活かし、<br>価値観型の起業家たちに向けて、<br><strong>AIもフル活用</strong>しながら<em class="marker">自分自身が主人公になって人生を自由にデザインする</em>ためのマーケティングを広めることに力を注いでいる。</p>
+    </div>
+
+    <div class="person">
+      <div class="person-tag">MEMBER 02</div>
+      <div class="person-name">松井 宏晃</div>
+      <div class="person-role">株式会社Catch the Web 代表取締役</div>
+      <p>新卒で<strong>大手証券会社の営業職</strong>としてキャリアをスタート。<br>数字と顧客対応の最前線で経験を積む。</p>
+
+      <p>その後、株式会社Catch the Webに入社。<br>ニッチビジネスの立ち上げから、複数事業の運営までを担い、<br><em class="marker">代表取締役として約15年間</em>、会社のトップとして<strong>陣頭指揮</strong>を執り、<em class="marker-cream">75億円以上の売上</em>を作ってきた。</p>
+
+      <p><em class="marker-cream">店舗ビジネス・中小企業向けマーケティング</em>を中心に、<br>これまで携わったマーケプロジェクトは数知れず。<br>業種・商材を問わず、<strong>結果が出る型</strong>を磨き続けてきた。</p>
+
+      <p>特筆すべきは、流行りものを追いかけるのではなく、<br><em class="marker">「継続的に売れ続ける」</em>プロダクトと仕組みを設計する力。</p>
+
+      <p>自社プロダクトでも、クライアント案件でも、<br>立ち上げて終わりではなく、<strong>長期で売上を生み続ける</strong>マーケティングを実践してきた。</p>
+    </div>
+
+    <div class="person">
+      <div class="person-tag">MEMBER 03</div>
+      <div class="person-name">高江洌 亮（たかえす りょう）</div>
+      <div class="person-role">株式会社C-links 代表取締役</div>
+      <p><strong>外資系コンサルティング会社</strong>を経て株式会社Catch the Webに入社。<br>
+      <em class="marker">役員</em>として経営に携わる。<br>
+      ニッチビジネスの立ち上げから運営までを内側から経験し、<br>
+      マーケと経営の現場感覚を蓄積していった。</p>
+
+      <p>独立後は、<strong>株式会社C-linksを設立</strong>。代表取締役に就任。</p>
+
+      <p>小規模事業者や<em class="marker-cream">コンテンツ販売を行う企業</em>を中心に、<br>コンセプト設計から、実際のセールスまでを<br><strong>総合的にプロデュース</strong>する形でマーケティング支援を実施している。</p>
+
+      <p>加えて、<em class="marker">歯科・通販・BtoB企業</em>など、<br>業種を問わずコンサルティングとマーケ支援を手がけ、<br>クライアントの幅も広い。</p>
+
+      <p>株式会社C-linksとして<em class="marker">120以上のプロジェクト</em>を支援し、売上UPやKPI改善に取り組み、<br>
+      トータルで<strong>100億円以上の売上創出</strong>に携わってきた。</p>
+
+      <p>約<strong>20年マーケティング畑を歩み</strong>、近年は<em class="marker-cream">AIを使ったマーケ業務の効率化</em>に取り組み、<br>自社・クライアント双方で実装を進めている。</p>
+    </div>
+
+    <div class="highlight-banner">
+      3人とも、戦い方を変えた中年です。<br>
+      その経験を、一緒に持ち込みます。
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY COMMUNITY ===== -->
+<section class="section bg-cream">
+  <div class="wrap-narrow">
+    <h2>孤独で戦うより、<br><em class="marker">仲間と戦う方が</em>はるかに楽しい。</h2>
+
+    <div class="box dots-bg">
+      <p>一人で戦うことは、もちろんできます。</p>
+
+      <p>実際、僕たち3人もこれまで、<br>
+      それぞれの会社で<strong>一人で歯を食いしばってきた時間</strong>がたくさんあった。</p>
+
+      <p>でも、40代を超えてから、<br>
+      ある一つの<em class="marker-cream">確信</em>に変わってきました。</p>
+
+      <p style="text-align: center; font-size: 22px; font-weight: 900; color: var(--orange-dark); margin: 32px 0;"><em class="marker">孤独で戦うより、仲間と戦った方が、<br>はるかに「楽しい」。</em></p>
+
+      <p>「速い」「成果が出る」も、もちろんある。<br>
+      でも、それ以上に大きいのは<strong>「楽しい」</strong>です。</p>
+
+      <p>同じテーマを追いかける仲間がいて、<br>
+      お互いの試行錯誤を共有して、<br>
+      上手くいったら一緒に喜んで、<br>
+      失敗したら一緒に笑える。</p>
+
+      <p>これが<em class="marker">あるか／ないか</em>で、<br>
+      この先の<strong>10年、20年</strong>の景色は、全く変わります。</p>
+
+      <p>世界的に有名なコンサルタント、大前研一さんが、こんなことを言っていました。</p>
+
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;">人生を変える方法は、<strong>たった3つ</strong>しかない。<br>
+      <em class="marker">時間配分・住む場所・付き合う人</em>。</p>
+
+      <p>この中で、自分の意志だけで変えにくいのが、<br>
+      <strong>「付き合う人」</strong>です。</p>
+
+      <p>時間配分は、明日から変えられる。<br>
+      住む場所も、決意すれば動かせる。<br>
+      でも<em class="marker-cream">付き合う人を変える</em>のは、<br>
+      環境そのものを変えないと、まず無理。</p>
+
+      <p>会社に行けば同じメンバーがいて、<br>
+      家に帰れば同じ家族がいて、<br>
+      休日に会う友人も、だいたい固定。</p>
+
+      <p>このループから抜け出して、<br>
+      <em class="marker">新しい仲間と新しいテーマで動く</em>には、<br>
+      <strong>意図的に「場」に飛び込む</strong>必要があります。</p>
+
+      <p>このコミュニティが、<br>
+      あなたにとっての<em class="marker-cream">「付き合う人を変える場」</em>に<br>
+      なれたら嬉しい。</p>
+
+      <p>そして何より、<br>
+      <strong>楽しい場</strong>になることを、僕たちは約束します。</p>
+    </div>
+
+    <div class="box" style="margin-top: 28px; background: #FFF8E8;">
+      <h3>これから先を一緒に過ごす仲間って、<br>意外と作りにくい時代だと思いませんか？</h3>
+
+      <p>大人になってからの友達作りって、<br>
+      <strong>本当に難しい</strong>。</p>
+
+      <p>これは、僕たち3人が一致して感じていることです。</p>
+
+      <p>会社の同僚は、いずれ組織を離れる日が来る。<br>
+      取引先は、どこまでいっても<em class="marker-cream">利害関係</em>が絡む。<br>
+      業界の知り合いは、<em class="marker-cream">肩書きや実績</em>で判断される。<br>
+      SNSにはたくさんの人がいるけど、<br>
+      本音はなかなか話せない。</p>
+
+      <p>学生時代の友人とは、<br>
+      もはや<strong>人生のステージがバラバラ</strong>になっていて、<br>
+      昔のように頻繁には会えない。</p>
+
+      <p>気づけば40代になって、</p>
+
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;">「<em class="marker">本音で話せる、純粋な仲間</em>って、<br>　思ったよりずっと少ないな・・・」</p>
+
+      <p>そんなふうに感じている人は、<br>
+      <strong>あなただけじゃありません</strong>。</p>
+
+      <p>これは個人の問題というよりも、<br>
+      <em class="marker-cream">40代以降に多くの人が直面する、構造的な孤独</em>です。</p>
+
+      <p>だからこそ、このMBAでは、<br>
+      <em class="marker">純粋な仲間関係</em>を<br>
+      作っていきたいと思っています。</p>
+
+      <p>仕事の話だけじゃなく、<br>
+      <strong>健康のこと、家族のこと、お金のこと、人生観のこと</strong>。<br>
+      「経営の場では話せない話」を、<br>
+      安心して持ち寄れる場。</p>
+
+      <p>一緒に高め合って、青春し合える。<br>
+      そんな関係を、ここで築けたらと、<br>
+      心から思っています。</p>
+
+      <p style="text-align: center; font-size: 22px; font-weight: 900; color: var(--navy); margin: 36px 0 0;"><em class="marker">この先の人生を、一緒に走る仲間</em>を、<br>ここで見つけてください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TIME / 100年時代 ===== -->
+<section class="section bg-white">
+  <div class="wrap-narrow">
+    <h2>40代・50代は、<br>まだ折り返し地点。</h2>
+
+    <div class="box">
+      <p>よく「人生100年時代」という言葉を耳にします。</p>
+
+      <p>でも、これを<em class="marker-cream">本気で実感している人</em>って、<br>
+      ほとんどいないんじゃないでしょうか。</p>
+
+      <p>正直、僕たちも頭では分かっていても、<br>
+      <strong>体感としては腹に落ちていなかった</strong>。</p>
+
+      <p>でも、実際に計算してみると、これが衝撃です。</p>
+
+      <p>仮に<em class="marker">人生を90歳まで</em>と置いてみたとき、<br>
+      45歳が、ちょうど折り返し地点。</p>
+
+      <p>つまり、40代前半は<br>
+      <strong>まだ折り返しにすら、達していない</strong>。</p>
+
+      <p style="text-align: center; font-size: 26px; font-weight: 900; color: var(--orange-dark); margin: 36px 0;"><em class="marker">残り、あと45年〜55年。</em></p>
+
+      <p>これは<strong>「もう一回、人生を作れる」</strong>くらいの長さです。</p>
+
+      <p>20代で会社員を始めて、<br>
+      30代で実績を作って、<br>
+      40代で独立した、というキャリアと同じだけの長さが、<br>
+      <em class="marker-cream">これからもう一回</em>、<br>
+      丸々用意されている。</p>
+
+      <p>そう考えると、<br>
+      「もう歳だから・・・」と諦めている場合じゃない。</p>
+
+      <p>20代の頃に、</p>
+
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;">「<em class="marker">40歳になった頃には、<br>　こんな自分でいたい</em>」</p>
+
+      <p>と、思い描いた自分の姿があったはずです。</p>
+
+      <p>まだそこに、たどり着いていないとしたら、<br>
+      残り時間は<strong>十分すぎるほどある</strong>。</p>
+
+      <p>ただし、ここで一つだけ、<br>
+      <em class="marker-cream">大事な前提</em>があります。</p>
+
+      <p>20代・30代の戦い方のままで、<br>
+      この先の20年・30年を走り続けたら、<br>
+      <strong>次の20年も、同じ詰まり方をする</strong>。</p>
+
+      <p>体力は確実に落ちていく。<br>
+      気力も、若い頃のようには湧かない。<br>
+      旧来のやり方で頑張り続けたら、<br>
+      心も身体も<em class="marker-cream">必ず壊れる</em>。</p>
+
+      <p>だから、いま<em class="marker">戦い方を変える</em>。</p>
+
+      <p>残された時間を、<strong>最高の20年・30年</strong>にするために。</p>
+    </div>
+
+    <div class="highlight-banner">
+      戦い方を変える、<br>
+      <span style="color: var(--orange-dark); font-size: 1.2em;">今がそのタイミングです。</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GATE（参加要件・審査制） ===== -->
+<section class="section bg-blue">
+  <div class="wrap-narrow">
+    <h2>誰でも参加できる、<br>わけではありません。</h2>
+
+    <div class="box dots-bg">
+      <p>僕たちは誰にでも、<br>このコミュニティに参加してもらいたいわけではありません。</p>
+
+      <p>本気で<em class="marker">「仲間として一緒に走れる人だけ」</em>に集まってほしい。</p>
+
+      <p>そして、メンバーのみんなが楽しく活動するために、<br>
+      <strong>安心安全の場であること</strong>を約束する必要があります。</p>
+
+      <p>なのでこのコミュニティは、<em class="marker">審査制</em>にしています。</p>
+
+      <p>審査とはいえ、<em class="marker-cream">高いハードルがあるわけではありません</em>。<br>
+      この条件は<strong>2つだけ</strong>。</p>
+
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;"><strong>1. 以下に該当する人</strong><br>
+      （参加して欲しい人、してもらいたくない人の記載をご覧ください）</p>
+
+      <p style="padding-left: 20px; border-left: 1px solid var(--gold); margin: 20px 0;"><strong>2. ちゃんとした身元のわかるFacebookアカウントであること</strong><br>
+      （MBAはFacebookグループを中心に運営されます）</p>
+    </div>
+
+    <div class="box" style="margin-top: 24px;">
+      <div class="gate-label ok">こんな方に参加してほしい</div>
+      <ul class="check-list">
+        <li>大人として、ルールを守って切磋琢磨できる人</li>
+        <li><em class="marker">テイカーではなく、ギバー</em>（与え合える人）</li>
+        <li>40代以降の人生を、もう一度本気でやりたい人</li>
+        <li>仲間と一緒に、純粋に高め合いたい人</li>
+        <li>利害関係を抜きにして、本音で話せる人</li>
+      </ul>
+
+      <div class="gate-label ng" style="margin-top: 16px;">こんな方は、ご遠慮ください</div>
+      <ul class="x-list">
+        <li>「もらうだけ」「奪うだけ」の方</li>
+        <li>仲間の悪口を陰で言う方</li>
+        <li>マウンティングで存在を示そうとする方</li>
+        <li>営業目的・売り込み目的の方</li>
+      </ul>
+    </div>
+
+    <div class="highlight-banner">
+      お互いの価値観が一致する方に、<br>仲間になってほしいと思っています。
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="section bg-cream-soft" id="join">
+  <div class="wrap-narrow" style="text-align: center;">
+    <div style="margin-bottom: 24px;">
+      <img src="images/mba_logo.png" alt="MBA - Midlife, Be Ambitious" style="width: 100%; max-width: 180px; height: auto; display: block; margin: 0 auto;">
+    </div>
+    <h2>コミュニティの<br>参加について。</h2>
+
+    <div style="margin-top: 16px;">
+      <div class="cta-btn-wrap">
+        <a href="#" class="cta-main-btn">▶ コミュニティの参加申請はこちら</a>
+      </div>
+    </div>
+
+    <div style="margin-top: 40px; padding: 36px 28px; border: 1px solid var(--line-strong); border-radius: 0; font-size: 16px; color: var(--text); line-height: 2; text-align: left; background: #fff;">
+      <p style="margin-bottom: 18px;">僕たちミッドライフ世代には、<br>
+      <em class="marker">まだまだ、信じられないくらい大きな可能性</em>がある。</p>
+
+      <p style="margin-bottom: 18px;">20年積み上げてきた<strong>マーケという武器</strong>。<br>
+      ミッドライフを10倍速で動かしてくれる<strong>AIという武器</strong>。<br>
+      人生そのものを豊かにしてくれる、<strong>大人のリベラルアーツ</strong>。<br>
+      そして何より、同じテーマで本気になれる<strong>仲間というコミュニティ</strong>。</p>
+
+      <p style="margin-bottom: 18px;">これらを全部、味方につけたとき、<br>
+      僕たちの人生は、もう<em class="marker-cream">下り坂じゃなくなる</em>。</p>
+
+      <p style="text-align: center; font-size: 20px; font-weight: 900; color: var(--orange-dark); margin: 26px 0;"><em class="marker">ここから、もっと上を目指して、<br>もっと高く、登っていける。</em></p>
+
+      <p style="margin-bottom: 18px;">そして、その方が<strong>圧倒的に楽しい</strong>。<br>
+      これは、僕たち3人がもつ焼き屋の夜を経て、<br>
+      心の底から確信していることです。</p>
+
+      <p style="margin-bottom: 18px;">正直に言うと、このMBAというコミュニティは、<br>
+      <em class="marker-cream">まだまだ実験的な段階</em>にあります。<br>
+      これから参加してくれる仲間と一緒に、<br>
+      <strong>どんどんブラッシュアップ</strong>していきたいと思っています。</p>
+
+      <p style="margin-bottom: 18px;">MBAの<em class="marker">参加は無料</em>です。</p>
+
+      <p style="margin-bottom: 18px;">今後は、運営維持やサービス向上のために、<br>
+      <em class="marker-cream">有料コンテンツ（特別セミナー、サポートサービス、アーカイブなど）</em>についても提供していくこともあると思いますが、<br>
+      現時点では未定です。</p>
+
+      <p style="margin-bottom: 18px;">もちろん、<strong>基本はずっと無料</strong>です。</p>
+
+      <p style="margin-bottom: 18px;">無料でも<em class="marker">十分に高い価値を感じてもらえる企画やコンテンツ</em>提供をし続けていくつもりなので、<br>
+      <strong>一緒に楽しいコミュニティ作り</strong>をしていけたらと思っています。</p>
+
+      <p style="margin-bottom: 18px;">僕たちは、<em class="marker">本当に心から</em>これを世に出したかった。</p>
+
+      <p style="margin-bottom: 18px;">なぜなら、僕たち3人が<br>
+      <em class="marker">自分たちの人生を、もっと素晴らしいものにしたい</em>から。<br>
+      そして、その同じ景色を、<br>
+      <strong>あなたの人生にも、必ず作れる</strong>と、そう信じているから。</p>
+
+      <p style="text-align: center; font-size: 22px; font-weight: 900; color: var(--navy); margin: 32px 0 8px;">ミッドライフからの<em class="marker">第2の青春</em>は、<br>ここから始まります。</p>
+    </div>
+
+    <!-- ===== FAQ ===== -->
+    <div style="text-align: left; margin-top: 60px;">
+      <h2>よくあるご質問</h2>
+
+      <p style="text-align: center; font-size: 16px; font-weight: 900; color: var(--navy); margin: 24px 0 16px; letter-spacing: 0.05em;">年齢について</p>
+
+      <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 24px; margin: 0 0 16px; background: #fff;">
+        <p style="font-weight: 900; color: var(--navy); margin-bottom: 8px; font-size: 16px;">Q. 30代でも参加できますか？</p>
+        <p style="font-size: 14px; line-height: 1.8; margin-bottom: 0;">もちろんです！30〜50代が中心ですが、年齢で厳密に区切ってはいません。早いうちから<strong>「消耗しない戦い方」</strong>を身につけられるのは、むしろ大きなアドバンテージです。</p>
+      </div>
+
+      <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 24px; margin: 0 0 16px; background: #fff;">
+        <p style="font-weight: 900; color: var(--navy); margin-bottom: 8px; font-size: 16px;">Q. 逆に、60歳以上はダメですか？</p>
+        <p style="font-size: 14px; line-height: 1.8; margin-bottom: 0;">大歓迎です。大事にしているのは年齢じゃなく<em class="marker">「ここからもっと面白くしたい」という気持ち</em>。経験豊富な先輩がいてくれると、場がぐっと豊かになります。</p>
+      </div>
+
+      <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 24px; margin: 0 0 36px; background: #fff;">
+        <p style="font-weight: 900; color: var(--navy); margin-bottom: 8px; font-size: 16px;">Q. まだ起業していない会社員でも大丈夫ですか？</p>
+        <p style="font-size: 14px; line-height: 1.8; margin-bottom: 0;">はい。経営者・個人事業主が中心ですが、<strong>「これから自分らしい働き方をつくりたい」</strong>方も歓迎です。</p>
+      </div>
+
+      <p style="text-align: center; font-size: 16px; font-weight: 900; color: var(--navy); margin: 24px 0 16px; letter-spacing: 0.05em;">イベント・コンテンツについて</p>
+
+      <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 24px; margin: 0 0 16px; background: #fff;">
+        <p style="font-weight: 900; color: var(--navy); margin-bottom: 8px; font-size: 16px;">Q. イベントはどんなペースでありますか？</p>
+        <p style="font-size: 14px; line-height: 1.8; margin-bottom: 0;">まずは<em class="marker">「軽く・たくさん」</em>を方針に、勉強会・公開コンサル・ゲスト回などを不定期に開催していきます。出られなかった回も、一部はアーカイブで追える形を予定しています。</p>
+      </div>
+
+      <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 24px; margin: 0 0 16px; background: #fff;">
+        <p style="font-weight: 900; color: var(--navy); margin-bottom: 8px; font-size: 16px;">Q. どんなゲストが来るんですか？</p>
+        <p style="font-size: 14px; line-height: 1.8; margin-bottom: 0;">ビジネスの人に限りません。<strong>旅・食・アート・健康・お金</strong>など、面白い挑戦をしている各分野のプロやマニアを、<em class="marker-cream">「マツコの知らない世界」みたいに</em>次々お呼びしていきます。</p>
+      </div>
+
+      <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 24px; margin: 0 0 36px; background: #fff;">
+        <p style="font-weight: 900; color: var(--navy); margin-bottom: 8px; font-size: 16px;">Q. 全部のイベントに参加しないとダメですか？</p>
+        <p style="font-size: 14px; line-height: 1.8; margin-bottom: 0;">いえ、出られるものに、出られる範囲で大丈夫。<strong>ゆるく長く付き合える場</strong>を目指しています。</p>
+      </div>
+
+      <p style="text-align: center; font-size: 16px; font-weight: 900; color: var(--navy); margin: 24px 0 16px; letter-spacing: 0.05em;">参加条件について</p>
+
+      <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 24px; margin: 0 0 16px; background: #fff;">
+        <p style="font-weight: 900; color: var(--navy); margin-bottom: 8px; font-size: 16px;">Q. 女性でも参加できますか？</p>
+        <p style="font-size: 14px; line-height: 1.8; margin-bottom: 10px;">もちろん大歓迎です。<strong>男女問わず</strong>、本気で「仲間として一緒に走れる」方なら、性別は一切問いません。我々としても<em class="marker-cream">男性のみ、女性のみに偏らないコミュニティ</em>を作っていきたいと考えています。</p>
+
+        <p style="font-size: 14px; line-height: 1.8; margin-bottom: 6px;">詳細な理由を話すと長くなってしまうのですが、心理学で一般的に言われているのは、</p>
+
+        <p style="font-size: 13px; line-height: 1.8; margin-bottom: 10px; padding-left: 14px; color: var(--text-soft);">・男性は <strong>「問題解決型」</strong>（原因を突き止めて行動する）<br>
+        ・女性は <strong>「感情表出・共感型」</strong>（気持ちを言語化して共有する）</p>
+
+        <p style="font-size: 14px; line-height: 1.8; margin-bottom: 10px;">という特徴があります。もちろんどちらが良い・悪いということはなく、それぞれを<strong>上手く融合させた形</strong>で、<em class="marker">多様性を大切にするコミュニティ</em>にしていきたいと考えています。</p>
+
+        <p style="font-size: 14px; line-height: 1.8; margin-bottom: 0;">中年期の悩みというのは <em class="marker-cream">"答えのないモヤモヤ"</em> が多く、解決策探しだけでも、共感だけでも足りません。<em class="marker">男女両方の視点が混ざる場</em>こそが、「気持ちを整理しながら、現実的に動ける」コミュニティになると我々は考えています。</p>
+      </div>
+
+      <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 24px; margin: 0 0 16px; background: #fff;">
+        <p style="font-weight: 900; color: var(--navy); margin-bottom: 8px; font-size: 16px;">Q. 仕事が忙しくても大丈夫ですか？</p>
+        <p style="font-size: 14px; line-height: 1.8; margin-bottom: 0;">大丈夫です。<strong>決まった課題やノルマはありません</strong>。気になる回だけ、のぞくだけ、でも歓迎です。</p>
+      </div>
+
+      <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 24px; margin: 0 0 36px; background: #fff;">
+        <p style="font-weight: 900; color: var(--navy); margin-bottom: 8px; font-size: 16px;">Q. マーケやAIに詳しくないのですが…</p>
+        <p style="font-size: 14px; line-height: 1.8; margin-bottom: 0;">まったく問題ありません。むしろ、<em class="marker">これから学びたい人</em>にこそ来てほしい場所です。</p>
+      </div>
+
+      <p style="text-align: center; font-size: 16px; font-weight: 900; color: var(--navy); margin: 24px 0 16px; letter-spacing: 0.05em;">参加費や運営について</p>
+
+      <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 24px; margin: 0 0 16px; background: #fff;">
+        <p style="font-weight: 900; color: var(--navy); margin-bottom: 8px; font-size: 16px;">Q. 本当に無料ですか？あとで高額なものを売られませんか？</p>
+        <p style="font-size: 14px; line-height: 1.8; margin-bottom: 0;">参加は<strong>無料</strong>です。将来的に特別な有料コンテンツを用意することはあるかもしれませんが、<em class="marker-cream">基本はずっと無料</em>。ガツガツ売り込む場ではないので、安心してください。</p>
+      </div>
+
+      <div style="border: 1px solid var(--line-strong); border-radius: 0; padding: 22px 24px; margin: 0; background: #fff;">
+        <p style="font-weight: 900; color: var(--navy); margin-bottom: 8px; font-size: 16px;">Q. なぜFacebookグループ運営で、実名が必要なんですか？</p>
+        <p style="font-size: 14px; line-height: 1.8; margin-bottom: 0;">MBAはFacebookグループを中心に運営します。<em class="marker">安心して本音を話せる場</em>にするため、身元の分かるFacebookアカウントでのご参加をお願いしています。</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 60px;">
+      <div class="cta-btn-wrap">
+        <a href="#" class="cta-main-btn">▶ コミュニティの参加申請はこちら</a>
+      </div>
+    </div>
+
+    <p style="margin-top: 18px; font-size: 13px; color: var(--text-soft); text-align: center; line-height: 1.7;">※ コミュニティ自体は基本無料で運営します。<br>テーマに応じて、有料のプログラムや教材もご用意していく予定です。</p>
+
+    <div style="margin-top: 28px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 22px; color: var(--gold-dark); letter-spacing: 0.06em; text-align: center;">Your Next Chapter Starts Now.</div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div style="margin-bottom: 20px;">
+    <img src="images/mba_logo.png" alt="MBA - Midlife, Be Ambitious" style="width: 100%; max-width: 160px; height: auto; display: block; margin: 0 auto;">
+  </div>
+  <div class="en">Midlife, Be Ambitious.</div>
+  <div class="jp">中年よ、大志を抱け。</div>
+  <div>© 2026 Midlife Be Ambitious Community</div>
+</footer>
+
+</body>
+</html>
