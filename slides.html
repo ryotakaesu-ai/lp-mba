@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>MBA ライブ配信スライド ｜ Midlife, Be Ambitious.</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta name="theme-color" content="#FDDD03">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #192b60;
+  --navy-dark: #0E1B3F;
+  --gold: #C9A961;
+  --gold-bright: #FFD150;
+  --yellow: #FDDD03;
+  --cream-bg: #FAF4E8;
+  --cream-soft: #FFF8E8;
+  --marker-yellow: #FFE99A;
+  --orange-dark: #C25F3F;
+  --text-soft: #4A5870;
+}
+html, body { height: 100%; overflow: hidden; }
+body {
+  font-family: "Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;
+  background: var(--navy-dark);
+  color: var(--navy);
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+.deck { position: relative; width: 100%; height: 100%; }
+.slide {
+  position: absolute; inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5vh 7vw;
+  background: var(--cream-bg);
+  overflow: hidden;
+}
+.slide.active { display: flex; }
+
+.kicker {
+  font-size: clamp(13px, 1.6vw, 18px);
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  color: var(--gold);
+  margin-bottom: 3.2vh;
+}
+.statement {
+  font-size: clamp(30px, 5.2vw, 66px);
+  font-weight: 900;
+  line-height: 1.5;
+  color: var(--navy);
+}
+.statement .marker {
+  font-style: normal;
+  background: linear-gradient(transparent 55%, var(--marker-yellow) 55%, var(--marker-yellow) 95%, transparent 95%);
+  padding: 0 6px;
+}
+.statement .accent { color: var(--orange-dark); }
+.sub {
+  margin-top: 3.5vh;
+  font-size: clamp(16px, 2vw, 24px);
+  font-weight: 700;
+  color: var(--text-soft);
+  line-height: 2;
+}
+.slide img.illust {
+  max-height: 34vh;
+  max-width: 70vw;
+  width: auto;
+  margin: 3.5vh auto 0;
+  display: block;
+}
+
+/* 吹き出しタイトル（LPのh2） */
+.bubble {
+  display: inline-block;
+  position: relative;
+  font-size: clamp(20px, 2.6vw, 32px);
+  font-weight: 900;
+  color: var(--orange-dark);
+  border: 3px solid var(--navy);
+  background: #fff;
+  border-radius: 100000px;
+  padding: 14px 38px;
+  margin-bottom: 5vh;
+}
+.bubble::before {
+  content: ""; position: absolute; bottom: -24px; left: 50%; transform: translateX(-50%);
+  border: 15px solid transparent; border-top: 15px solid #fff; z-index: 2;
+}
+.bubble::after {
+  content: ""; position: absolute; bottom: -28px; left: 50%; transform: translateX(-50%);
+  border: 15px solid transparent; border-top-color: var(--navy); z-index: 1;
+}
+
+/* カード列 */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: clamp(12px, 2vw, 24px);
+  margin-top: 4.5vh;
+  width: min(1100px, 90vw);
+}
+.card {
+  background: #fff;
+  border: 3px solid var(--navy);
+  border-radius: 16px;
+  padding: clamp(18px, 2.4vw, 32px) clamp(14px, 1.8vw, 26px);
+  text-align: center;
+}
+.card.dashed { border-style: dashed; background: var(--cream-soft); }
+.card .no {
+  font-size: 12px; font-weight: 900; letter-spacing: 0.22em;
+  color: var(--gold); margin-bottom: 8px;
+}
+.card .name {
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-weight: 900; color: var(--navy); line-height: 1.4;
+  margin-bottom: 10px;
+}
+.card .desc { font-size: clamp(12px, 1.3vw, 15px); font-weight: 700; color: var(--text-soft); line-height: 1.8; }
+
+/* リスト型スライド */
+.bigline {
+  font-size: clamp(19px, 2.6vw, 32px);
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 2.1;
+  text-align: left;
+}
+.bigline .num { color: var(--orange-dark); margin-right: 10px; }
+
+/* ダークスライド */
+.slide.dark { background: var(--navy); }
+.slide.dark .statement { color: #fff; }
+.slide.dark .sub { color: #C8D2EC; }
+.slide.dark .kicker { color: var(--gold-bright); }
+.slide.dark .statement .marker { background: linear-gradient(transparent 55%, rgba(255,209,80,.4) 55%, rgba(255,209,80,.4) 95%, transparent 95%); color: var(--gold-bright); }
+
+/* イエロースライド（FVカラー） */
+.slide.sun { background: var(--yellow); }
+.slide.sun .statement { color: #1A1A1A; }
+.slide.sun .kicker { color: #1A1A1A; }
+.slide.sun .script { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(20px, 2.6vw, 34px); color: #1A1A1A; margin-top: 4vh; letter-spacing: 0.06em; }
+
+/* ロゴ */
+.logo { max-height: 20vh; width: auto; margin-bottom: 4vh; }
+
+/* ナビ・カウンター */
+.counter {
+  position: fixed; right: 22px; bottom: 16px;
+  font-size: 13px; font-weight: 700; color: var(--text-soft);
+  z-index: 10; letter-spacing: 0.1em;
+  background: rgba(255,255,255,.65); padding: 4px 12px; border-radius: 100px;
+}
+.hint {
+  position: fixed; left: 22px; bottom: 16px;
+  font-size: 12px; font-weight: 700; color: var(--text-soft);
+  z-index: 10; opacity: .7;
+  background: rgba(255,255,255,.65); padding: 4px 12px; border-radius: 100px;
+}
+@media (max-width: 700px) {
+  .cards { grid-template-columns: 1fr; gap: 10px; }
+  .card { padding: 14px; }
+  .slide img.illust { max-height: 26vh; }
+}
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+<!-- 1 表紙 -->
+<section class="slide sun active">
+  <img class="logo" src="images/mba_logo.png" alt="MBA ロゴ">
+  <p class="statement">中年よ、大志を抱け。</p>
+  <p class="script">Midlife, Be Ambitious.</p>
+</section>
+
+<!-- 2 3人 -->
+<section class="slide">
+  <p class="kicker">SPEAKERS</p>
+  <p class="statement" style="font-size: clamp(24px, 3.6vw, 44px);">今日話す、3人。</p>
+  <div class="cards">
+    <div class="card">
+      <p class="no">MEMBER 01</p>
+      <p class="name">真井 良幸</p>
+      <p class="desc">株式会社Wambase 代表<br>マーケ戦略と言語化の人</p>
+    </div>
+    <div class="card">
+      <p class="no">MEMBER 02</p>
+      <p class="name">松井 宏晃</p>
+      <p class="desc">元Catch the Web 代表取締役<br>15年で75億円を売った人</p>
+    </div>
+    <div class="card">
+      <p class="no">MEMBER 03</p>
+      <p class="name">高江洌 亮</p>
+      <p class="desc">C-links株式会社 代表<br>AI実装の実践家</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 もつ焼き屋 -->
+<section class="slide">
+  <p class="kicker">PROLOGUE</p>
+  <p class="statement" style="font-size: clamp(24px, 3.8vw, 48px);">五反田のもつ焼き屋で辿り着いた、<br><span class="marker">「中年が」幸せに成功する方法。</span></p>
+  <img class="illust" src="images/motsuyaki.png" alt="もつ焼き屋で語り合う3人">
+</section>
+
+<!-- 4 現在地 -->
+<section class="slide">
+  <p class="kicker">MIDLIFE CRISIS</p>
+  <p class="statement">体力も気力も、<br><span class="marker">ピークはもう過ぎた。</span></p>
+  <img class="illust" src="images/midlife_crisis.png" alt="頭を抱える中年男性">
+</section>
+
+<!-- 5 下り坂 -->
+<section class="slide">
+  <p class="statement">常識で考えれば、<br>40代からは<span class="accent">下り坂</span>。</p>
+  <img class="illust" src="images/downhill_40s.png" alt="下り坂を降りていく人">
+</section>
+
+<!-- 6 上り坂 -->
+<section class="slide">
+  <p class="statement">でも、戦い方を変えれば<br>人生は<span class="marker">まだまだ上り坂</span>。</p>
+  <img class="illust" src="images/uphill_40s.png" alt="山頂の星へ駆け上がる人">
+</section>
+
+<!-- 7 提案 -->
+<section class="slide dark">
+  <p class="kicker">OUR PROPOSAL</p>
+  <p class="statement"><span class="marker">マーケ × AI</span> で、<br>中年よ、再び大志を抱こう！</p>
+</section>
+
+<!-- 8 AI -->
+<section class="slide">
+  <div class="bubble">提案 ①</div>
+  <p class="statement" style="font-size: clamp(24px, 3.8vw, 48px);">ミドルエイジの可能性を広げる<br><span class="marker">「AI」という武器</span></p>
+  <p class="sub">何時間もかけていた仕事が、数十分で形になる。<br>僕たちは専門家じゃない。<strong style="color: var(--orange-dark);">実践家</strong>です。</p>
+</section>
+
+<!-- 9 マーケ -->
+<section class="slide">
+  <div class="bubble">提案 ②</div>
+  <p class="statement" style="font-size: clamp(24px, 3.8vw, 48px);"><span class="marker">中年こそ</span>、マーケを学ぶべき。</p>
+  <div style="margin-top: 4vh;">
+    <p class="bigline"><span class="num">①</span>体力勝負の代わりになる「設計」の力</p>
+    <p class="bigline"><span class="num">②</span>人を動かす技術 ＝ 一生使える"OS"</p>
+    <p class="bigline"><span class="num">③</span>20年の経験が、初めて"資産"になる</p>
+    <p class="bigline"><span class="num">④</span>セカンドキャリア時代の必須教養</p>
+  </div>
+</section>
+
+<!-- 10 武器とOS -->
+<section class="slide dark">
+  <p class="statement">AIは<span class="marker">「武器」</span>。<br>マーケは<span class="marker">「OS」</span>。</p>
+  <p class="sub">この2つが揃ったとき、<br>ミッドライフからの仕事と人生が、本当に動き出す。</p>
+</section>
+
+<!-- 11 リベラルアーツ -->
+<section class="slide">
+  <div class="bubble">提案 ③</div>
+  <p class="statement" style="font-size: clamp(24px, 3.8vw, 48px);">さらに必要なのは<br><span class="marker">「大人のリベラルアーツ」</span>だ！</p>
+  <div class="cards">
+    <div class="card"><p class="name">身体</p><p class="desc">運動・食事・健康・医療</p></div>
+    <div class="card"><p class="name">人生</p><p class="desc">運・縁・人間関係</p></div>
+    <div class="card"><p class="name">感性</p><p class="desc">アート・芸術・古典</p></div>
+    <div class="card"><p class="name">お金</p><p class="desc">資産形成・投資・税</p></div>
+  </div>
+</section>
+
+<!-- 12 両輪 -->
+<section class="slide">
+  <p class="statement" style="font-size: clamp(24px, 3.8vw, 48px);"><span class="marker">短期で効くもの</span>と<br><span class="marker">長期で効くもの</span>、その両輪。</p>
+  <img class="illust" src="images/long_short.png" alt="短期と長期の両輪">
+</section>
+
+<!-- 13 部活 -->
+<section class="slide">
+  <p class="kicker">HOW WE DO IT</p>
+  <p class="statement" style="font-size: clamp(24px, 3.8vw, 48px);">3つを<span class="marker">「部活」</span>のように楽しむ。</p>
+  <div class="cards">
+    <div class="card"><p class="no">CLUB 01</p><p class="name">マーケ部</p><p class="desc">添削会・公開コンサル<br>ケーススタディ</p></div>
+    <div class="card"><p class="no">CLUB 02</p><p class="name">AI部</p><p class="desc">実践家のリアルな使い方を<br>そのまま共有</p></div>
+    <div class="card"><p class="no">CLUB 03</p><p class="name">大人のリベラルアーツ部</p><p class="desc">ゲスト回・読書会<br>実体験のシェア</p></div>
+  </div>
+</section>
+
+<!-- 14 増える部活 -->
+<section class="slide">
+  <p class="statement" style="font-size: clamp(24px, 3.8vw, 48px);">部活は、<span class="marker">自由に増えていく</span>。</p>
+  <div class="cards">
+    <div class="card dashed"><p class="no">CLUB 04</p><p class="name">旅行部</p><p class="desc">合宿・ワーケーション・海外も</p></div>
+    <div class="card dashed"><p class="no">CLUB 05</p><p class="name">飲み部</p><p class="desc">お酒を交わして、本音で語る</p></div>
+    <div class="card dashed"><p class="no">CLUB ??</p><p class="name">あなたが立ち上げる部</p><p class="desc">「これやりたい！」があれば<br>どんどん作ろう</p></div>
+  </div>
+</section>
+
+<!-- 15 仲間 -->
+<section class="slide dark">
+  <p class="statement">孤独で戦うより、<br><span class="marker">仲間と戦う方が</span><br>はるかに楽しい。</p>
+</section>
+
+<!-- 16 企画 -->
+<section class="slide">
+  <p class="kicker">COMING UP</p>
+  <p class="statement" style="font-size: clamp(24px, 3.8vw, 48px);">これから、<span class="marker">こんな企画</span>をやります。</p>
+  <div class="cards">
+    <div class="card"><p class="no">月2回</p><p class="name">ゲスト回</p><p class="desc">各界のマニア・専門家を招く<br>「オトナの知らない世界」</p></div>
+    <div class="card"><p class="no">月1回</p><p class="name">公開経営相談室</p><p class="desc">メンバーの課題を<br>3人で公開コンサル</p></div>
+    <div class="card"><p class="no">週1回</p><p class="name">AI仕事術ライブ</p><p class="desc">実務の画面共有デモ<br>明日から使える形で</p></div>
+    <div class="card dashed"><p class="no">突発</p><p class="name">ゲリラライブ</p><p class="desc">3人のうち2人が空いてたら<br>いきなり開店</p></div>
+  </div>
+</section>
+
+<!-- 17 参加 -->
+<section class="slide">
+  <p class="kicker">JOIN US</p>
+  <p class="statement" style="font-size: clamp(24px, 3.8vw, 48px);">参加は<span class="marker">無料</span>。<br>Facebookグループで待ってます。</p>
+  <p class="sub">承認制です。40〜60代のミッドライフ世代が中心。<br>「これから始める人」も、もちろん歓迎。</p>
+</section>
+
+<!-- 18 クロージング -->
+<section class="slide sun">
+  <p class="statement">中年よ、大志を抱け。</p>
+  <p class="script">Midlife, Be Ambitious.</p>
+</section>
+
+</div>
+
+<div class="hint">← → キー or クリックでめくる</div>
+<div class="counter" id="counter">1 / 18</div>
+
+<script>
+(function(){
+  var slides = document.querySelectorAll('.slide');
+  var counter = document.getElementById('counter');
+  var i = 0;
+  var hash = parseInt(location.hash.slice(1), 10);
+  if (hash >= 1 && hash <= slides.length) i = hash - 1;
+
+  function show(n){
+    if (n < 0) n = 0;
+    if (n > slides.length - 1) n = slides.length - 1;
+    slides[i].classList.remove('active');
+    i = n;
+    slides[i].classList.add('active');
+    counter.textContent = (i + 1) + ' / ' + slides.length;
+    history.replaceState(null, '', '#' + (i + 1));
+  }
+  show(i);
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown' || e.key === 'Enter') { e.preventDefault(); show(i + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'Backspace') { e.preventDefault(); show(i - 1); }
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(slides.length - 1);
+  });
+  document.addEventListener('click', function(e){
+    if (e.clientX > window.innerWidth * 0.3) show(i + 1); else show(i - 1);
+  });
+  var sx = null;
+  document.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, {passive: true});
+  document.addEventListener('touchend', function(e){
+    if (sx === null) return;
+    var dx = e.changedTouches[0].clientX - sx;
+    if (dx < -40) show(i + 1);
+    if (dx > 40) show(i - 1);
+    sx = null;
+  }, {passive: true});
+})();
+</script>
+</body>
+</html>
