@@ -144,6 +144,13 @@ body {
 }
 .card.left { text-align: left; }
 .card.dashed { border-style: dashed; background: var(--cream-soft); }
+.card .avatar {
+  width: clamp(72px, 8vw, 104px); height: clamp(72px, 8vw, 104px);
+  border-radius: 50%; object-fit: cover; object-position: center top;
+  border: 3px solid var(--navy); display: block; margin: 0 auto clamp(10px,1.4vh,16px);
+  background: var(--cream-soft);
+}
+.card.left { text-align: center; }
 .card .no {
   font-size: 11.5px; font-weight: 900; letter-spacing: 0.22em;
   color: var(--gold); margin-bottom: 6px;
@@ -264,18 +271,21 @@ body {
   <p class="statement sm">今日話す、3人。</p>
   <div class="cards">
     <div class="card left">
+      <img class="avatar" src="images/face_sanai.jpg" alt="真井 良幸">
       <p class="no">MEMBER 01</p>
       <p class="name">真井 良幸</p>
       <p class="role">wombase株式会社 代表</p>
       <p class="desc">Catch the Web で全広告の責任者を務めたのち独立。15年間、社員を雇わない<strong>自由なひとり起業家</strong>としてマーケを全部自分で実践。現在は<span class="mk">価値観型マーケティング×AI</span>を広める。</p>
     </div>
     <div class="card left">
+      <img class="avatar" src="images/face_matsui.jpg" alt="松井 宏晃">
       <p class="no">MEMBER 02</p>
       <p class="name">松井 宏晃</p>
       <p class="role">株式会社Catch the Web 代表</p>
       <p class="desc">大手証券会社の営業を経て Catch the Web へ。<strong>代表取締役として約15年</strong>陣頭指揮を執り、<span class="mk">75億円以上の売上</span>を作ってきた。店舗ビジネス・中小企業のマーケ案件を多数支援。</p>
     </div>
     <div class="card left">
+      <img class="avatar" src="images/face_takaesu.jpg" alt="高江洌 亮">
       <p class="no">MEMBER 03</p>
       <p class="name">高江洌 亮</p>
       <p class="role">株式会社C-links 代表</p>
