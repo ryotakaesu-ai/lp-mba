@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>ナラティブマーケティング講義 ｜ MBA</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta name="theme-color" content="#FDDD03">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #192b60;
+  --navy-dark: #0E1B3F;
+  --gold: #C9A961;
+  --gold-bright: #FFD150;
+  --yellow: #FDDD03;
+  --cream-bg: #FAF4E8;
+  --cream-soft: #FFF8E8;
+  --marker-yellow: #FFE99A;
+  --orange-dark: #C25F3F;
+  --text-soft: #4A5870;
+  --green-ok: #2D8C57;
+  --red-ng: #E53935;
+}
+html, body { height: 100%; overflow: hidden; }
+body {
+  font-family: "Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;
+  background: var(--navy-dark);
+  color: var(--navy);
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+.deck { position: relative; width: 100%; height: 100%; }
+.slide {
+  position: absolute; inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4.5vh 6vw;
+  background: var(--cream-bg);
+  overflow: hidden;
+}
+.slide.active { display: flex; }
+
+.kicker {
+  font-size: clamp(12px, 1.5vw, 17px);
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  color: var(--gold);
+  margin-bottom: 2.6vh;
+}
+.statement {
+  font-size: clamp(28px, 4.8vw, 60px);
+  font-weight: 900;
+  line-height: 1.5;
+  color: var(--navy);
+}
+.statement.sm { font-size: clamp(22px, 3.4vw, 42px); }
+.statement .marker {
+  font-style: normal;
+  background: linear-gradient(transparent 55%, var(--marker-yellow) 55%, var(--marker-yellow) 95%, transparent 95%);
+  padding: 0 6px;
+}
+.statement .accent { color: var(--orange-dark); }
+.sub {
+  margin-top: 3vh;
+  font-size: clamp(15px, 1.9vw, 22px);
+  font-weight: 700;
+  color: var(--text-soft);
+  line-height: 2;
+}
+.sub strong { color: var(--orange-dark); }
+.quote {
+  margin-top: 3vh;
+  display: inline-block;
+  text-align: left;
+  padding: 10px 0 10px 22px;
+  border-left: 3px solid var(--gold);
+  font-size: clamp(16px, 2.1vw, 25px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.9;
+}
+.slide img.illust {
+  max-height: 30vh;
+  max-width: 64vw;
+  width: auto;
+  margin: 3vh auto 0;
+  display: block;
+}
+
+/* 吹き出し */
+.bubble {
+  display: inline-block;
+  position: relative;
+  font-size: clamp(17px, 2.2vw, 27px);
+  font-weight: 900;
+  color: var(--orange-dark);
+  border: 3px solid var(--navy);
+  background: #fff;
+  border-radius: 100000px;
+  padding: 12px 34px;
+  margin-bottom: 4.5vh;
+}
+.bubble::before {
+  content: ""; position: absolute; bottom: -22px; left: 50%; transform: translateX(-50%);
+  border: 14px solid transparent; border-top: 14px solid #fff; z-index: 2;
+}
+.bubble::after {
+  content: ""; position: absolute; bottom: -26px; left: 50%; transform: translateX(-50%);
+  border: 14px solid transparent; border-top-color: var(--navy); z-index: 1;
+}
+
+/* カード */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: clamp(10px, 1.6vw, 20px);
+  margin-top: 3.6vh;
+  width: min(1150px, 92vw);
+}
+.cards.two { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+.card {
+  background: #fff;
+  border: 3px solid var(--navy);
+  border-radius: 16px;
+  padding: clamp(16px, 2vw, 26px) clamp(14px, 1.8vw, 24px);
+  text-align: center;
+}
+.card.left { text-align: left; }
+.card.dashed { border-style: dashed; background: var(--cream-soft); }
+.card .avatar {
+  width: clamp(72px, 8vw, 104px); height: clamp(72px, 8vw, 104px);
+  border-radius: 50%; object-fit: cover; object-position: center top;
+  border: 3px solid var(--navy); display: block; margin: 0 auto clamp(10px,1.4vh,16px);
+  background: var(--cream-soft);
+}
+.card.left { text-align: center; }
+.card .no {
+  font-size: 11.5px; font-weight: 900; letter-spacing: 0.22em;
+  color: var(--gold); margin-bottom: 6px;
+}
+.card .name {
+  font-size: clamp(17px, 2vw, 24px);
+  font-weight: 900; color: var(--navy); line-height: 1.4;
+  margin-bottom: 8px;
+}
+.card .role { font-size: clamp(11px, 1.2vw, 13px); font-weight: 700; color: var(--gold); margin-bottom: 10px; letter-spacing: 0.06em; }
+.card .desc { font-size: clamp(12px, 1.25vw, 14.5px); font-weight: 500; color: var(--text-soft); line-height: 1.85; }
+.card .desc strong { color: var(--navy); font-weight: 900; }
+.card .desc .mk { background: linear-gradient(transparent 55%, var(--marker-yellow) 55%, var(--marker-yellow) 95%, transparent 95%); font-weight: 900; color: var(--navy); padding: 0 2px; }
+
+/* 番号付き理由カード */
+.reason {
+  display: grid;
+  gap: clamp(8px, 1.4vh, 16px);
+  margin-top: 3.4vh;
+  width: min(940px, 92vw);
+}
+.reason .r {
+  background: #fff;
+  border: 3px solid var(--navy);
+  border-radius: 14px;
+  padding: clamp(12px, 1.8vh, 20px) clamp(16px, 2vw, 28px);
+  text-align: left;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+.reason .r .n { font-size: clamp(18px, 2.2vw, 26px); font-weight: 900; color: var(--orange-dark); flex-shrink: 0; }
+.reason .r .t { font-size: clamp(15px, 1.9vw, 22px); font-weight: 900; color: var(--navy); line-height: 1.6; }
+.reason .r .t small { display: block; font-size: clamp(11.5px, 1.25vw, 14px); font-weight: 500; color: var(--text-soft); margin-top: 2px; line-height: 1.7; }
+
+/* ✓リスト（AI実務） */
+.use-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 6px 28px;
+  margin-top: 3.2vh;
+  width: min(880px, 90vw);
+  list-style: none;
+  text-align: left;
+}
+.use-list li {
+  font-size: clamp(14px, 1.7vw, 19px);
+  font-weight: 700;
+  color: var(--navy);
+  padding: 7px 0 7px 30px;
+  position: relative;
+  border-bottom: 1px dashed #D8D0BC;
+}
+.use-list li::before { content: "✓"; position: absolute; left: 4px; color: var(--orange-dark); font-weight: 900; }
+
+/* ○✕リスト（審査） */
+.gate-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(10px, 1.6vw, 20px); margin-top: 3.2vh; width: min(1050px, 92vw); }
+.gate-box { background: #fff; border: 3px solid var(--navy); border-radius: 16px; padding: clamp(14px, 2vh, 24px) clamp(16px, 1.8vw, 26px); text-align: left; }
+.gate-box .lbl { display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: 0.1em; padding: 5px 14px; border-radius: 100px; margin-bottom: 12px; }
+.gate-box .lbl.ok { background: #E8F4E5; color: var(--green-ok); border: 2px solid var(--green-ok); }
+.gate-box .lbl.ng { background: #FCE8E6; color: var(--red-ng); border: 2px solid var(--red-ng); }
+.gate-box ul { list-style: none; }
+.gate-box li { font-size: clamp(12.5px, 1.4vw, 15.5px); font-weight: 700; color: var(--navy); padding: 6px 0 6px 28px; position: relative; line-height: 1.7; }
+.gate-box li.o::before { content: "○"; position: absolute; left: 2px; color: var(--green-ok); font-weight: 900; }
+.gate-box li.x::before { content: "✕"; position: absolute; left: 3px; color: var(--red-ng); font-weight: 900; }
+
+/* ダーク */
+.slide.dark { background: var(--navy); }
+.slide.dark .statement { color: #fff; }
+.slide.dark .sub { color: #C8D2EC; }
+.slide.dark .sub strong { color: var(--gold-bright); }
+.slide.dark .kicker { color: var(--gold-bright); }
+.slide.dark .statement .marker { background: linear-gradient(transparent 55%, rgba(255,209,80,.4) 55%, rgba(255,209,80,.4) 95%, transparent 95%); color: var(--gold-bright); }
+
+/* イエロー */
+.slide.sun { background: var(--yellow); }
+.slide.sun .statement { color: #1A1A1A; }
+.slide.sun .sub { color: #1A1A1A; }
+.slide.sun .kicker { color: #1A1A1A; }
+.slide.sun .script { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(19px, 2.5vw, 32px); color: #1A1A1A; margin-top: 3.6vh; letter-spacing: 0.06em; }
+
+.logo { max-height: 18vh; width: auto; margin-bottom: 3.6vh; }
+
+.counter {
+  position: fixed; right: 22px; bottom: 16px;
+  font-size: 13px; font-weight: 700; color: var(--text-soft);
+  z-index: 10; letter-spacing: 0.1em;
+  background: rgba(255,255,255,.65); padding: 4px 12px; border-radius: 100px;
+}
+.hint {
+  position: fixed; left: 22px; bottom: 16px;
+  font-size: 12px; font-weight: 700; color: var(--text-soft);
+  z-index: 10; opacity: .7;
+  background: rgba(255,255,255,.65); padding: 4px 12px; border-radius: 100px;
+}
+@media (max-width: 700px) {
+  .cards, .gate-cols { grid-template-columns: 1fr; gap: 8px; }
+  .use-list { grid-template-columns: 1fr; }
+  .slide img.illust { max-height: 22vh; }
+  .card { padding: 12px 14px; }
+}
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+<!-- 1 表紙 -->
+<section class="slide sun active">
+  <img class="logo" src="images/mba_logo.png" alt="MBA ロゴ">
+  <p class="statement" style="font-size: clamp(28px, 4.4vw, 56px);">ナラティブマーケティング</p>
+  <p class="sub" style="margin-top: 1.5vh; font-weight: 900; font-size: clamp(18px, 2.4vw, 30px); color: #1A1A1A;">「感情資産」のつくり方</p>
+  <p class="sub" style="margin-top: 3vh;">MBA 講義｜高江洌 亮</p>
+</section>
+
+<!-- 2 メタ掴み -->
+<section class="slide">
+  <p class="kicker">QUESTION</p>
+  <p class="statement sm">皆さん、なぜ<span class="marker">このコミュニティ</span>に<br>入りましたか？</p>
+  <p class="sub">MBAのLPには、商品スペックも料金表も、ほぼありませんでした。<br>
+  あったのは、<strong>五反田のもつ焼き屋の物語</strong>だけ。<br><br>
+  それでも、あなたはここにいる。<br><strong style="color: var(--orange-dark);">あなたが動いた理由こそ、今日の講義の中身です。</strong></p>
+</section>
+
+<!-- 3 今日の地図 -->
+<section class="slide">
+  <p class="kicker">AGENDA</p>
+  <p class="statement sm">今日の<span class="marker">地図</span>。</p>
+  <div class="reason">
+    <div class="r"><span class="n">1</span><span class="t">ナラティブとストーリーの違い<small>言葉の整理。ここが曖昧だと全部曖昧になる</small></span></div>
+    <div class="r"><span class="n">2</span><span class="t">なぜ今、ナラティブなのか<small>キーワードは「感情資産」</small></span></div>
+    <div class="r"><span class="n">3</span><span class="t">マーケティングへの組み込み方<small>コンセプト → プロモ設計 → 成果物 → 公開 → 計測PDCA の5工程</small></span></div>
+    <div class="r"><span class="n">4</span><span class="t">今夜やるファーストステップ<small>紙とペンで15分の宿題を持ち帰ってもらいます</small></span></div>
+  </div>
+</section>
+
+<!-- 4 3つの用語 -->
+<section class="slide">
+  <div class="bubble">第1章 定義</div>
+  <p class="statement sm"><span class="marker">3つの言葉</span>を区別する。</p>
+  <div class="cards">
+    <div class="card"><p class="no">STORY</p><p class="name">物語</p><p class="desc"><strong>素材</strong>。完結した出来事。<br>創業エピソード、失敗談、転機</p></div>
+    <div class="card"><p class="no">NARRATIVE</p><p class="name">ナラティブ</p><p class="desc"><strong>編集方針</strong>。進行形の世界観。<br>「中年よ、大志を抱け」</p></div>
+    <div class="card"><p class="no">STORYTELLING</p><p class="name">ストーリーテリング</p><p class="desc"><strong>伝達技術</strong>。フック、感情曲線、<br>間の取り方</p></div>
+  </div>
+  <p class="sub">物語＝素材、ナラティブ＝編集方針、ストーリーテリング＝伝え方の技術。</p>
+</section>
+
+<!-- 5 海と船 -->
+<section class="slide">
+  <p class="kicker">NARRATIVE ⊃ STORY</p>
+  <p class="statement sm">ナラティブは<span class="marker">海</span>、<br>ストーリーは<span class="marker">船</span>。</p>
+  <div class="cards two">
+    <div class="card left"><p class="no">APPLE の場合</p><p class="desc"><strong>海</strong>：Think Different（反逆者とクリエイターの道具）<br><strong>船</strong>：ガレージ創業／1984年のCM／ユーザーがiPhoneで撮った映画</p></div>
+    <div class="card left"><p class="no">BITCOIN の場合</p><p class="desc"><strong>海</strong>：分散型の新しい信頼社会<br><strong>船</strong>：サトシ・ナカモトの論文／ピザ2枚事件／暴落と復活</p></div>
+  </div>
+  <p class="sub">海（世界観）があるから、バラバラの船（エピソード）が<strong>同じ方向に動き出す</strong>。</p>
+</section>
+
+<!-- 6 3つの断絶 -->
+<section class="slide">
+  <p class="statement sm">ストーリーとナラティブの<br><span class="marker">3つの違い</span>。</p>
+  <div class="reason">
+    <div class="r"><span class="n">①</span><span class="t">消費される vs 乗っかる<small>ストーリーは「観る」もの。ナラティブは「参加する」もの</small></span></div>
+    <div class="r"><span class="n">②</span><span class="t">完結した過去 vs 余白のある進行形<small>ナラティブには、受け手が自分の解釈と行動を投げ込める余白がある</small></span></div>
+    <div class="r"><span class="n">③</span><span class="t">説得の武器 vs コミュニティの重力<small>「これは俺たちの物語だ」と思った人が、勝手に語り始める</small></span></div>
+  </div>
+</section>
+
+<!-- 7 MBAで言うと -->
+<section class="slide">
+  <p class="kicker">CASE: MBA</p>
+  <p class="statement sm">このコミュニティで言うと。</p>
+  <div class="cards two">
+    <div class="card left"><p class="no">海（ナラティブ）</p><p class="desc"><strong>「中年よ、大志を抱け」</strong><br>40代からの人生を上り坂にする、という進行形の世界観</p></div>
+    <div class="card left"><p class="no">船（ストーリー）</p><p class="desc">五反田のもつ焼き屋の夜／<strong>Facebookライブで20分迷子事件</strong>／キックオフのオプチャ230人</p></div>
+  </div>
+  <p class="sub">海があるから、<strong>失敗談すら船になる</strong>。<br>迷子事件は恥ではなく「これが40代のリアル」という物語になった。</p>
+</section>
+
+<!-- 8 1章まとめ -->
+<section class="slide dark">
+  <p class="kicker">第1章 まとめ</p>
+  <p class="statement">ストーリーは、語り終わる。<br><span class="marker">ナラティブは、住む場所になる。</span></p>
+</section>
+
+<!-- 9 時代認識 -->
+<section class="slide">
+  <div class="bubble">第2章 なぜ今か</div>
+  <p class="statement sm"><span class="marker">70点</span>までは、<br>誰でも出せる時代になった。</p>
+  <p class="sub">ノウハウは無料化する。テクニックはAIで誰でも再現できる。<br>
+  機能や品質の「差」は、つくることが年々難しくなっている。<br><br>
+  <strong style="color: var(--orange-dark);">では、何で差がつくのか？</strong></p>
+</section>
+
+<!-- 10 感情資産の定義 -->
+<section class="slide dark">
+  <p class="kicker">KEY CONCEPT</p>
+  <p class="statement">感情資産<span style="font-size: 0.5em;">（かんじょうしさん）</span></p>
+  <p class="sub" style="font-size: clamp(17px, 2.2vw, 26px);">顧客の中に積み上がる、<br>あなたへの<strong>「感情の残高」</strong>。<br><br>
+  信頼。共感。応援。「この人から買いたい」。<br>
+  機能と価格は比較表に載るが、<strong>感情資産は比較表に載らない</strong>。</p>
+</section>
+
+<!-- 11 資産×装置 -->
+<section class="slide">
+  <p class="statement sm">マーケティングは<br><span class="marker">「資産」と「装置」</span>の2つしかない。</p>
+  <div class="cards two">
+    <div class="card left"><p class="no">資産（ストック）</p><p class="desc">ナラティブ、ファン、信頼、指名される力<br><strong>遅いが、複利で貯まる。止めても消えない</strong><br>→ AI時代に価値が上がり続ける</p></div>
+    <div class="card left"><p class="no">装置（フロー）</p><p class="desc">LP、広告運用、ステップメール、導線設計<br><strong>速いが、止めれば即死する</strong><br>→ AIで誰でも作れて、コモディティ化する</p></div>
+  </div>
+  <p class="quote">判定質問はひとつ。「今日これをやめたら、3ヶ月後に何が残るか？」</p>
+</section>
+
+<!-- 12 実証データ -->
+<section class="slide">
+  <p class="kicker">EVIDENCE</p>
+  <p class="statement sm">感覚論ではなく、<span class="marker">実証</span>があります。</p>
+  <div class="reason">
+    <div class="r"><span class="n">①</span><span class="t">長期の売上成長は「資産側」が作る<small>Binet &amp; Field（2013）。広告効果の大規模データ分析。最適配分は資産60：装置40</small></span></div>
+    <div class="r"><span class="n">②</span><span class="t">指名検索のCTRは 55.3%<small>一般キーワードは▲62%。同じLPでも「知っている人」なら反応が変わる＝資産が装置の効率を上げる</small></span></div>
+    <div class="r"><span class="n">③</span><span class="t">物語は模倣できない<small>ノウハウはコピーされる。あなたの20年は、AIにも競合にも複製できない</small></span></div>
+  </div>
+</section>
+
+<!-- 13 2章まとめ -->
+<section class="slide dark">
+  <p class="kicker">第2章 まとめ</p>
+  <p class="statement">装置はAIがやってくれる。<br>人間の仕事は、<span class="marker">感情資産を積むこと</span>。</p>
+</section>
+
+<!-- 14 5工程の全体図 -->
+<section class="slide">
+  <div class="bubble">第3章 実装</div>
+  <p class="statement sm">組み込み方は、<span class="marker">5つの工程</span>。</p>
+  <div class="reason">
+    <div class="r"><span class="n">①</span><span class="t">コンセプトを決める<small>ナラティブ（Why / Being）の言語化。ここだけは人間の仕事</small></span></div>
+    <div class="r"><span class="n">②</span><span class="t">プロモーションの流れを決める<small>どの海に、どの船を、どの媒体で浮かべるか</small></span></div>
+    <div class="r"><span class="n">③</span><span class="t">成果物をつくる<small>核は人間、量産はAI</small></span></div>
+    <div class="r"><span class="n">④</span><span class="t">顧客に公開する<small>「発表」ではなく「場開き」</small></span></div>
+    <div class="r"><span class="n">⑤</span><span class="t">効果計測 → PDCA<small>資産と装置では、見る指標が違う</small></span></div>
+  </div>
+</section>
+
+<!-- 15 工程1 -->
+<section class="slide">
+  <p class="kicker">STEP 1</p>
+  <p class="statement sm">コンセプト＝<span class="marker">ナラティブの言語化</span>。</p>
+  <div class="cards">
+    <div class="card"><p class="no">PAST</p><p class="name">原体験</p><p class="desc">その人にしかない出来事。<br>挫折・違和感・夢中</p></div>
+    <div class="card"><p class="no">PRESENT</p><p class="name">転機の意味づけ</p><p class="desc">過去に「章タイトル」をつけ、<br>意味を上書きする</p></div>
+    <div class="card"><p class="no">FUTURE</p><p class="name">未来ビジョン</p><p class="desc">顧客と世界が主人公の、<br>これから紡ぐ景色</p></div>
+  </div>
+  <p class="sub">成立条件はひとつ：<strong>「他人が住める場所」になっていること</strong>。<br>
+  「私は20年やってきた」✗ ／「中年から、もう一度大志を抱く」◎</p>
+</section>
+
+<!-- 16 工程1注意 -->
+<section class="slide">
+  <p class="kicker">STEP 1 の注意</p>
+  <p class="statement sm">Whyは「見つける」ものではなく、<br><span class="marker">動きながら言語化される</span>もの。</p>
+  <p class="sub">完璧なコンセプトができるまで待たない。<br>
+  動く → 何が響くか観察する → 仮の言語化 → また動く。この螺旋です。<br><br>
+  僕自身、20年動いた後に「中年よ、大志を抱け」が言葉になりました。<br><strong>先にWhyがあったのではない。動きの中から言語化された。</strong></p>
+</section>
+
+<!-- 17 工程2 -->
+<section class="slide">
+  <p class="kicker">STEP 2</p>
+  <p class="statement sm">プロモーションの流れ＝<br><span class="marker">海に、船を、どう浮かべるか</span>。</p>
+  <div class="reason">
+    <div class="r"><span class="n">LP</span><span class="t">FVで未来、中盤で原体験、CTA前で転機<small>MBAのLPはこの構造そのままです</small></span></div>
+    <div class="r"><span class="n">SNS</span><span class="t">1日1エピソード（船を毎日1隻）<small>昔々→毎日→ある日→そのせいで→ついに、の5文式</small></span></div>
+    <div class="r"><span class="n">営業</span><span class="t">クライアント変革物語 ＋ 自分の原体験<small>共感 → 信頼 → 提案の順。いきなり提案しない</small></span></div>
+  </div>
+  <p class="sub">投資配分の目安は<strong>資産60：装置40</strong>。</p>
+</section>
+
+<!-- 18 工程3 -->
+<section class="slide">
+  <p class="kicker">STEP 3</p>
+  <p class="statement sm">成果物の作成：<span class="marker">核は人間、量産はAI</span>。</p>
+  <div class="cards two">
+    <div class="card left"><p class="no">人間がやる（物語の核）</p><p class="desc">原体験の発掘／編集方針・世界観の決定／誰に何を伝えるかの判断／<strong>誠実さの最終チェック</strong></p></div>
+    <div class="card left"><p class="no">AIがやる（展開と量産）</p><p class="desc">媒体別リライト（LP・SNS・営業資料）／短文量産／整形・デザイン<br><strong>実例：MBAのLPとこのスライド</strong></p></div>
+  </div>
+  <p class="sub">冒頭の物語だけ人間が書き、残りはAIが数十分で展開。<br>「AIっぽくない」と言われる理由は、<strong>核が人間の物語だから</strong>。</p>
+</section>
+
+<!-- 19 工程4 -->
+<section class="slide">
+  <p class="kicker">STEP 4</p>
+  <p class="statement sm">公開は「発表」ではなく<span class="marker">「場開き」</span>。</p>
+  <p class="sub">語りたくなる余白、参加できる隙間を残して出す。<br>顧客を観客から<strong>参加者</strong>に変える。</p>
+  <div class="gate-cols">
+    <div class="gate-box">
+      <span class="lbl ng">やってはいけない</span>
+      <ul>
+        <li class="x">盛る・誇張する（バレた瞬間に信用ゼロ）</li>
+        <li class="x">他人の物語を借りる</li>
+        <li class="x">感情を操作しすぎる</li>
+        <li class="x">更新を止める（3ヶ月で温度が冷える）</li>
+      </ul>
+    </div>
+    <div class="gate-box">
+      <span class="lbl ok">公開前の7問チェック（抜粋）</span>
+      <ul>
+        <li class="o">事実か？</li>
+        <li class="o">感情があるか？ 具体か？</li>
+        <li class="o">顧客にとって価値があるか？</li>
+        <li class="o">次の行動につながるか？</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 20 工程5 -->
+<section class="slide">
+  <p class="kicker">STEP 5</p>
+  <p class="statement sm">計測：<span class="marker">資産と装置で、見る指標が違う</span>。</p>
+  <div class="cards two">
+    <div class="card left"><p class="no">装置の指標（週次で回す）</p><p class="desc">CTR／CVR／CPA／登録数<br><strong>速く動く数字。PDCAはここで高速に</strong></p></div>
+    <div class="card left"><p class="no">資産の指標（四半期で見る）</p><p class="desc">指名検索数／リピート率／紹介数／UGC数／「あなたから買いたい」の声<br><strong>感情資産の残高はゆっくり動く</strong></p></div>
+  </div>
+  <p class="sub">資産の数字は<strong>遅行指標</strong>。すぐ動かなくても焦らない。<br>装置の数字だけ見てナラティブを打ち切るのが、一番もったいない失敗。</p>
+</section>
+
+<!-- 21 3章まとめ -->
+<section class="slide dark">
+  <p class="kicker">第3章 まとめ</p>
+  <p class="statement sm">5工程のうち、<br><span class="marker">工程①だけはAIに任せられない</span>。</p>
+  <p class="sub">コンセプト（あなたのWhy）だけは、外注もAI任せもできない。<br>逆に言えば、①さえ握れば、②〜⑤はどんどん楽になっていく。</p>
+</section>
+
+<!-- 22 ワーク -->
+<section class="slide">
+  <p class="kicker">WORK（3分）</p>
+  <p class="statement sm">あなたの事業を、<br><span class="marker">「自分流に」一言</span>で言い換えると？</p>
+  <p class="sub">肩書きや業種ではなく、あなたの言葉で。<br>
+  例：「マーケ支援」→「中年の再起動を設計する仕事」<br><br>
+  <strong style="color: var(--orange-dark);">チャットに書き込んでください。いくつか拾ってコメントします。</strong></p>
+</section>
+
+<!-- 23 クロージング -->
+<section class="slide dark">
+  <p class="statement">ノウハウは、陳腐化する。<br><span class="marker">あなたの物語は、陳腐化しない。</span></p>
+  <p class="sub">感情資産は、今日から積める。<br>複利は、始めた日から効き始める。</p>
+</section>
+
+<!-- 24 ファーストステップ -->
+<section class="slide sun">
+  <p class="kicker">FIRST STEP ── 今夜、紙とペンで15分</p>
+  <p class="statement sm">3つの質問に答えてみてください。</p>
+  <div class="reason" style="width: min(860px, 92vw);">
+    <div class="r"><span class="n">①</span><span class="t">人生で最初に「悔しい」と感じた出来事は？</span></div>
+    <div class="r"><span class="n">②</span><span class="t">一番自慢したい「失敗」は？</span></div>
+    <div class="r"><span class="n">③</span><span class="t">全部失っても、これだけは続けたい仕事は？</span></div>
+  </div>
+  <p class="sub" style="color: #1A1A1A;">答えの中に、あなたのナラティブの種があります。<br><strong>中年よ、大志を抱け。</strong></p>
+</section>
+
+</div>
+
+<div class="hint">← → キー or クリックでめくる</div>
+<div class="counter" id="counter">1 / 24</div>
+
+<script>
+(function(){
+  var slides = document.querySelectorAll('.slide');
+  var counter = document.getElementById('counter');
+  var i = 0;
+  var hash = parseInt(location.hash.slice(1), 10);
+  if (hash >= 1 && hash <= slides.length) i = hash - 1;
+
+  function show(n){
+    if (n < 0) n = 0;
+    if (n > slides.length - 1) n = slides.length - 1;
+    slides[i].classList.remove('active');
+    i = n;
+    slides[i].classList.add('active');
+    counter.textContent = (i + 1) + ' / ' + slides.length;
+    history.replaceState(null, '', '#' + (i + 1));
+  }
+  show(i);
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown' || e.key === 'Enter') { e.preventDefault(); show(i + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'Backspace') { e.preventDefault(); show(i - 1); }
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(slides.length - 1);
+  });
+  document.addEventListener('click', function(e){
+    if (e.clientX > window.innerWidth * 0.3) show(i + 1); else show(i - 1);
+  });
+  var sx = null;
+  document.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, {passive: true});
+  document.addEventListener('touchend', function(e){
+    if (sx === null) return;
+    var dx = e.changedTouches[0].clientX - sx;
+    if (dx < -40) show(i + 1);
+    if (dx > 40) show(i - 1);
+    sx = null;
+  }, {passive: true});
+})();
+</script>
+</body>
+</html>
