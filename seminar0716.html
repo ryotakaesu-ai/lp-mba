@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M7LZ2LFV');</script>
+<!-- End Google Tag Manager -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>MBA スタートアップ説明会 2026.7.16</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta name="theme-color" content="#FDDD03">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #192b60;
+  --navy-dark: #0E1B3F;
+  --gold: #C9A961;
+  --gold-bright: #FFD150;
+  --yellow: #FDDD03;
+  --cream-bg: #FAF4E8;
+  --cream-soft: #FFF8E8;
+  --marker-yellow: #FFE99A;
+  --orange-dark: #C25F3F;
+  --text-soft: #4A5870;
+  --green-ok: #2D8C57;
+  --red-ng: #E53935;
+}
+html, body { height: 100%; overflow: hidden; }
+body {
+  font-family: "Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;
+  background: var(--navy-dark);
+  color: var(--navy);
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+.deck { position: relative; width: 100%; height: 100%; }
+.slide {
+  position: absolute; inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4.5vh 6vw;
+  background: var(--cream-bg);
+  overflow: hidden;
+}
+.slide.active { display: flex; }
+
+.kicker {
+  font-size: clamp(12px, 1.5vw, 17px);
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  color: var(--gold);
+  margin-bottom: 2.6vh;
+}
+.statement {
+  font-size: clamp(28px, 4.8vw, 60px);
+  font-weight: 900;
+  line-height: 1.5;
+  color: var(--navy);
+}
+.statement.sm { font-size: clamp(22px, 3.4vw, 42px); }
+.statement .marker {
+  font-style: normal;
+  background: linear-gradient(transparent 55%, var(--marker-yellow) 55%, var(--marker-yellow) 95%, transparent 95%);
+  padding: 0 6px;
+}
+.statement .accent { color: var(--orange-dark); }
+.sub {
+  margin-top: 3vh;
+  font-size: clamp(15px, 1.9vw, 22px);
+  font-weight: 700;
+  color: var(--text-soft);
+  line-height: 2;
+}
+.sub strong { color: var(--orange-dark); }
+.quote {
+  margin-top: 3vh;
+  display: inline-block;
+  text-align: left;
+  padding: 10px 0 10px 22px;
+  border-left: 3px solid var(--gold);
+  font-size: clamp(16px, 2.1vw, 25px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.9;
+}
+.slide img.illust {
+  max-height: 30vh;
+  max-width: 64vw;
+  width: auto;
+  margin: 3vh auto 0;
+  display: block;
+}
+
+/* 吹き出し */
+.bubble {
+  display: inline-block;
+  position: relative;
+  font-size: clamp(17px, 2.2vw, 27px);
+  font-weight: 900;
+  color: var(--orange-dark);
+  border: 3px solid var(--navy);
+  background: #fff;
+  border-radius: 100000px;
+  padding: 12px 34px;
+  margin-bottom: 4.5vh;
+}
+.bubble::before {
+  content: ""; position: absolute; bottom: -22px; left: 50%; transform: translateX(-50%);
+  border: 14px solid transparent; border-top: 14px solid #fff; z-index: 2;
+}
+.bubble::after {
+  content: ""; position: absolute; bottom: -26px; left: 50%; transform: translateX(-50%);
+  border: 14px solid transparent; border-top-color: var(--navy); z-index: 1;
+}
+
+/* カード */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: clamp(10px, 1.6vw, 20px);
+  margin-top: 3.6vh;
+  width: min(1150px, 92vw);
+}
+.cards.two { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+.card {
+  background: #fff;
+  border: 3px solid var(--navy);
+  border-radius: 16px;
+  padding: clamp(16px, 2vw, 26px) clamp(14px, 1.8vw, 24px);
+  text-align: center;
+}
+.card.left { text-align: left; }
+.card.dashed { border-style: dashed; background: var(--cream-soft); }
+.card .avatar {
+  width: clamp(72px, 8vw, 104px); height: clamp(72px, 8vw, 104px);
+  border-radius: 50%; object-fit: cover; object-position: center top;
+  border: 3px solid var(--navy); display: block; margin: 0 auto clamp(10px,1.4vh,16px);
+  background: var(--cream-soft);
+}
+.card.left { text-align: center; }
+.card .no {
+  font-size: 11.5px; font-weight: 900; letter-spacing: 0.22em;
+  color: var(--gold); margin-bottom: 6px;
+}
+.card .name {
+  font-size: clamp(17px, 2vw, 24px);
+  font-weight: 900; color: var(--navy); line-height: 1.4;
+  margin-bottom: 8px;
+}
+.card .role { font-size: clamp(11px, 1.2vw, 13px); font-weight: 700; color: var(--gold); margin-bottom: 10px; letter-spacing: 0.06em; }
+.card .desc { font-size: clamp(12px, 1.25vw, 14.5px); font-weight: 500; color: var(--text-soft); line-height: 1.85; }
+.card .desc strong { color: var(--navy); font-weight: 900; }
+.card .desc .mk { background: linear-gradient(transparent 55%, var(--marker-yellow) 55%, var(--marker-yellow) 95%, transparent 95%); font-weight: 900; color: var(--navy); padding: 0 2px; }
+
+/* 番号付き理由カード */
+.reason {
+  display: grid;
+  gap: clamp(8px, 1.4vh, 16px);
+  margin-top: 3.4vh;
+  width: min(940px, 92vw);
+}
+.reason .r {
+  background: #fff;
+  border: 3px solid var(--navy);
+  border-radius: 14px;
+  padding: clamp(12px, 1.8vh, 20px) clamp(16px, 2vw, 28px);
+  text-align: left;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+.reason .r .n { font-size: clamp(18px, 2.2vw, 26px); font-weight: 900; color: var(--orange-dark); flex-shrink: 0; }
+.reason .r .t { font-size: clamp(15px, 1.9vw, 22px); font-weight: 900; color: var(--navy); line-height: 1.6; }
+.reason .r .t small { display: block; font-size: clamp(11.5px, 1.25vw, 14px); font-weight: 500; color: var(--text-soft); margin-top: 2px; line-height: 1.7; }
+
+/* ✓リスト（AI実務） */
+.use-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 6px 28px;
+  margin-top: 3.2vh;
+  width: min(880px, 90vw);
+  list-style: none;
+  text-align: left;
+}
+.use-list li {
+  font-size: clamp(14px, 1.7vw, 19px);
+  font-weight: 700;
+  color: var(--navy);
+  padding: 7px 0 7px 30px;
+  position: relative;
+  border-bottom: 1px dashed #D8D0BC;
+}
+.use-list li::before { content: "✓"; position: absolute; left: 4px; color: var(--orange-dark); font-weight: 900; }
+
+/* ○✕リスト（審査） */
+.gate-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(10px, 1.6vw, 20px); margin-top: 3.2vh; width: min(1050px, 92vw); }
+.gate-box { background: #fff; border: 3px solid var(--navy); border-radius: 16px; padding: clamp(14px, 2vh, 24px) clamp(16px, 1.8vw, 26px); text-align: left; }
+.gate-box .lbl { display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: 0.1em; padding: 5px 14px; border-radius: 100px; margin-bottom: 12px; }
+.gate-box .lbl.ok { background: #E8F4E5; color: var(--green-ok); border: 2px solid var(--green-ok); }
+.gate-box .lbl.ng { background: #FCE8E6; color: var(--red-ng); border: 2px solid var(--red-ng); }
+.gate-box ul { list-style: none; }
+.gate-box li { font-size: clamp(12.5px, 1.4vw, 15.5px); font-weight: 700; color: var(--navy); padding: 6px 0 6px 28px; position: relative; line-height: 1.7; }
+.gate-box li.o::before { content: "○"; position: absolute; left: 2px; color: var(--green-ok); font-weight: 900; }
+.gate-box li.x::before { content: "✕"; position: absolute; left: 3px; color: var(--red-ng); font-weight: 900; }
+
+/* ダーク */
+.slide.dark { background: var(--navy); }
+.slide.dark .statement { color: #fff; }
+.slide.dark .sub { color: #C8D2EC; }
+.slide.dark .sub strong { color: var(--gold-bright); }
+.slide.dark .kicker { color: var(--gold-bright); }
+.slide.dark .statement .marker { background: linear-gradient(transparent 55%, rgba(255,209,80,.4) 55%, rgba(255,209,80,.4) 95%, transparent 95%); color: var(--gold-bright); }
+
+/* イエロー */
+.slide.sun { background: var(--yellow); }
+.slide.sun .statement { color: #1A1A1A; }
+.slide.sun .sub { color: #1A1A1A; }
+.slide.sun .kicker { color: #1A1A1A; }
+.slide.sun .script { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(19px, 2.5vw, 32px); color: #1A1A1A; margin-top: 3.6vh; letter-spacing: 0.06em; }
+
+.logo { max-height: 18vh; width: auto; margin-bottom: 3.6vh; }
+
+.counter {
+  position: fixed; right: 22px; bottom: 16px;
+  font-size: 13px; font-weight: 700; color: var(--text-soft);
+  z-index: 10; letter-spacing: 0.1em;
+  background: rgba(255,255,255,.65); padding: 4px 12px; border-radius: 100px;
+}
+.hint {
+  position: fixed; left: 22px; bottom: 16px;
+  font-size: 12px; font-weight: 700; color: var(--text-soft);
+  z-index: 10; opacity: .7;
+  background: rgba(255,255,255,.65); padding: 4px 12px; border-radius: 100px;
+}
+@media (max-width: 700px) {
+  .cards, .gate-cols { grid-template-columns: 1fr; gap: 8px; }
+  .use-list { grid-template-columns: 1fr; }
+  .slide img.illust { max-height: 22vh; }
+  .card { padding: 12px 14px; }
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M7LZ2LFV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="deck" id="deck">
+
+<!-- 1 表紙 -->
+<section class="slide sun active">
+  <img class="logo" src="images/mba_logo.png" alt="MBA ロゴ">
+  <p class="statement" style="font-size: clamp(28px, 4.4vw, 56px);">MBA スタートアップ説明会</p>
+  <p class="sub" style="margin-top: 2vh; font-weight: 900; font-size: clamp(17px, 2.2vw, 26px); color: #1A1A1A;">2026.7.16（木）21:00〜22:00</p>
+  <p class="sub" style="margin-top: 2.5vh;">今夜は<strong style="color: #1A1A1A;">22:00ピッタリ</strong>に終わります。安心してゆるっとご参加ください🍻</p>
+</section>
+
+<!-- 2 本日の流れ -->
+<section class="slide">
+  <p class="kicker">AGENDA</p>
+  <p class="statement sm">本日の<span class="marker">流れ</span>。</p>
+  <div class="reason">
+    <div class="r"><span class="n">①</span><span class="t">MBAって何？（サクッと復習）</span></div>
+    <div class="r"><span class="n">②</span><span class="t">いま、どうなってる？（現在地の共有）</span></div>
+    <div class="r"><span class="n">③</span><span class="t">今後のスケジュール発表<small>7月23日のライブ／8月3日の特別ゲスト／9月のリアルイベント</small></span></div>
+    <div class="r"><span class="n">④</span><span class="t">質問・コメントタイム</span></div>
+    <div class="r"><span class="n">⑤</span><span class="t">締め（22:00に必ず終わります。延長なし！）</span></div>
+  </div>
+</section>
+
+<!-- 3 復習1 コンセプト -->
+<section class="slide">
+  <div class="bubble">復習 ①</div>
+  <p class="statement sm">MBA＝<span class="marker">中年よ、大志を抱け</span>。</p>
+  <p class="sub">Midlife, Be Ambitious（中年の経営学）。<br>
+  40代からの人生を、<strong>下り坂じゃなく上り坂</strong>にしていく仲間の集まりです。<br>
+  戦い方を変えれば、人生はまだまだこれから。</p>
+</section>
+
+<!-- 4 復習2 3本柱 -->
+<section class="slide">
+  <div class="bubble">復習 ②</div>
+  <p class="statement sm">磨くのは、<span class="marker">3つ</span>。</p>
+  <div class="cards">
+    <div class="card"><p class="no">PILLAR 01</p><p class="name">マーケティング</p><p class="desc">人を動かす技術。<br>一生使える<strong>"OS"</strong></p></div>
+    <div class="card"><p class="no">PILLAR 02</p><p class="name">AI活用</p><p class="desc">体力と気力を補う<strong>"武器"</strong>。<br>実践家のリアルな使い方</p></div>
+    <div class="card"><p class="no">PILLAR 03</p><p class="name">大人のリベラルアーツ</p><p class="desc">身体・人生・感性・お金。<br><strong>長期で効いてくる教養</strong></p></div>
+  </div>
+</section>
+
+<!-- 5 復習3 部活 -->
+<section class="slide">
+  <div class="bubble">復習 ③</div>
+  <p class="statement sm">講座じゃなくて、<span class="marker">部活</span>。</p>
+  <p class="sub">一方通行で教わるのではなく、仲間と楽しみながら磨く。<br>
+  マーケ部・AI部・リベラルアーツ部。そのうち旅行部も飲み部も。<br>
+  <strong>「これやりたい！」があれば、どんどん部活を作っていきましょう。</strong></p>
+</section>
+
+<!-- 6 現在地 -->
+<section class="slide">
+  <p class="kicker">NOW</p>
+  <p class="statement sm">いま、<span class="marker">どうなってる？</span></p>
+  <div class="cards">
+    <div class="card"><p class="no">LINEオープンチャット</p><p class="name">◯◯◯人</p><p class="desc">想定の2倍超え！<br>ありがとうございます</p></div>
+    <div class="card"><p class="no">FACEBOOKグループ</p><p class="name">◯◯◯人</p><p class="desc">本拠地、始動</p></div>
+    <div class="card"><p class="no">キックオフライブ</p><p class="name">アーカイブ公開中</p><p class="desc">LPにダイジェスト版も<br>掲載しました</p></div>
+  </div>
+  <p class="sub">※数字は当日の最新値に差し替え</p>
+</section>
+
+<!-- 7 スケジュール一覧 -->
+<section class="slide dark">
+  <p class="kicker">SCHEDULE</p>
+  <p class="statement sm">ここから、<span class="marker">動き出します</span>。</p>
+  <p class="sub" style="font-size: clamp(19px, 2.4vw, 30px); line-height: 2.2;"><strong>7月23日（木）</strong>ライブセミナー<br>
+  <strong>8月3日（月）</strong>特別ゲスト回 第1弾<br>
+  <strong>9月</strong> リアルイベント開催</p>
+</section>
+
+<!-- 8 7/23 -->
+<section class="slide">
+  <p class="kicker">2026.7.23 THU</p>
+  <p class="statement sm">3人による<br><span class="marker">マーケティング × AI セミナー</span></p>
+  <p class="sub">マーケ畑20年の3人が、いま実際にやっている<br>
+  <strong>マーケとAIの使い方</strong>を、実務ベースでお話しします。<br><br>
+  詳しいテーマは近日、オープンチャットとFBグループで発表します。お楽しみに！</p>
+</section>
+
+<!-- 9 8/3 浦上さん -->
+<section class="slide">
+  <p class="kicker">2026.8.3 MON ── SPECIAL GUEST</p>
+  <p class="statement sm">特別ゲスト回 第1弾：<span class="marker">浦上 大輔さん</span></p>
+  <div class="cards two" style="align-items: center;">
+    <div class="card" style="background: var(--cream-soft);">
+      <img src="images/peptalk_book.jpg" alt="たった1分で相手をやる気にさせる話術 PEP TALK" style="max-height: 34vh; width: auto; margin: 0 auto; display: block; border-radius: 6px; box-shadow: 0 6px 18px rgba(0,0,0,0.2);">
+    </div>
+    <div class="card left">
+      <p class="no">PROFILE</p>
+      <p class="name">浦上 大輔さん</p>
+      <p class="role">日本ペップトーク普及協会 専務理事</p>
+      <p class="desc">『たった1分で相手をやる気にさせる話術 <strong>ペップトーク</strong>』著者。<br><br>
+      アメリカ生まれの<strong>「不安や緊張を、やる気に変える話し方」</strong>を日本に広めるプロ。<br>
+      大谷翔平の「憧れるのをやめましょう」を読み解く言葉の専門家です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10 9月リアル -->
+<section class="slide">
+  <p class="kicker">SEPTEMBER</p>
+  <p class="statement sm">9月、<span class="marker">リアルイベント</span>やります。</p>
+  <p class="sub">画面越しじゃなく、<strong>リアルで乾杯しましょう</strong>。<br>
+  日程・場所は近日発表。募集はオープンチャットとFBグループで先行案内します。<br><br>
+  <strong style="color: var(--orange-dark);">「行きたい！」という方、今日のコメントで教えてください。</strong></p>
+</section>
+
+<!-- 11 楽しみ方 -->
+<section class="slide">
+  <p class="kicker">HOW TO ENJOY</p>
+  <p class="statement sm">MBAの<span class="marker">楽しみ方</span>。</p>
+  <div class="reason">
+    <div class="r"><span class="n">①</span><span class="t">ライブはリアタイ参加が一番おいしい<small>コメントで参加すると、もっとおいしい。お酒を片手にどうぞ</small></span></div>
+    <div class="r"><span class="n">②</span><span class="t">FBグループで自己紹介、お待ちしています<small>「いいね」とコメントが、最初の部活動です</small></span></div>
+    <div class="r"><span class="n">③</span><span class="t">見逃してもアーカイブがあります<small>ただし、ライブの乾杯には乗り遅れます</small></span></div>
+  </div>
+</section>
+
+<!-- 12 Q&A -->
+<section class="slide">
+  <p class="kicker">Q&amp;A TIME</p>
+  <p class="statement">質問・コメント、<br><span class="marker">なんでもどうぞ</span>。</p>
+  <p class="sub">MBAのこと、3人のこと、マーケやAIのこと。<br>「9月のリアル行きたい」表明も大歓迎です。</p>
+</section>
+
+<!-- 13 まとめ -->
+<section class="slide">
+  <p class="kicker">TODAY'S RECAP</p>
+  <p class="statement sm">今日の<span class="marker">3つのお知らせ</span>。</p>
+  <div class="reason">
+    <div class="r"><span class="n">①</span><span class="t">7月23日（木）3人によるマーケ×AIセミナー</span></div>
+    <div class="r"><span class="n">②</span><span class="t">8月3日（月）特別ゲスト・浦上大輔さん（ペップトーク）</span></div>
+    <div class="r"><span class="n">③</span><span class="t">9月にリアルイベント開催（日程・場所は近日発表）</span></div>
+  </div>
+  <p class="sub">続きはFBグループとオープンチャットで。</p>
+</section>
+
+<!-- 14 クロージング -->
+<section class="slide sun">
+  <p class="statement">中年よ、大志を抱け。</p>
+  <p class="script">Midlife, Be Ambitious.</p>
+</section>
+
+<!-- 15 乾杯 -->
+<section class="slide sun">
+  <img src="images/three.jpg" alt="MBAの3人" style="max-height: 46vh; max-width: 80vw; width: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.25); margin-bottom: 3vh;">
+  <p class="statement" style="font-size: clamp(30px, 5vw, 64px);">それでは、乾杯！🍻</p>
+  <p class="sub">22:00になりました。時間ピッタリ、今日はここまで！</p>
+</section>
+
+</div>
+
+<div class="hint">← → キー or クリックでめくる</div>
+<div class="counter" id="counter">1 / 15</div>
+
+<script>
+(function(){
+  var slides = document.querySelectorAll('.slide');
+  var counter = document.getElementById('counter');
+  var i = 0;
+  var hash = parseInt(location.hash.slice(1), 10);
+  if (hash >= 1 && hash <= slides.length) i = hash - 1;
+
+  function show(n){
+    if (n < 0) n = 0;
+    if (n > slides.length - 1) n = slides.length - 1;
+    slides[i].classList.remove('active');
+    i = n;
+    slides[i].classList.add('active');
+    counter.textContent = (i + 1) + ' / ' + slides.length;
+    history.replaceState(null, '', '#' + (i + 1));
+  }
+  show(i);
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown' || e.key === 'Enter') { e.preventDefault(); show(i + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'Backspace') { e.preventDefault(); show(i - 1); }
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(slides.length - 1);
+  });
+  document.addEventListener('click', function(e){
+    if (e.clientX > window.innerWidth * 0.3) show(i + 1); else show(i - 1);
+  });
+  var sx = null;
+  document.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, {passive: true});
+  document.addEventListener('touchend', function(e){
+    if (sx === null) return;
+    var dx = e.changedTouches[0].clientX - sx;
+    if (dx < -40) show(i + 1);
+    if (dx > 40) show(i - 1);
+    sx = null;
+  }, {passive: true});
+})();
+</script>
+</body>
+</html>
