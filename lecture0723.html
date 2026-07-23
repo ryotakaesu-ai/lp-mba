@@ -329,6 +329,47 @@ body {
     <p class="meta-note">（画面共有／デモへ切り替え）</p>
   </section>
 
+  <!-- 11. データベースが良いアウトプットを生む -->
+  <section class="slide">
+    <h2 class="statement sm">データベースの構築が、<span class="marker">良いアウトプット</span>を生む</h2>
+    <svg viewBox="0 0 1000 400" style="width:100%; max-width:940px; height:auto; margin-top:3vh;" role="img" aria-label="素材データからデータベースを作り、プロンプトを通じてアウトプットを生む流れ図">
+      <defs>
+        <marker id="ah" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 Z" fill="#C9A961"/>
+        </marker>
+      </defs>
+      <!-- 素材ラベル -->
+      <text x="115" y="70" text-anchor="middle" font-size="18" font-weight="900" fill="#C25F3F">集めた素材（データ）</text>
+      <!-- 素材ボックス -->
+      <rect x="18" y="92" width="194" height="56" rx="12" fill="#fff" stroke="#192b60" stroke-width="2.5"/>
+      <text x="115" y="126" text-anchor="middle" font-size="16" font-weight="800" fill="#192b60">ランディングページ</text>
+      <rect x="18" y="176" width="194" height="56" rx="12" fill="#fff" stroke="#192b60" stroke-width="2.5"/>
+      <text x="115" y="210" text-anchor="middle" font-size="16" font-weight="800" fill="#192b60">画像データ</text>
+      <rect x="18" y="260" width="194" height="56" rx="12" fill="#fff" stroke="#192b60" stroke-width="2.5"/>
+      <text x="115" y="294" text-anchor="middle" font-size="15" font-weight="800" fill="#192b60">構造化・テキストデータ</text>
+      <!-- コネクタ（DBへ集約） -->
+      <path d="M212,120 C272,120 280,205 326,214" fill="none" stroke="#C9A961" stroke-width="2.5"/>
+      <path d="M212,204 C270,204 282,214 326,216" fill="none" stroke="#C9A961" stroke-width="2.5"/>
+      <path d="M212,288 C272,288 280,228 326,218" fill="none" stroke="#C9A961" stroke-width="2.5"/>
+      <!-- データベース（円柱） -->
+      <path d="M330,168 L330,278 A72,17 0 0 0 474,278 L474,168" fill="#192b60"/>
+      <ellipse cx="402" cy="168" rx="72" ry="17" fill="#26407e"/>
+      <text x="402" y="232" text-anchor="middle" font-size="18" font-weight="900" fill="#fff">データベース</text>
+      <!-- 矢印 DB→プロンプト -->
+      <line x1="478" y1="216" x2="552" y2="216" stroke="#C9A961" stroke-width="3.5" marker-end="url(#ah)"/>
+      <!-- プロンプト -->
+      <rect x="560" y="178" width="168" height="76" rx="14" fill="#fff" stroke="#192b60" stroke-width="2.5"/>
+      <text x="644" y="210" text-anchor="middle" font-size="18" font-weight="900" fill="#192b60">プロンプト</text>
+      <text x="644" y="236" text-anchor="middle" font-size="14" font-weight="700" fill="#4A5870">（命令）</text>
+      <!-- 矢印 プロンプト→アウトプット -->
+      <line x1="732" y1="216" x2="806" y2="216" stroke="#C9A961" stroke-width="3.5" marker-end="url(#ah)"/>
+      <!-- アウトプット -->
+      <rect x="814" y="174" width="172" height="84" rx="14" fill="#FFF3C7" stroke="#C9A961" stroke-width="3"/>
+      <text x="900" y="222" text-anchor="middle" font-size="19" font-weight="900" fill="#192b60">アウトプット</text>
+    </svg>
+    <p class="punch" style="margin-top:2.6vh;">良いアウトプットを出すには、<span class="marker">データベースを作り込む</span>ことが大事。</p>
+  </section>
+
 </div>
 
 <div class="counter" id="counter">1 / 10</div>
