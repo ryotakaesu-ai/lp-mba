@@ -79,6 +79,14 @@ body {
 }
 .statement .accent { color: var(--orange-dark); }
 .slide.dark .statement .accent { color: var(--gold-bright); }
+/* 暗転スライドのマーカーは下線式だと紺文字が背景と同化するので、ベタ塗りにする */
+.slide.dark .statement .marker,
+.slide.dark .punch .marker {
+  background: var(--gold-bright);
+  color: var(--navy);
+  padding: 2px 10px;
+  border-radius: 6px;
+}
 
 .badge {
   display: inline-block;
@@ -233,7 +241,7 @@ body {
   <!-- 1. 表紙 -->
   <section class="slide dark active">
     <div class="kicker">MBA ミニレクチャー</div>
-    <h1 class="statement">僕の<span class="marker">AIの使い方</span></h1>
+    <h1 class="statement">僕たちの<span class="accent">AIの使い方</span></h1>
     <div class="cover-name">高江洌 亮</div>
   </section>
 
