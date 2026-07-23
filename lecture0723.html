@@ -30,8 +30,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   --marker-yellow: #FFE99A;
   --orange-dark: #C25F3F;
   --text-soft: #4A5870;
-  --green-ok: #2D8C57;
-  --red-ng: #E53935;
 }
 html, body { height: 100%; overflow: hidden; }
 body {
@@ -96,7 +94,7 @@ body {
 
 .sub {
   margin-top: 3vh;
-  font-size: clamp(15px, 1.9vw, 22px);
+  font-size: clamp(15px, 1.9vw, 23px);
   font-weight: 700;
   color: var(--text-soft);
   line-height: 2;
@@ -110,9 +108,9 @@ body {
   margin-top: 3.6vh;
   display: flex;
   flex-direction: column;
-  gap: 1.7vh;
+  gap: 1.9vh;
   text-align: left;
-  max-width: 760px;
+  max-width: 780px;
   width: 100%;
 }
 .list .row {
@@ -129,9 +127,8 @@ body {
   width: 12px; height: 12px;
   border-radius: 50%;
   background: var(--gold);
-  margin-top: 0.7em;
+  margin-top: 0.55em;
 }
-.list .row small { display:block; font-size: clamp(12px,1.4vw,15px); font-weight:700; color: var(--text-soft); margin-top: 4px; }
 
 /* チップ */
 .chips {
@@ -140,16 +137,16 @@ body {
   flex-wrap: wrap;
   gap: 12px 14px;
   justify-content: center;
-  max-width: 720px;
+  max-width: 760px;
 }
 .chip {
-  font-size: clamp(15px, 1.9vw, 22px);
+  font-size: clamp(15px, 1.9vw, 23px);
   font-weight: 900;
   color: var(--navy);
   background: #fff;
   border: 2.5px solid var(--navy);
   border-radius: 100px;
-  padding: 9px 22px;
+  padding: 9px 24px;
 }
 
 /* 対比（下がる / 上がる） */
@@ -173,43 +170,18 @@ body {
   font-size: clamp(14px, 1.7vw, 20px);
   font-weight: 900;
   margin-bottom: 1.6vh;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
 }
 .col.down h4 { color: var(--text-soft); }
 .col.up h4 { color: var(--orange-dark); }
-.col ul { list-style: none; display: flex; flex-direction: column; gap: 0.9vh; }
-.col li { font-size: clamp(14px, 1.7vw, 20px); font-weight: 700; color: var(--navy); }
-.col.down li { color: #7A7259; text-decoration: line-through; text-decoration-color: rgba(120,110,80,.5); }
-.arrowmid {
-  display: flex; align-items: center; justify-content: center;
-  font-size: clamp(26px, 3vw, 40px); color: var(--gold); font-weight: 900;
-}
-
-/* ステップ */
-.steps {
-  margin-top: 3.8vh;
-  display: flex;
-  align-items: stretch;
-  gap: 1vw;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.step {
-  background: #fff;
-  border: 2.5px solid var(--navy);
-  border-radius: 16px;
-  padding: 2.4vh 2vw;
-  min-width: 180px;
-  font-weight: 900;
-  color: var(--navy);
-  font-size: clamp(16px, 2vw, 24px);
-}
-.step .n { display:block; font-family:"Playfair Display",serif; font-style:italic; color: var(--gold); font-size: clamp(20px,2.4vw,30px); margin-bottom: 6px; }
-.stepsep { display:flex; align-items:center; font-size: clamp(22px,2.6vw,34px); color: var(--gold); font-weight:900; }
+.col ul { list-style: none; display: flex; flex-direction: column; gap: 1vh; }
+.col li { font-size: clamp(15px, 1.9vw, 23px); font-weight: 800; color: var(--navy); }
+.col.down li { color: #8A8067; text-decoration: line-through; text-decoration-color: rgba(120,110,80,.5); }
 
 .punch {
   margin-top: 4vh;
-  font-size: clamp(20px, 2.8vw, 34px);
+  font-size: clamp(20px, 2.9vw, 36px);
   font-weight: 900;
   color: var(--orange-dark);
   line-height: 1.6;
@@ -227,22 +199,19 @@ body {
   color: var(--gold-bright);
   letter-spacing: 0.14em;
 }
-
 .meta-note {
   margin-top: 2.6vh;
   font-size: clamp(12px, 1.4vw, 16px);
   font-weight: 700;
-  color: var(--text-soft);
+  color: #9FB0CC;
 }
-.slide.dark .meta-note { color: #9FB0CC; }
 
 /* ナビ */
 .counter {
   position: fixed; right: 20px; bottom: 16px;
   font-size: 13px; font-weight: 700; color: var(--gold);
-  letter-spacing: 0.1em; z-index: 20; opacity: .8;
+  letter-spacing: 0.1em; z-index: 20; opacity: .85;
 }
-.slide.dark ~ .counter { color: var(--gold-bright); }
 .nav-hint {
   position: fixed; left: 20px; bottom: 16px;
   font-size: 12px; color: rgba(120,120,120,.6); z-index: 20;
@@ -252,9 +221,6 @@ body {
 .tapzone.right { right: 0; }
 @media (max-width: 640px){
   .contrast { grid-template-columns: 1fr; }
-  .arrowmid { transform: rotate(90deg); padding: 1vh 0; }
-  .steps { flex-direction: column; }
-  .stepsep { transform: rotate(90deg); justify-content:center; }
 }
 </style>
 </head>
@@ -268,44 +234,32 @@ body {
   <section class="slide dark active">
     <div class="kicker">MBA ミニレクチャー</div>
     <h1 class="statement">僕の<span class="marker">AIの使い方</span></h1>
-    <p class="sub">このスライドも、LPも、<strong>AIと一緒に</strong>作りました。</p>
     <div class="cover-name">高江洌 亮</div>
   </section>
 
   <!-- 2. 中年はAIをもっと使うべき -->
   <section class="slide">
-    <div class="kicker">01</div>
-    <h2 class="statement sm">中年こそ、<span class="marker">AIをもっと使うべき</span></h2>
-    <div class="list">
-      <div class="row"><span class="dot"></span><span>AIは、若者だけのものではない</span></div>
-      <div class="row"><span class="dot"></span><span>むしろ<strong>経営者・40代・50代ほど</strong>、恩恵が大きい</span></div>
-      <div class="row"><span class="dot"></span><span>人を増やさなくても、<strong>一人でできること</strong>が爆発的に増えた</span></div>
-    </div>
+    <h2 class="statement sm">中年は、<span class="marker">AIをもっと使うべき</span></h2>
+    <p class="sub">1人で、いろんなことができる時代です。</p>
   </section>
 
-  <!-- 3. もう一人でここまでできる時代 -->
+  <!-- 3. このMBAもほとんどAI -->
   <section class="slide">
-    <div class="kicker">02</div>
-    <h2 class="statement sm">もう、<span class="marker">一人でここまでできる</span>時代</h2>
-    <p class="sub" style="margin-top:2vh;">この MBA も、ほとんどAIで作りました。</p>
+    <h2 class="statement sm">この MBA も、<span class="marker">ほとんどAI</span>で。</h2>
     <div class="chips">
       <span class="chip">LP</span>
+      <span class="chip">ダイジェスト動画編集</span>
       <span class="chip">ロゴ</span>
-      <span class="chip">ダイジェスト動画</span>
-      <span class="chip">Webサイト</span>
-      <span class="chip">コピー</span>
-      <span class="chip">資料</span>
     </div>
-    <p class="punch" style="margin-top:3.6vh;">AIは「仕事を楽にするツール」ではなく<br><span class="marker">事業を一緒につくる相棒</span>。</p>
+    <p class="sub" style="margin-top:2.8vh;">この辺りは、ほとんどAIで作っています。</p>
   </section>
 
   <!-- 4. 価値が上がるもの -->
   <section class="slide">
-    <div class="kicker">03</div>
-    <h2 class="statement sm">AI時代に、<span class="marker">価値が上がるもの</span></h2>
+    <h2 class="statement sm">AIの発展で、<span class="marker">価値が変わる</span></h2>
     <div class="contrast">
       <div class="col down">
-        <h4>価値が下がっていく</h4>
+        <h4>「やれること」（特定スキル）の価値は、低くなる</h4>
         <ul>
           <li>作る</li>
           <li>書く</li>
@@ -313,79 +267,59 @@ body {
           <li>コーディングする</li>
         </ul>
       </div>
-      <div class="arrowmid">→</div>
       <div class="col up">
-        <h4>逆に、価値が上がる</h4>
+        <h4>むしろ、価値があるのは</h4>
         <ul>
-          <li>何をやりたいか</li>
+          <li>やりたいこと</li>
           <li>自分らしさ</li>
-          <li>世界観</li>
           <li>願望</li>
-          <li>誰を幸せにしたいか</li>
         </ul>
       </div>
     </div>
-    <p class="punch">AIのおかげで、<span class="marker">わがままに生きられる時代</span>が来た。</p>
+    <p class="punch"><span class="marker">わがままに生きれる時代</span>です。</p>
   </section>
 
-  <!-- 5. だから、とにかく使ってほしい -->
+  <!-- 5. だから使ってほしい -->
   <section class="slide">
-    <div class="kicker">04</div>
-    <h2 class="statement sm">だから、<span class="marker">とにかく使ってほしい</span></h2>
-    <p class="sub" style="margin-top:2vh;">AIの情報は、もう多すぎる。</p>
+    <h2 class="statement sm">だから、まだ使い込んでいない人は</h2>
+    <p class="punch" style="margin-top:3vh;"><span class="marker">どんどん使ってほしい。</span></p>
+  </section>
+
+  <!-- 6. でも情報が溢れている -->
+  <section class="slide">
+    <h2 class="statement sm">でも、<span class="marker">AIの情報は溢れまくっている</span></h2>
     <div class="list">
-      <div class="row"><span class="dot"></span><span>学びすぎて、動けない</span></div>
-      <div class="row"><span class="dot"></span><span>情報が多すぎて、嫌になる</span></div>
-      <div class="row"><span class="dot"></span><span>X には「驚き屋」が大量にいる（笑）</span></div>
+      <div class="row"><span class="dot"></span><span>嫌になって、学ばなくなった人もいる</span></div>
+      <div class="row"><span class="dot"></span><span>学びすぎて、混乱する人もいる</span></div>
+      <div class="row"><span class="dot"></span><span>X には「驚き屋」みたいな人が多くて、見るのも疲れる（笑）</span></div>
     </div>
-    <p class="punch">情報収集だけでは、<span class="accent">疲れる</span>だけ。</p>
   </section>
 
-  <!-- 6. 一番早く上達する方法 -->
+  <!-- 7. 一番手っ取り早いのはマネ -->
   <section class="slide">
-    <div class="kicker">05</div>
-    <h2 class="statement sm">一番早く、<span class="marker">上達する方法</span></h2>
-    <p class="sub" style="margin-top:2vh;">僕自身もそうでした。真井さんのやり方を見て<br>「まず真似する」ことから始めました。</p>
-    <div class="steps">
-      <div class="step"><span class="n">1</span>まず真似する</div>
-      <div class="stepsep">→</div>
-      <div class="step"><span class="n">2</span>少し変える</div>
-      <div class="stepsep">→</div>
-      <div class="step"><span class="n">3</span>自分流になる</div>
-    </div>
-    <p class="punch">AIも同じ。<span class="marker">これが一番早い。</span></p>
+    <h2 class="statement sm">一番手っ取り早いのは</h2>
+    <p class="punch" style="margin-top:2.6vh;"><span class="marker">実践で使っている人の、マネをすること。</span></p>
+    <p class="sub" style="margin-top:3vh;">僕も、真井さんから学んで、そうでした。</p>
   </section>
 
-  <!-- 7. 今日お伝えしたいこと -->
+  <!-- 8. TIPSとしてシェア -->
   <section class="slide">
-    <div class="kicker">06</div>
-    <h2 class="statement sm">今日、<span class="marker">お伝えしたいこと</span></h2>
-    <p class="sub" style="margin-top:2.4vh;">僕ら3人が、実際に仕事で使っている<br><strong>AI活用法</strong>を、TIPS として紹介します。</p>
-    <p class="punch">全部を覚えなくてOK。<br>「<span class="marker">これ真似したい</span>」だけ、持ち帰ってください。</p>
+    <h2 class="statement sm">今日は、僕らがやっていることを<br><span class="marker">TIPS としてシェア</span>します</h2>
+    <p class="sub" style="margin-top:2.8vh;">真似したいものを、<strong>つまみ食いする感じ</strong>で<br>使ってみてください。</p>
   </section>
 
-  <!-- 8. 分からないことはAIに聞けばいい -->
+  <!-- 9. 分からないところはAIに聞けば -->
   <section class="slide">
-    <div class="kicker">07</div>
-    <h2 class="statement sm">分からないことは、<span class="marker">AIに聞けばいい</span></h2>
-    <p class="sub" style="margin-top:2.4vh;">細かい操作や設定は、全部覚える必要はありません。<br>分からなくなったら、<strong>AIに聞けば</strong>ほとんど解決します。</p>
-    <p class="punch">だからまずは、<span class="marker">使ってみること。</span></p>
+    <h2 class="statement sm">時間の都合上、<br>細かいところまで全部は話せません。</h2>
+    <p class="punch" style="margin-top:3.2vh;">でも、分からないところは<br><span class="marker">AIに聞けば、だいたい解決します。</span></p>
   </section>
 
-  <!-- 9. 実演（間仕切り） -->
+  <!-- 10. 実演（間仕切り） -->
   <section class="slide dark">
     <div class="badge">ここから実演</div>
     <h2 class="statement">実際に、<span class="accent">LP</span>を<br>どう作っているか</h2>
-    <p class="sub" style="margin-top:2.6vh;">この MBA のLPを、普段どう作っているのか。<br>5分くらいで、そのままお見せします。</p>
+    <p class="sub" style="margin-top:2.6vh;">普段どうやってLPを作っているのか、<br>そのままお見せします。</p>
     <p class="meta-note">（画面共有／デモへ切り替え）</p>
-  </section>
-
-  <!-- 10. 締め -->
-  <section class="slide dark">
-    <div class="kicker">MBA からのメッセージ</div>
-    <h2 class="statement sm">AIは、<span class="accent">能力差</span>を縮めます。</h2>
-    <p class="sub" style="margin-top:2.6vh;">でも「<strong>何を実現したいか</strong>」という差は、<br>これから、もっと大きくなります。</p>
-    <p class="punch" style="margin-top:3.4vh;">だからこそ、中年こそAIを味方につけて、<br><span class="marker">自分のやりたいこと</span>を、形にしていきましょう。</p>
   </section>
 
 </div>
@@ -406,7 +340,6 @@ body {
     i = clamp(n);
     slides.forEach(function(s,idx){ s.classList.toggle('active', idx===i); });
     counter.textContent = (i+1) + ' / ' + total;
-    // dark slide -> counter色を明るく
     counter.style.color = slides[i].classList.contains('dark') ? '#FFD150' : '#C9A961';
     if (push !== false) history.replaceState(null,'', '#' + (i+1));
   }
@@ -420,7 +353,6 @@ body {
   });
   document.getElementById('tzR').addEventListener('click', next);
   document.getElementById('tzL').addEventListener('click', prev);
-  // スワイプ
   var x0 = null;
   document.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, {passive:true});
   document.addEventListener('touchend', function(e){
@@ -433,7 +365,6 @@ body {
     var n = parseInt(location.hash.replace('#',''),10);
     if (!isNaN(n)) show(n-1, false);
   });
-  // 初期位置（#N 対応）
   var start = parseInt(location.hash.replace('#',''),10);
   show(isNaN(start) ? 0 : start-1, false);
 })();
