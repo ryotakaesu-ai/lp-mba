@@ -645,6 +645,136 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- ===== SCHEDULE & GUESTS ===== -->
+<style>
+.sch-wrap { max-width: 900px; margin: 0 auto; }
+.sch-kicker { text-align:center; font-size:13px; font-weight:900; letter-spacing:.3em; color:var(--gold); margin-bottom:14px; }
+.sch-list { display:flex; flex-direction:column; gap:10px; margin-top:28px; }
+.sch-row { display:flex; align-items:center; gap:18px; background:#fff; border:2px solid var(--navy); border-radius:12px; padding:14px 20px; }
+.sch-row.done { background:#F1EDE4; border-color:#D6CDBB; }
+.sch-date { flex-shrink:0; width:132px; }
+.sch-date .d { font-weight:900; color:var(--navy); font-size:19px; line-height:1.2; }
+.sch-date .d span { font-size:.72em; }
+.sch-date .t { font-size:12.5px; color:var(--text-soft); font-weight:700; }
+.sch-body { flex:1; min-width:0; text-align:left; }
+.sch-body .ttl { font-weight:900; color:var(--navy); font-size:17px; line-height:1.35; }
+.sch-body .sub { font-size:13px; color:var(--text-soft); font-weight:700; }
+.sch-row.done .d, .sch-row.done .ttl { color:#8C8474; }
+.sch-tag { flex-shrink:0; font-size:12px; font-weight:900; padding:6px 14px; border-radius:100px; }
+.sch-tag.arts { background:#F6D9CB; color:#B3401F; }
+.sch-tag.biz { background:var(--navy); color:#fff; }
+.sch-tag.real { background:#F3D66B; color:#7A5B12; }
+.sch-tag.done { background:#CFC7B8; color:#6B6355; }
+.sch-note { text-align:center; font-size:13px; font-weight:700; color:var(--text-soft); margin-top:20px; }
+.gst { max-width:900px; margin:56px auto 0; background:#fff; border:2px solid var(--navy); border-radius:16px; padding:32px 28px; }
+.gst-meta { text-align:center; font-size:12px; font-weight:900; letter-spacing:.2em; color:var(--gold); margin-bottom:10px; }
+.gst-h { text-align:center; font-size:clamp(19px,3vw,26px); font-weight:900; color:var(--navy); margin-bottom:26px; line-height:1.5; }
+.gst-grid { display:grid; grid-template-columns: 300px 1fr; gap:28px; align-items:start; }
+.gst-visual { text-align:center; }
+.gst-face { width:118px; height:118px; border-radius:50%; object-fit:cover; object-position:center top; border:3px solid var(--navy); margin-bottom:14px; }
+.gst-book { width:100%; max-width:210px; border-radius:6px; box-shadow:0 6px 18px rgba(0,0,0,.18); }
+.gst-name { font-size:20px; font-weight:900; color:var(--navy); text-align:center; }
+.gst-role { font-size:13px; font-weight:800; color:var(--gold); text-align:center; margin:6px 0 16px; line-height:1.6; }
+.gst-body p { font-size:15px; line-height:1.95; color:var(--navy); margin-bottom:14px; text-align:left; }
+.gst-body strong { color:var(--orange-dark, #C25F3F); }
+@media (max-width: 700px){
+  .sch-row { flex-wrap:wrap; gap:8px 14px; padding:14px 16px; }
+  .sch-date { width:auto; }
+  .sch-body { flex-basis:100%; order:3; }
+  .gst-grid { grid-template-columns:1fr; }
+  .gst-visual { display:flex; align-items:center; justify-content:center; gap:18px; }
+  .gst-face { margin-bottom:0; }
+  .gst-book { max-width:140px; }
+}
+</style>
+<section class="section bg-cream-soft" style="padding-top:64px;">
+  <div class="sch-wrap">
+    <p class="sch-kicker">SCHEDULE</p>
+    <h2 style="margin-bottom:0;">今後のイベント<span class="marker">スケジュール</span>。</h2>
+
+    <div class="sch-list">
+      <div class="sch-row done">
+        <div class="sch-date"><p class="d">7/16<span>（木）</span></p><p class="t">20:00〜21:00</p></div>
+        <div class="sch-body"><p class="ttl">スタートアップ説明会</p><p class="sub">3人でお届け</p></div>
+        <span class="sch-tag done">終了しました</span>
+      </div>
+      <div class="sch-row done">
+        <div class="sch-date"><p class="d">7/23<span>（木）</span></p><p class="t">20:00〜21:00</p></div>
+        <div class="sch-body"><p class="ttl">AI・マーケティング</p><p class="sub">3人でお届け</p></div>
+        <span class="sch-tag done">終了しました</span>
+      </div>
+      <div class="sch-row">
+        <div class="sch-date"><p class="d">8/3<span>（月）</span></p><p class="t">21:00〜22:00</p></div>
+        <div class="sch-body"><p class="ttl">ペップトーク</p><p class="sub">浦上 大輔さん</p></div>
+        <span class="sch-tag arts">大人のリベラルアーツ</span>
+      </div>
+      <div class="sch-row">
+        <div class="sch-date"><p class="d">8/17<span>（月）</span></p><p class="t">20:00〜21:00（仮）</p></div>
+        <div class="sch-body"><p class="ttl">睡眠と集中力アップ</p><p class="sub">片岡 夕美子さん</p></div>
+        <span class="sch-tag arts">大人のリベラルアーツ</span>
+      </div>
+      <div class="sch-row">
+        <div class="sch-date"><p class="d">9/1<span>（火）</span></p><p class="t">20:00〜21:00（仮）</p></div>
+        <div class="sch-body"><p class="ttl">AI・マーケティング</p><p class="sub">3人でお届け</p></div>
+        <span class="sch-tag biz">ビジネス系</span>
+      </div>
+      <div class="sch-row">
+        <div class="sch-date"><p class="d">9/14<span>（月）</span></p><p class="t">18:00〜21:00（仮）</p></div>
+        <div class="sch-body"><p class="ttl">リアル会</p><p class="sub">画面越しじゃなく、集まろう</p></div>
+        <span class="sch-tag real">リアル会</span>
+      </div>
+      <div class="sch-row">
+        <div class="sch-date"><p class="d">9/28<span>（月）</span></p><p class="t">20:00〜21:00（仮）</p></div>
+        <div class="sch-body"><p class="ttl">テーマ・登壇者は未定</p><p class="sub">お楽しみに</p></div>
+        <span class="sch-tag arts">大人のリベラルアーツ</span>
+      </div>
+    </div>
+    <p class="sch-note">（仮）は日程調整中。確定はオープンチャット・FBグループで発表します。</p>
+  </div>
+
+  <!-- ゲスト第1弾：浦上さん -->
+  <div class="gst">
+    <p class="gst-meta">2026.8.3 MON 21:00〜（1時間予定）｜SPECIAL GUEST</p>
+    <p class="gst-h">特別ゲスト回 第1弾：<span class="marker">浦上 大輔さん</span></p>
+    <div class="gst-grid">
+      <div class="gst-visual">
+        <img class="gst-face" src="images/urakami.jpg" alt="浦上 大輔さん">
+        <img class="gst-book" src="images/peptalk_book.jpg" alt="たった1分で相手をやる気にさせる話術 ペップトーク">
+      </div>
+      <div>
+        <p class="gst-name">浦上 大輔さん</p>
+        <p class="gst-role">一般財団法人 日本ペップトーク普及協会 専務理事</p>
+        <div class="gst-body">
+          <p>理学療法士としてリハビリの現場からキャリアを始め、<strong>ストレッチポール®のLPN社 代表取締役・日本コアコンディショニング協会 理事長</strong>として協会を全国組織に育てた実業家。</p>
+          <p>人の<strong>身体</strong>を整える仕事を極めた先に辿り着いたのが、言葉で人の<strong>心</strong>に火をつける仕事。アメリカのスポーツ現場で生まれた「試合前に選手を送り出す激励の1分スピーチ」＝<strong>ペップトーク</strong>を日本に広める第一人者です。</p>
+          <p>大谷翔平の<strong>「憧れるのをやめましょう」</strong>は、まさにペップトークの代表例。部下への声かけ、お客さんへの言葉、そして<strong>自分自身への語りかけ</strong>が変わる一夜になります。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ゲスト第2弾：片岡さん -->
+  <div class="gst">
+    <p class="gst-meta">2026.8.17 MON 20:00〜21:00（仮）｜SPECIAL GUEST</p>
+    <p class="gst-h">特別ゲスト回 第2弾：<span class="marker">片岡 夕美子さん</span></p>
+    <div class="gst-grid">
+      <div class="gst-visual">
+        <img class="gst-face" src="images/kataoka.jpg" alt="片岡 夕美子さん">
+        <img class="gst-book" src="images/ketsuryu_book.jpg" alt="体調は血流が9割">
+      </div>
+      <div>
+        <p class="gst-name">片岡 夕美子さん</p>
+        <p class="gst-role">株式会社Life &amp; Energy 代表／中目黒 Sanctus Salon 院長</p>
+        <div class="gst-body">
+          <p>18歳でカイロプラクティックの道へ。解剖学・生理学を土台に、<strong>のべ4万人以上</strong>の身体と向き合ってきた美容と健康のスペシャリスト。サロンの<strong>リピート率は98%</strong>。</p>
+          <p>解剖生理学に基づく1日5分の「背骨ほぐし」を体系化し、著書<strong>『体調は血流が9割』</strong>は約15万人の実践者が支持。</p>
+          <p>テーマは<strong>「睡眠と集中力アップ」</strong>。40代からの<strong>疲れ・冷え・眠りの浅さ</strong>を、<strong>血流のプロが、一点から解きほぐします</strong>。1分で眠気を飛ばし、集中力を上げる方法まで。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== EMPATHY ===== -->
 <section class="section bg-white dots">
   <div class="wrap-narrow">
