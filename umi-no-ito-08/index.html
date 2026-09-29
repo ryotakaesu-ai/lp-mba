@@ -47,20 +47,32 @@ body.paged #scroll, body.paged .end{display:none}
 
 /* ---- ページ送り ---- */
 #stage{display:none;position:fixed;left:0;right:0;bottom:0;top:var(--barh,56px);z-index:10;
-  padding:8px 0 52px;align-items:center;justify-content:center;
+  padding:8px 0 60px;align-items:center;justify-content:center;
   touch-action:pan-y;user-select:none;-webkit-user-select:none}
 body.paged #stage{display:flex}
 #stage img{max-width:100%;max-height:100%;width:auto;height:auto;display:block;
   box-shadow:0 6px 28px rgba(0,0,0,.22)}
-.zone{position:absolute;top:0;bottom:52px;width:50%;border:0;background:transparent;padding:0;
+.zone{position:absolute;top:0;bottom:60px;width:50%;border:0;background:transparent;padding:0;
   -webkit-tap-highlight-color:transparent}
 .zone.next{left:0} .zone.prev{right:0}
 .zone:focus-visible{outline:2px solid var(--accent);outline-offset:-4px}
-.nav{position:absolute;left:0;right:0;bottom:0;height:52px;display:flex;align-items:center;gap:10px;
+.nav{position:absolute;left:0;right:0;bottom:0;height:60px;display:flex;align-items:center;gap:10px;
   padding:0 16px;background:var(--panel);border-top:1px solid var(--line)}
-.nav button{flex:none;border:1px solid var(--line);background:transparent;border-radius:999px;
-  padding:7px 12px;font-size:12px;font-weight:700}
-.nav button:disabled{opacity:.35;cursor:default}
+.nav button{flex:none;display:inline-flex;align-items:center;gap:6px;border:0;
+  background:var(--ink);color:var(--bg);border-radius:999px;
+  padding:9px 16px;font-size:13px;font-weight:800;min-height:38px}
+.nav button svg{width:11px;height:12px;fill:currentColor;flex:none}
+.nav button:disabled{opacity:.3;cursor:default}
+/* 画面の左右に出る三角ボタン（ページの外側に余白がある幅のときだけ） */
+.arw{display:none;position:absolute;top:50%;transform:translateY(-50%);
+  width:56px;height:56px;border-radius:50%;background:var(--ink);color:var(--bg);
+  align-items:center;justify-content:center;flex-direction:column;gap:2px;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);pointer-events:none}
+.arw svg{width:16px;height:18px;fill:currentColor}
+.arw small{font-size:10px;font-weight:800;line-height:1}
+.zone.next .arw{left:20px} .zone.prev .arw{right:20px}
+.zone:disabled .arw{opacity:.25}
+@media (min-width:700px){ .arw{display:flex} }
 .nav input{flex:1;min-width:0;accent-color:var(--accent)}
 .hint{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
   background:rgba(20,22,27,.86);color:#fff;border-radius:12px;padding:14px 18px;
@@ -94,13 +106,13 @@ body.paged #stage{display:flex}
 
 <div id="stage" aria-label="ページ送りビュー">
   <img id="page" alt="" width="1024" height="1536">
-  <button type="button" class="zone next" id="zNext" aria-label="次のページ"></button>
-  <button type="button" class="zone prev" id="zPrev" aria-label="前のページ"></button>
+  <button type="button" class="zone next" id="zNext" aria-label="次のページ"><span class="arw"><svg viewBox="0 0 11 12" aria-hidden="true"><polygon points="11,0 0,6 11,12"/></svg><small>次へ</small></span></button>
+  <button type="button" class="zone prev" id="zPrev" aria-label="前のページ"><span class="arw"><svg viewBox="0 0 11 12" aria-hidden="true"><polygon points="0,0 11,6 0,12"/></svg><small>戻る</small></span></button>
   <div class="hint" id="hint">左側をタップ　次のページへ<br>右側をタップ　前のページへ</div>
   <div class="nav">
-    <button type="button" id="bNext">次へ</button>
+    <button type="button" id="bNext"><svg viewBox="0 0 11 12" aria-hidden="true"><polygon points="11,0 0,6 11,12"/></svg>次へ</button>
     <input type="range" id="slider" min="1" max="26" step="1" value="1" dir="rtl" aria-label="ページ移動">
-    <button type="button" id="bPrev">戻る</button>
+    <button type="button" id="bPrev">戻る<svg viewBox="0 0 11 12" aria-hidden="true"><polygon points="0,0 11,6 0,12"/></svg></button>
   </div>
 </div>
 
@@ -139,6 +151,8 @@ body.paged #stage{display:flex}
     slider.value = cur;
     $('bNext').disabled = (cur>=N);
     $('bPrev').disabled = (cur<=1);
+    $('zNext').disabled = (cur>=N);
+    $('zPrev').disabled = (cur<=1);
     store.set('page', cur);
   }
   function show(n){
